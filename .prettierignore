@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Generated files
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# Cache
+.cache/
+.parcel-cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Specific files that shouldn't be formatted
+website/server/src/database/schema.sql
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp

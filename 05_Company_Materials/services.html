@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Obvious Company | Strategic Intelligence Amplification Programs</title>
+    <meta name="description" content="Explore our five-tier strategic readiness programs designed for midlife professionals seeking AI-powered strategic transformation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --text-color: #ffffff;
+            --text-secondary: #b8c5d6;
+            --energy-amber: #f7931e;
+            --depth-charcoal: #2c3e50;
+            --clarity-blue: #3498db;
+            --wisdom-purple: #9b59b6;
+            --growth-green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--energy-amber);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--energy-amber);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+        }
+
+        .service-tier {
+            font-size: 0.9rem;
+            color: var(--energy-amber);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .service-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--clarity-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-features i {
+            color: var(--growth-green);
+            width: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 147, 30, 0.3);
+        }
+
+        .process-section {
+            margin: 4rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .process-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--energy-amber);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">The Obvious Company</div>
+                <ul class="nav-links">
+                    <li><a href="the_obvious_landing_page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Layered Service Delivery</h1>
+                <p class="page-subtitle">We meet you at your current layer of understanding and guide you through progressive value revelation. Each layer builds upon the previous, creating sustainable transformation through natural progression.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-tier">Layer 1: Universal Access</div>
+                    <h2 class="service-title">Immediate Relief</h2>
+                    <div class="service-price">Starting at $2,500</div>
+                    <p class="service-description">For leaders seeking immediate solutions to pressing operational challenges. We provide rapid implementation of proven systems that deliver measurable relief within 30-60 days.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Quick-win automation of repetitive tasks</li>
+                        <li><i class="fas fa-check"></i> Streamlined communication and workflow systems</li>
+                        <li><i class="fas fa-check"></i> Basic energy optimization through delegation frameworks</li>
+                        <li><i class="fas fa-check"></i> Immediate productivity gains through AI tool integration</li>
+                        <li><i class="fas fa-check"></i> Simple metrics and tracking systems</li>
+                        <li><i class="fas fa-check"></i> 90-day implementation support</li>
+                    </ul>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-bolt"></i>
+                        Get Immediate Relief
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-tier">Layer 2: Strategic Depth</div>
+                    <h2 class="service-title">Strategic Integration</h2>
+                    <div class="service-price">$8,000 - $25,000</div>
+                    <p class="service-description">For leaders ready to transform their strategic approach through systematic integration of advanced capabilities. We build comprehensive frameworks that create sustainable competitive advantage.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Comprehensive strategic framework development</li>
+                        <li><i class="fas fa-check"></i> Advanced AI integration across multiple business functions</li>
+                        <li><i class="fas fa-check"></i> Energy optimization through role specialization</li>
+                        <li><i class="fas fa-check"></i> Predictive analytics and strategic intelligence systems</li>
+                        <li><i class="fas fa-check"></i> Team training and capability development</li>
+                        <li><i class="fas fa-check"></i> Ongoing strategic coaching and optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-chess"></i>
+                        Develop Strategic Depth
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-tier">Layer 3: Transformational Truth</div>
+                    <h2 class="service-title">Paradigm Shift</h2>
+                    <div class="service-price">$35,000 - $100,000+</div>
+                    <p class="service-description">For visionary leaders ready to fundamentally reimagine their industry through breakthrough innovation. We co-create entirely new paradigms that redefine what's possible.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Industry paradigm analysis and breakthrough opportunity identification</li>
+                        <li><i class="fas fa-check"></i> Revolutionary framework development and intellectual property creation</li>
+                        <li><i class="fas fa-check"></i> Ecosystem transformation strategy and implementation</li>
+                        <li><i class="fas fa-check"></i> Thought leadership positioning and market education</li>
+                        <li><i class="fas fa-check"></i> Strategic partnership and alliance development</li>
+                        <li><i class="fas fa-check"></i> Long-term transformation partnership and co-evolution</li>
+                    </ul>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-infinity"></i>
+                        Create Paradigm Shift
+                    </a>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h2 class="process-title">Progressive Value Revelation System</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Our adaptive approach that meets you at your current layer of understanding</p>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Diagnostic Listening</h3>
+                        <p class="step-description">We identify your current layer of understanding through sophisticated pattern recognition, listening for language cues, question types, and decision-making timeframes that reveal your readiness level.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Responsive Mirroring</h3>
+                        <p class="step-description">We adapt our communication and service delivery to match your layer - using garden metaphors for Universal Access, orchestra analogies for Strategic Depth, or prism concepts for Transformational Truth.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Demonstration Principle</h3>
+                        <p class="step-description">We prove our value through invisible excellence (seamless execution), effortless escalation (natural progression), and transformational outcomes (paradigm-shifting results).</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Progressive Relationship Building</h3>
+                        <p class="step-description">As trust deepens and understanding expands, we naturally evolve the engagement to higher layers, always maintaining the foundation while expanding the horizon of possibility.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 4rem 0;">
+                <h2 style="margin-bottom: 1rem; color: var(--energy-amber);">Ready to Begin Your Strategic Transformation?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;">Schedule your complimentary Strategic AI-Energy Readiness Assessment and discover which tier aligns with your current position and goals.</p>
+                <a href="the_obvious_landing_page.html#consultation" class="btn" style="width: auto; padding: 1.25rem 2.5rem; font-size: 1.1rem;">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule Free Assessment
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

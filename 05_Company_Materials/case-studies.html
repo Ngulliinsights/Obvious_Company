@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - The Obvious Company</title>
+    <meta name="description" content="Real transformation stories: How we help organizations discover obvious solutions and optimize for sustainable growth.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --clarity-blue: #2E5BBA;
+            --insight-green: #00A676;
+            --energy-amber: #F7931E;
+            --calm-gray: #6B7280;
+            --focus-white: #FFFFFF;
+            --depth-charcoal: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--depth-charcoal);
+            background-color: var(--focus-white);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid var(--energy-amber);
+            padding-bottom: 2px;
+        }
+
+        main {
+            padding: 4rem 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--calm-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid var(--energy-amber);
+        }
+
+        .case-study-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .case-study h2 {
+            color: var(--clarity-blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study .subtitle {
+            color: var(--calm-gray);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .case-metrics {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .metric {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .metric:last-child {
+            margin-bottom: 0;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--insight-green);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--calm-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .challenge, .solution {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .challenge h3, .solution h3 {
+            color: var(--depth-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .challenge {
+            border-left: 4px solid #ef4444;
+        }
+
+        .solution {
+            border-left: 4px solid var(--insight-green);
+        }
+
+        .results {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .results h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .results ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .results li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--energy-amber);
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--energy-amber);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--depth-charcoal);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--calm-gray);
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--energy-amber);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--depth-charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .case-study-header {
+                grid-template-columns: 1fr;
+            }
+
+            .case-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-study {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/obvious-company-logo-dark.svg" alt="The Obvious Company Logo">
+                    <h1>The Obvious Company</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="the_obvious_landing_page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="case-studies.html" class="active">Case Studies</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1>Transformation Stories</h1>
+                <p>Real results from organizations that discovered what was obvious all along - and transformed their operations accordingly.</p>
+            </section>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h2>East African Tech Startup</h2>
+                        <p class="subtitle">From Burnout to Breakthrough: Optimizing Founder Energy</p>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">300%</span>
+                            <span class="metric-label">Productivity Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Stress Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">8 weeks</span>
+                            <span class="metric-label">Implementation Time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-content">
+                    <div class="challenge">
+                        <h3>The Challenge</h3>
+                        <p>A promising fintech startup was struggling with founder burnout. The CEO was working 16-hour days, making every decision, and becoming a bottleneck for growth. Despite securing funding, the team was demoralized and progress was stalling.</p>
+                        <p>The obvious problem wasn't time management - it was energy allocation and decision architecture.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h3>The Obvious Solution</h3>
+                        <p>We implemented our Energy Optimization Framework, identifying the founder's peak decision-making hours and restructuring the organization to match natural energy patterns.</p>
+                        <p>Key changes included: decision delegation protocols, energy-based scheduling, and systematic automation of routine choices.</p>
+                    </div>
+                </div>
+
+                <div class="results">
+                    <h3>Transformation Results</h3>
+                    <ul>
+                        <li>Founder's working hours reduced from 16 to 8 hours daily</li>
+                        <li>Team autonomy increased by 80% through clear decision frameworks</li>
+                        <li>Product development velocity tripled within 6 weeks</li>
+                        <li>Employee satisfaction scores improved from 4.2 to 8.7/10</li>
+                        <li>Secured Series A funding 3 months ahead of schedule</li>
+                    </ul>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        The breakthrough wasn't learning something new - it was seeing what was already there. Once we aligned our operations with natural energy patterns instead of fighting them, everything became effortless.
+                    </blockquote>
+                    <div class="testimonial-author">- Founder & CEO</div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h2>Regional NGO Network</h2>
+                        <p class="subtitle">Scaling Impact Through Intelligent Systems</p>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">5x</span>
+                            <span class="metric-label">Program Reach</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12 weeks</span>
+                            <span class="metric-label">Full Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-content">
+                    <div class="challenge">
+                        <h3>The Challenge</h3>
+                        <p>A network of NGOs across East Africa was struggling to coordinate programs effectively. Duplicate efforts, communication gaps, and resource inefficiencies were limiting their collective impact.</p>
+                        <p>Each organization was working harder, not smarter, with 70% of effort going to coordination rather than direct impact.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h3>The Obvious Solution</h3>
+                        <p>We identified that the network was optimizing for individual organization success rather than collective impact. The solution was a shared resource and intelligence system.</p>
+                        <p>Implementation included: unified impact tracking, resource sharing protocols, and AI-assisted program coordination.</p>
+                    </div>
+                </div>
+
+                <div class="results">
+                    <h3>Collective Impact</h3>
+                    <ul>
+                        <li>Program beneficiaries increased from 50,000 to 250,000</li>
+                        <li>Administrative overhead reduced by 40% across the network</li>
+                        <li>Duplicate programs eliminated, saving $2.3M annually</li>
+                        <li>Cross-organization collaboration increased by 300%</li>
+                        <li>Donor confidence and funding increased by 180%</li>
+                    </ul>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        We were so focused on our individual missions that we missed the obvious opportunity for collective impact. The framework helped us see the forest, not just the trees.
+                    </blockquote>
+                    <div class="testimonial-author">- Network Coordinator</div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h2>Professional Services Firm</h2>
+                        <p class="subtitle">From Reactive to Predictive Operations</p>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <span class="metric-value">85%</span>
+                            <span class="metric-label">Efficiency Gain</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">200%</span>
+                            <span class="metric-label">Client Satisfaction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">6 weeks</span>
+                            <span class="metric-label">ROI Achievement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-content">
+                    <div class="challenge">
+                        <h3>The Challenge</h3>
+                        <p>A growing consultancy was drowning in reactive work. Client requests were unpredictable, team utilization was inefficient, and quality was inconsistent despite having talented professionals.</p>
+                        <p>The team was constantly firefighting instead of delivering strategic value.</p>
+                    </div>
+
+                    <div class="solution">
+                        <h3>The Obvious Solution</h3>
+                        <p>The pattern was clear: reactive operations create reactive outcomes. We implemented predictive systems that anticipated client needs and optimized team allocation.</p>
+                        <p>Changes included: client pattern analysis, proactive service delivery, and systematic knowledge capture and reuse.</p>
+                    </div>
+                </div>
+
+                <div class="results">
+                    <h3>Operational Excellence</h3>
+                    <ul>
+                        <li>Emergency requests reduced by 75% through predictive planning</li>
+                        <li>Team utilization optimized from 60% to 85% efficiency</li>
+                        <li>Client satisfaction scores doubled from 6.5 to 9.2/10</li>
+                        <li>Revenue per consultant increased by 140%</li>
+                        <li>Employee stress levels decreased by 50%</li>
+                    </ul>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        The transformation was remarkable. We went from constantly reacting to confidently anticipating. Our clients now see us as strategic partners, not just service providers.
+                    </blockquote>
+                    <div class="testimonial-author">- Managing Partner</div>
+                </div>
+            </div>
+
+            <section class="cta-section">
+                <h2>Ready for Your Transformation Story?</h2>
+                <p>Every organization has obvious opportunities hiding in plain sight. Let us help you discover yours.</p>
+                <a href="contact.html" class="cta-button">Start Your Journey</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

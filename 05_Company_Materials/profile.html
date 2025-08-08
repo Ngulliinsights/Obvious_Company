@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Strategic Intelligence Amplifier | Joshua Ngulli | Where Human Wisdom Meets Artificial Intelligence</title>
+    <meta name="description" content="We tackle the obvious while you handle the impossible. Strategic AI implementation that amplifies your unique leadership capabilities and transforms operational excellence into competitive advantage.">
+    <meta name="keywords" content="AI strategy consultant, human AI collaboration, AI implementation strategy, strategic AI thinking, AI business intelligence, AI transformation consulting">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-color: #ffffff;
+            --text-secondary: #b0b0b0;
+            --energy-amber: #f7931e;
+            --clarity-blue: #3498db;
+            --wisdom-purple: #9b59b6;
+            --success-green: #27ae60;
+            --warning-orange: #e67e22;
+            --tension-red: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(26, 26, 26, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--accent-dark);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--energy-amber);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--energy-amber);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(247, 147, 30, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-hook {
+            font-size: 1.4rem;
+            color: var(--energy-amber);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-headline {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-subheadline {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-intrigue {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--energy-amber);
+        }
+
+        /* Mirror Section - Reader's Pain */
+        .mirror-section {
+            padding: 6rem 0;
+            background: rgba(231, 76, 60, 0.05);
+            border-top: 2px solid var(--tension-red);
+        }
+
+        .mirror-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            color: var(--tension-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .mirror-headline {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pain-point {
+            background: var(--secondary-dark);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-dark);
+            transition: all 0.3s ease;
+        }
+
+        .pain-point:hover {
+            transform: translateY(-5px);
+            border-color: var(--tension-red);
+        }
+
+        .pain-point h3 {
+            color: var(--tension-red);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .pain-point p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Window Section - Transformation */
+        .window-section {
+            padding: 6rem 0;
+            background: rgba(52, 152, 219, 0.05);
+            border-top: 2px solid var(--clarity-blue);
+        }
+
+        .window-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .window-label {
+            font-size: 0.9rem;
+            color: var(--clarity-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .window-headline {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .transformation-story {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .insight-card {
+            background: var(--secondary-dark);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-dark);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--clarity-blue);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--clarity-blue);
+        }
+
+        .insight-card h3 {
+            color: var(--clarity-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .insight-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Door Section - The Method */
+        .door-section {
+            padding: 6rem 0;
+            background: rgba(247, 147, 30, 0.05);
+            border-top: 2px solid var(--energy-amber);
+        }
+
+        .door-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .door-label {
+            font-size: 0.9rem;
+            color: var(--energy-amber);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .door-headline {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .method-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .method-step {
+            background: var(--secondary-dark);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-dark);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .method-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+        }
+
+        .method-step:hover {
+            transform: translateY(-5px);
+            border-color: var(--energy-amber);
+        }
+
+        .step-number {
+            font-size: 2rem;
+            color: var(--energy-amber);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .method-step h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .method-step p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            padding: 6rem 0;
+            background: rgba(39, 174, 96, 0.05);
+            border-top: 2px solid var(--success-green);
+        }
+
+        .proof-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-label {
+            font-size: 0.9rem;
+            color: var(--success-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .proof-headline {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .proof-story {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .credential {
+            background: var(--secondary-dark);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-dark);
+            text-align: center;
+        }
+
+        .credential i {
+            font-size: 2rem;
+            color: var(--success-green);
+            margin-bottom: 1rem;
+        }
+
+        .credential h4 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .credential p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--primary-dark) 100%);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-headline {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .cta-subheadline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .urgency-element {
+            background: rgba(247, 147, 30, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--energy-amber);
+            margin-bottom: 3rem;
+        }
+
+        .urgency-element p {
+            color: var(--energy-amber);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .urgency-element span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(247, 147, 30, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--energy-amber);
+            color: var(--energy-amber);
+        }
+
+        .btn-secondary:hover {
+            background: var(--energy-amber);
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-dark);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--accent-dark);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2.5rem;
+            }
+            
+            .mirror-headline,
+            .window-headline,
+            .door-headline,
+            .proof-headline {
+                font-size: 2rem;
+            }
+
+            .pain-points,
+            .insights-grid,
+            .method-steps,
+            .credentials {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+
+        /* Scroll-triggered animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">The Obvious Company</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#mirror" class="active">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#methodology">Methodology</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <div class="hero-hook">Strategic Intelligence Amplification</div>
+                    <h1 class="hero-headline">We Tackle the Obvious While You Handle the Impossible</h1>
+                    <p class="hero-subheadline">Transform AI from operational tool to strategic multiplier of your unique leadership vision</p>
+                    <div class="hero-intrigue">
+                        <strong>The wisdom of true leadership:</strong> Just because you can doesn't mean you should. 
+                        When obvious tasks are handled with invisible excellence, your true strategic colors emerge with unprecedented clarity.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mirror Section - Reader's Pain -->
+        <section class="mirror-section" id="mirror">
+            <div class="container">
+                <div class="mirror-content scroll-reveal">
+                    <div class="section-label">The Strategic Challenge</div>
+                    <h2 class="mirror-headline">Your Vision Deserves Better Than Operational Friction</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem;">
+                        You have the strategic insight to transform industries. You see opportunities others miss. You make decisions that shape the future. 
+                        But your energy gets consumed by the obvious—the routine cognitive work that could be systematized with precision...
+                    </p>
+                </div>
+                
+                <div class="pain-points">
+                    <div class="pain-point scroll-reveal stagger-1">
+                        <h3><i class="fas fa-hourglass-half"></i> The Bandwidth Paradox</h3>
+                        <p>Your most valuable insights emerge when you have space to think strategically. Yet operational demands consume the mental bandwidth needed for breakthrough thinking.</p>
+                    </div>
+                    
+                    <div class="pain-point scroll-reveal stagger-2">
+                        <h3><i class="fas fa-puzzle-piece"></i> The Implementation Gap</h3>
+                        <p>You see how AI could amplify your organization's capabilities, but translating vision into systematic execution requires precision that most approaches lack.</p>
+                    </div>
+                    
+                    <div class="pain-point scroll-reveal stagger-3">
+                        <h3><i class="fas fa-diamond"></i> The Excellence Standard</h3>
+                        <p>Your leadership demands excellence in execution. AI tools that create more work instead of seamless amplification fall short of your operational standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Window Section - Transformation -->
+        <section class="window-section" id="window">
+            <div class="container">
+                <div class="window-content scroll-reveal">
+                    <div class="window-label">The Transformation Waiting for You</div>
+                    <h2 class="window-headline">When the Obvious Becomes Effortless, the Impossible Becomes Inevitable</h2>
+                    <div class="transformation-story">
+                        <p>Picture this: You walk into your next strategic planning session with complete mental clarity because routine cognitive work has been systematized with invisible excellence. Your team operates at peak effectiveness because AI handles the obvious while amplifying their unique human capabilities. Your competitive advantage compounds because while others chase AI trends, you've built sustainable systems that multiply strategic impact.</p>
+                        
+                        <p style="margin-top: 2rem;">This is the prism effect—when obvious tasks are handled with precision, your unique vision reveals its full spectrum of possibility.</p>
+                    </div>
+                </div>
+                
+                <div class="insights-grid">
+                    <div class="insight-card scroll-reveal stagger-1">
+                        <h3><i class="fas fa-chess-king"></i> Strategic Amplification</h3>
+                        <p>Your decision-making bandwidth expands as routine cognitive work becomes systematized. More mental space for the strategic thinking that only you can provide.</p>
+                    </div>
+                    
+                    <div class="insight-card scroll-reveal stagger-2">
+                        <h3><i class="fas fa-gem"></i> Operational Excellence</h3>
+                        <p>Your team operates with precision and confidence because AI handles the obvious tasks with invisible excellence, freeing them to focus on high-value contributions.</p>
+                    </div>
+                    
+                    <div class="insight-card scroll-reveal stagger-3">
+                        <h3><i class="fas fa-crown"></i> Sustainable Leadership</h3>
+                        <p>While others struggle with AI implementation, you build lasting competitive advantages through strategic human-AI collaboration that amplifies your unique strengths.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Door Section - The Method -->
+        <section class="door-section" id="door">
+            <div class="container">
+                <div class="door-content scroll-reveal">
+                    <div class="door-label">The Obvious Company Method</div>
+                    <h2 class="door-headline">Strategic Intelligence Amplification Framework</h2>
+                    <p class="method-description">
+                        Like a master conductor who could play every instrument but chooses to shape the symphony, 
+                        we help you systematize the obvious so your unique strategic vision can create the impossible.
+                    </p>
+                </div>
+                
+                <div class="method-steps">
+                    <div class="method-step scroll-reveal stagger-1">
+                        <div class="step-number">01</div>
+                        <h3>Strategic Canvas Mapping</h3>
+                        <p>We identify the precise boundaries of your unique strategic contribution—the decisions and insights that only you can provide—and map the obvious cognitive work that can be systematized with excellence.</p>
+                    </div>
+                    
+                    <div class="method-step scroll-reveal stagger-2">
+                        <div class="step-number">02</div>
+                        <h3>Invisible Infrastructure Design</h3>
+                        <p>We create seamless AI systems that handle routine cognitive tasks with such precision they become invisible, freeing your mental bandwidth for the strategic thinking that transforms industries.</p>
+                    </div>
+                    
+                    <div class="method-step scroll-reveal stagger-3">
+                        <div class="step-number">03</div>
+                        <h3>Strategic Amplification Activation</h3>
+                        <p>We implement systems that multiply your strategic impact without multiplying your effort. The obvious becomes effortless, making the impossible feel inevitable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof Section -->
+        <section class="proof-section" id="proof">
+            <div class="container">
+                <div class="proof-content scroll-reveal">
+                    <div class="proof-label">The Foundation of Excellence</div>
+                    <h2 class="proof-headline">Where Strategic Vision Meets Systematic Execution</h2>
+                    <div class="proof-story">
+                        <p>True mastery emerges from understanding both the art of strategic thinking and the science of systematic execution. My background spans the creative synthesis of complex ideas, the precision of data analysis, and the strategic application of emerging technologies.</p>
+                        
+                        <p style="margin-top: 2rem;">This unique combination—pattern recognition across disciplines, systematic approach to cognitive work optimization, and deep understanding of how leaders think—enables me to create AI systems that amplify rather than complicate your strategic capabilities.</p>
+                        
+                        <p style="margin-top: 2rem;">The result: AI implementation that feels like a natural extension of your leadership rather than a foreign technology you have to manage.</p>
+                    </div>
+                </div>
+                
+                <div class="credentials">
+                    <div class="credential scroll-reveal stagger-1">
+                        <i class="fas fa-chess-queen"></i>
+                        <h4>Strategic Intelligence Architecture</h4>
+                        <p>Cross-domain pattern recognition and systematic thinking frameworks</p>
+                    </div>
+                    
+                    <div class="credential scroll-reveal stagger-2">
+                        <i class="fas fa-chart-network"></i>
+                        <h4>Data Science Precision</h4>
+                        <p>ALX Africa certification in strategic data analysis and decision science</p>
+                    </div>
+                    
+                    <div class="credential scroll-reveal stagger-3">
+                        <i class="fas fa-cogs"></i>
+                        <h4>AI Systems Mastery</h4>
+                        <p>Advanced prompt engineering and seamless AI integration</p>
+                    </div>
+                    
+                    <div class="credential scroll-reveal stagger-4">
+                        <i class="fas fa-crown"></i>
+                        <h4>Leadership Amplification</h4>
+                        <p>Strategic cognitive work optimization for executive excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <div class="cta-content scroll-reveal">
+                    <h2 class="cta-headline">Ready to Make the Impossible Inevitable?</h2>
+                    <p class="cta-subheadline">
+                        Transform your strategic capacity by systematizing the obvious. Amplify your leadership impact exponentially.
+                    </p>
+                    
+                    <div class="urgency-element">
+                        <p><i class="fas fa-crown"></i> The Strategic Amplification Advantage</p>
+                        <span>While others struggle with AI complexity, visionary leaders are creating invisible systems that make excellence effortless. The question isn't whether to systematize—it's whether you'll shape the future or be shaped by it.</span>
+                    </div>
+                    
+                    <div>
+                        <a href="mailto:joshua@theobviouscompany.com" class="btn">
+                            <i class="fas fa-chess-queen"></i>
+                            Begin Strategic Amplification
+                        </a>
+                        <a href="#schedule" class="btn btn-secondary">
+                            <i class="fas fa-magic"></i>
+                            Schedule Excellence Session
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The Obvious Company. All rights reserved. | Systematizing the Obvious to Make the Impossible Inevitable</p>
+        </div>
+    </footer>
+
+<script>
+// Advanced scroll-triggered animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+        }
+    });
+}, observerOptions);
+
+// Observe all scroll-reveal elements
+document.querySelectorAll('.scroll-reveal').forEach(el => {
+    observer.observe(el);
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Dynamic navigation highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function updateActiveNav() {
+    const scrollPosition = window.scrollY + 100;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
+
+// Add reading progress indicator
+const progressBar = document.createElement('div');
+progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(45deg, #f7931e, #3498db);
+    z-index: 1001;
+    transition: width 0.3s ease;
+`;
+document.body.appendChild(progressBar);
+
+// Update progress bar on scroll
+function updateProgressBar() {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+}
+
+window.addEventListener('scroll', updateProgressBar);
+
+// Enhanced hover effects for interactive elements
+document.querySelectorAll('.pain-point, .insight-card, .method-step, .credential').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px) scale(1.02)';
+        this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.3)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = 'none';
+    });
+});
+
+// Create mobile menu
+function createMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Create mobile menu toggle button
+    const mobileToggle = document.createElement('button');
+    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.style.cssText = `
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    `;
+    
+    // Add mobile styles
+    const mobileStyles = document.createElement('style');
+    mobileStyles.textContent = `
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block !important;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--secondary-dark);
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem;
+                display: block;
+            }
+        }
+    `;
+    
+    document.head.appendChild(mobileStyles);
+    nav.appendChild(mobileToggle);
+    
+    // Toggle mobile menu
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    });
+    
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            navLinks.classList.remove('active');
+            mobileToggle.querySelector('i').className = 'fas fa-bars';
+        }
+    });
+}
+
+// Initialize mobile menu
+createMobileMenu();
+
+// Performance optimization: Throttle scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Apply throttling to scroll-heavy functions
+window.addEventListener('scroll', throttle(updateProgressBar, 16));
+window.addEventListener('scroll', throttle(updateActiveNav, 16));
+</script>
+</body>
+</html>

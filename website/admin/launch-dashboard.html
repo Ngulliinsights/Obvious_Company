@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Dashboard - The Obvious Company</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, #2E5BBA, #00A676);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .metric-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 0;
+        }
+        
+        .metric-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .status-excellent { background: #d1fae5; color: #065f46; }
+        .status-healthy { background: #dbeafe; color: #1e40af; }
+        .status-warning { background: #fef3c7; color: #92400e; }
+        .status-critical { background: #fee2e2; color: #991b1b; }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2E5BBA;
+            margin: 10px 0;
+        }
+        
+        .metric-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+        }
+        
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 20px 0;
+        }
+        
+        .alerts-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+        }
+        
+        .alert-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid;
+        }
+        
+        .alert-critical {
+            background: #fef2f2;
+            border-left-color: #dc2626;
+        }
+        
+        .alert-high {
+            background: #fef3c7;
+            border-left-color: #f59e0b;
+        }
+        
+        .alert-medium {
+            background: #dbeafe;
+            border-left-color: #3b82f6;
+        }
+        
+        .alert-icon {
+            font-size: 1.2rem;
+            margin-right: 12px;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-title {
+            font-weight: 600;
+            margin: 0 0 5px 0;
+        }
+        
+        .alert-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .alert-time {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+        
+        .feature-flags-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+        }
+        
+        .flag-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .flag-item:last-child {
+            border-bottom: none;
+        }
+        
+        .flag-info {
+            flex: 1;
+        }
+        
+        .flag-name {
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 5px 0;
+        }
+        
+        .flag-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .flag-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .flag-toggle {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background: #d1d5db;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .flag-toggle.enabled {
+            background: #10b981;
+        }
+        
+        .flag-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .flag-toggle.enabled::after {
+            transform: translateX(26px);
+        }
+        
+        .rollout-percentage {
+            font-weight: 600;
+            color: #2E5BBA;
+            min-width: 40px;
+            text-align: right;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #6b7280;
+        }
+        
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .refresh-button {
+            background: #2E5BBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .refresh-button:hover {
+            background: #1e40af;
+        }
+        
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">🚀 Launch Dashboard</h1>
+            <p class="dashboard-subtitle">Real-time monitoring of AI Integration Assessment Platform launch</p>
+        </div>
+        
+        <button class="refresh-button" onclick="refreshDashboard()">
+            <i class="fas fa-sync-alt"></i> Refresh Data
+        </button>
+        
+        <div id="dashboard-content">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span style="margin-left: 10px;">Loading dashboard data...</span>
+            </div>
+        </div>
+        
+        <div class="last-updated" id="last-updated"></div>
+    </div>
+
+    <script>
+        class LaunchDashboard {
+            constructor() {
+                this.apiBase = '/api/launch';
+                this.adminKey = localStorage.getItem('adminKey') || this.promptForAdminKey();
+                this.refreshInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.loadDashboard();
+                this.startAutoRefresh();
+            }
+            
+            promptForAdminKey() {
+                const key = prompt('Enter admin key to access launch dashboard:');
+                if (key) {
+                    localStorage.setItem('adminKey', key);
+                    return key;
+                }
+                return null;
+            }
+            
+            async loadDashboard() {
+                try {
+                    const response = await fetch(`${this.apiBase}/dashboard?adminKey=${this.adminKey}`);
+                    
+                    if (!response.ok) {
+                        if (response.status === 401) {
+                            localStorage.removeItem('adminKey');
+                            this.adminKey = this.promptForAdminKey();
+                            if (this.adminKey) {
+                                return this.loadDashboard();
+                            }
+                        }
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.renderDashboard(result.data);
+                        this.updateLastUpdated();
+                    } else {
+                        throw new Error(result.message || 'Failed to load dashboard');
+                    }
+                    
+                } catch (error) {
+                    console.error('Dashboard load error:', error);
+                    this.renderError(error.message);
+                }
+            }
+            
+            renderDashboard(data) {
+                const { launchStatus, performanceMetrics, feedbackSummary, supportSummary, featureFlags, recommendations } = data;
+                
+                const content = `
+                    <div class="metrics-grid">
+                        ${this.renderLaunchStatusCard(launchStatus)}
+                        ${this.renderPerformanceCard(performanceMetrics)}
+                        ${this.renderFeedbackCard(feedbackSummary)}
+                        ${this.renderSupportCard(supportSummary)}
+                    </div>
+                    
+                    ${this.renderAlertsSection(performanceMetrics?.alerts || [])}
+                    ${this.renderFeatureFlagsSection(featureFlags)}
+                    ${this.renderRecommendationsSection(recommendations)}
+                `;
+                
+                document.getElementById('dashboard-content').innerHTML = content;
+            }
+            
+            renderLaunchStatusCard(status) {
+                const statusClass = `status-${status.systemHealth}`;
+                const phaseEmoji = {
+                    'beta': '🧪',
+                    'soft-launch': '🚀',
+                    'full-launch': '🌟'
+                };
+                
+                return `
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Launch Status</h3>
+                            <span class="metric-status ${statusClass}">${status.systemHealth}</span>
+                        </div>
+                        <div class="metric-value">${phaseEmoji[status.phase] || '🚀'} ${status.phase}</div>
+                        <p class="metric-description">
+                            System health: ${status.systemHealth}<br>
+                            Performance score: ${status.performanceScore || 'N/A'}<br>
+                            User satisfaction: ${status.userSatisfaction || 'N/A'}/5
+                        </p>
+                    </div>
+                `;
+            }
+            
+            renderPerformanceCard(metrics) {
+                if (!metrics) {
+                    return `
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3 class="metric-title">Performance</h3>
+                                <span class="metric-status status-warning">No Data</span>
+                            </div>
+                            <div class="metric-value">N/A</div>
+                            <p class="metric-description">Performance data not available</p>
+                        </div>
+                    `;
+                }
+                
+                const avgResponseTime = metrics.systemMetrics?.responseTime?.avg || 0;
+                const errorRate = (metrics.systemMetrics?.errorRate?.rate || 0) * 100;
+                
+                return `
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Performance</h3>
+                            <span class="metric-status ${avgResponseTime < 1000 ? 'status-excellent' : avgResponseTime < 2000 ? 'status-healthy' : 'status-warning'}">
+                                ${avgResponseTime < 1000 ? 'Excellent' : avgResponseTime < 2000 ? 'Good' : 'Slow'}
+                            </span>
+                        </div>
+                        <div class="metric-value">${Math.round(avgResponseTime)}ms</div>
+                        <p class="metric-description">
+                            Avg response time<br>
+                            Error rate: ${errorRate.toFixed(2)}%<br>
+                            Throughput: ${metrics.systemMetrics?.throughput || 0} req/h
+                        </p>
+                    </div>
+                `;
+            }
+            
+            renderFeedbackCard(feedback) {
+                if (!feedback) {
+                    return `
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3 class="metric-title">User Feedback</h3>
+                                <span class="metric-status status-warning">No Data</span>
+                            </div>
+                            <div class="metric-value">N/A</div>
+                            <p class="metric-description">No feedback data available</p>
+                        </div>
+                    `;
+                }
+                
+                const avgRating = parseFloat(feedback.averageRating) || 0;
+                const statusClass = avgRating >= 4 ? 'status-excellent' : avgRating >= 3 ? 'status-healthy' : 'status-warning';
+                
+                return `
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">User Feedback</h3>
+                            <span class="metric-status ${statusClass}">
+                                ${avgRating >= 4 ? 'Excellent' : avgRating >= 3 ? 'Good' : 'Needs Attention'}
+                            </span>
+                        </div>
+                        <div class="metric-value">${avgRating.toFixed(1)}/5</div>
+                        <p class="metric-description">
+                            Average rating<br>
+                            Total feedback: ${feedback.total || 0}<br>
+                            Positive sentiment: ${Math.round(((feedback.sentimentDistribution?.positive || 0) / Math.max(feedback.total, 1)) * 100)}%
+                        </p>
+                    </div>
+                `;
+            }
+            
+            renderSupportCard(support) {
+                if (!support) {
+                    return `
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <h3 class="metric-title">Support</h3>
+                                <span class="metric-status status-healthy">Normal</span>
+                            </div>
+                            <div class="metric-value">0</div>
+                            <p class="metric-description">No support tickets</p>
+                        </div>
+                    `;
+                }
+                
+                const openTickets = support.ticketStats?.open || 0;
+                const overdueTickets = support.ticketStats?.overdue || 0;
+                const statusClass = overdueTickets > 0 ? 'status-critical' : openTickets > 5 ? 'status-warning' : 'status-healthy';
+                
+                return `
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Support</h3>
+                            <span class="metric-status ${statusClass}">
+                                ${overdueTickets > 0 ? 'Overdue' : openTickets > 5 ? 'Busy' : 'Normal'}
+                            </span>
+                        </div>
+                        <div class="metric-value">${openTickets}</div>
+                        <p class="metric-description">
+                            Open tickets<br>
+                            Overdue: ${overdueTickets}<br>
+                            Recent: ${support.ticketStats?.recent || 0}
+                        </p>
+                    </div>
+                `;
+            }
+            
+            renderAlertsSection(alerts) {
+                if (!alerts || alerts.length === 0) {
+                    return `
+                        <div class="alerts-section">
+                            <h2 class="chart-title">🟢 System Alerts</h2>
+                            <p style="color: #10b981; text-align: center; padding: 20px;">
+                                <i class="fas fa-check-circle"></i> No active alerts - system running smoothly
+                            </p>
+                        </div>
+                    `;
+                }
+                
+                const alertItems = alerts.slice(0, 10).map(alert => {
+                    const severityClass = `alert-${alert.severity}`;
+                    const icon = {
+                        'critical': 'fas fa-exclamation-triangle',
+                        'high': 'fas fa-exclamation-circle',
+                        'medium': 'fas fa-info-circle',
+                        'low': 'fas fa-info'
+                    }[alert.severity] || 'fas fa-info';
+                    
+                    return `
+                        <div class="alert-item ${severityClass}">
+                            <i class="${icon} alert-icon"></i>
+                            <div class="alert-content">
+                                <div class="alert-title">${alert.type.replace(/_/g, ' ').toUpperCase()}</div>
+                                <div class="alert-description">${JSON.stringify(alert.data)}</div>
+                            </div>
+                            <div class="alert-time">${new Date(alert.timestamp).toLocaleTimeString()}</div>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <div class="alerts-section">
+                        <h2 class="chart-title">⚠️ Active Alerts (${alerts.length})</h2>
+                        ${alertItems}
+                    </div>
+                `;
+            }
+            
+            renderFeatureFlagsSection(flags) {
+                if (!flags || flags.length === 0) {
+                    return `
+                        <div class="feature-flags-section">
+                            <h2 class="chart-title">🎛️ Feature Flags</h2>
+                            <p style="text-align: center; color: #6b7280; padding: 20px;">No feature flags configured</p>
+                        </div>
+                    `;
+                }
+                
+                const flagItems = flags.map(flag => `
+                    <div class="flag-item">
+                        <div class="flag-info">
+                            <div class="flag-name">${flag.name.replace(/_/g, ' ').toUpperCase()}</div>
+                            <div class="flag-description">${flag.description}</div>
+                        </div>
+                        <div class="flag-controls">
+                            <div class="rollout-percentage">${flag.rolloutPercentage}%</div>
+                            <div class="flag-toggle ${flag.enabled ? 'enabled' : ''}" 
+                                 onclick="toggleFeatureFlag('${flag.name}', ${!flag.enabled})">
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                return `
+                    <div class="feature-flags-section">
+                        <h2 class="chart-title">🎛️ Feature Flags</h2>
+                        ${flagItems}
+                    </div>
+                `;
+            }
+            
+            renderRecommendationsSection(recommendations) {
+                if (!recommendations || recommendations.length === 0) {
+                    return `
+                        <div class="alerts-section">
+                            <h2 class="chart-title">💡 Recommendations</h2>
+                            <p style="color: #10b981; text-align: center; padding: 20px;">
+                                <i class="fas fa-thumbs-up"></i> No recommendations - system performing well
+                            </p>
+                        </div>
+                    `;
+                }
+                
+                const recItems = recommendations.map(rec => {
+                    const priorityClass = `alert-${rec.priority}`;
+                    const icon = {
+                        'high': 'fas fa-exclamation-triangle',
+                        'medium': 'fas fa-lightbulb',
+                        'low': 'fas fa-info-circle'
+                    }[rec.priority] || 'fas fa-info';
+                    
+                    const actions = rec.actions ? rec.actions.map(action => `<li>${action}</li>`).join('') : '';
+                    
+                    return `
+                        <div class="alert-item ${priorityClass}">
+                            <i class="${icon} alert-icon"></i>
+                            <div class="alert-content">
+                                <div class="alert-title">${rec.type.replace(/_/g, ' ').toUpperCase()}</div>
+                                <div class="alert-description">
+                                    ${rec.message}
+                                    ${actions ? `<ul style="margin: 10px 0 0 20px;">${actions}</ul>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <div class="alerts-section">
+                        <h2 class="chart-title">💡 Recommendations</h2>
+                        ${recItems}
+                    </div>
+                `;
+            }
+            
+            renderError(message) {
+                document.getElementById('dashboard-content').innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Error loading dashboard:</strong> ${message}
+                    </div>
+                `;
+            }
+            
+            updateLastUpdated() {
+                document.getElementById('last-updated').textContent = 
+                    `Last updated: ${new Date().toLocaleString()}`;
+            }
+            
+            startAutoRefresh() {
+                // Refresh every 30 seconds
+                this.refreshInterval = setInterval(() => {
+                    this.loadDashboard();
+                }, 30000);
+            }
+            
+            stopAutoRefresh() {
+                if (this.refreshInterval) {
+                    clearInterval(this.refreshInterval);
+                    this.refreshInterval = null;
+                }
+            }
+        }
+        
+        // Global functions
+        function refreshDashboard() {
+            window.dashboard.loadDashboard();
+        }
+        
+        async function toggleFeatureFlag(flagName, enabled) {
+            try {
+                const response = await fetch(`/api/launch/feature-flags/${flagName}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Admin-Key': window.dashboard.adminKey
+                    },
+                    body: JSON.stringify({
+                        updates: { enabled }
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Refresh dashboard to show updated state
+                    refreshDashboard();
+                } else {
+                    alert('Failed to update feature flag: ' + result.message);
+                }
+                
+            } catch (error) {
+                console.error('Feature flag toggle error:', error);
+                alert('Failed to update feature flag');
+            }
+        }
+        
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.dashboard = new LaunchDashboard();
+        });
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            if (window.dashboard) {
+                window.dashboard.stopAutoRefresh();
+            }
+        });
+    </script>
+</body>
+</html>

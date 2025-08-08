@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUCII - Strategic Framework</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            width: 90vw;
+            max-width: 1200px;
+            height: 80vh;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 60px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide.active {
+            display: flex;
+            animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-number {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .slide-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .question {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: center;
+            color: #ffffff;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .question::before {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            left: -40px;
+            top: -20px;
+            font-family: serif;
+        }
+
+        .question::after {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            right: -40px;
+            bottom: -40px;
+            font-family: serif;
+        }
+
+        .emphasis {
+            color: #7c3aed;
+            font-weight: 500;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            transition: width 0.5s ease;
+            z-index: 100;
+        }
+
+        .dots-indicator {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #7c3aed;
+            transform: scale(1.3);
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #7c3aed;
+            letter-spacing: 3px;
+        }
+
+        .context-note {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .framework-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .framework-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #7c3aed;
+            margin-bottom: 15px;
+        }
+
+        .framework-item p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .closing-content {
+            text-align: center;
+        }
+
+        .closing-content h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #7c3aed;
+        }
+
+        .closing-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">MUCII</div>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <div class="slide-header">
+                <div class="slide-number">01</div>
+                <h1 class="slide-title">Strategic Framework</h1>
+                <p class="slide-subtitle">AI in African Cinema</p>
+            </div>
+            <div class="slide-content">
+                <div class="context-note">Infrastructure that enables. Culture that endures.</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Current Reality -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">02</div>
+                <h1 class="slide-title">Current Reality</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    What's the biggest gap between <span class="emphasis">creative vision</span> and what can actually be executed technically?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Resource Allocation -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">03</div>
+                <h1 class="slide-title">Resource Flow</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    How often do brilliant stories get compromised because <span class="emphasis">technical execution</span> consumes resources meant for authentic storytelling?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Systemic Analysis -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">04</div>
+                <h1 class="slide-title">System Dynamics</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    Where do the most significant bottlenecks occur, and how might they be <span class="emphasis">symptoms of deeper</span> resource allocation problems?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Creative Control -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">05</div>
+                <h1 class="slide-title">Creative Sovereignty</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    Who actually controls <span class="emphasis">creative direction</span> at each stage, and how does that influence which stories get told authentically?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Market Pressures -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">06</div>
+                <h1 class="slide-title">External Influence</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    How do international platforms shape what gets prioritized, and what does that reveal about whose <span class="emphasis">aesthetic judgments</span> drive the industry?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Competitive Landscape -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">07</div>
+                <h1 class="slide-title">Strategic Position</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    If AI reduces production costs by 60% while raising audience expectations, how does that change the <span class="emphasis">competitive position</span> of cultural authenticity?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Reframing -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">08</div>
+                <h1 class="slide-title">Cultural Infrastructure</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    What if AI handled technical barriers, freeing up resources for <span class="emphasis">deeper cultural research</span> and community engagement?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Market Positioning -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">09</div>
+                <h1 class="slide-title">Strategic Advantage</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    How might the power balance shift if filmmakers could achieve Hollywood-level effects on indie budgets while maintaining <span class="emphasis">complete creative control</span>?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Cultural Preservation -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">10</div>
+                <h1 class="slide-title">Authenticity Framework</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    Which specific narrative elements are we protecting, and how do we distinguish between <span class="emphasis">authentic practices</span> versus romanticized ideas?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Implementation -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">11</div>
+                <h1 class="slide-title">Strategic Implementation</h1>
+            </div>
+            <div class="slide-content">
+                <div class="question">
+                    What evaluation criteria should guide decisions about which AI applications serve <span class="emphasis">long-term strategic interests</span> versus compromise competitive advantages?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Future Scenarios -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">12</div>
+                <h1 class="slide-title">Strategic Scenarios</h1>
+            </div>
+            <div class="slide-content">
+                <div class="framework-grid">
+                    <div class="framework-item">
+                        <h3>Early Adoption</h3>
+                        <p>Competitive advantage through technical capability</p>
+                    </div>
+                    <div class="framework-item">
+                        <h3>Resistance</h3>
+                        <p>Cultural preservation at cost of market position</p>
+                    </div>
+                    <div class="framework-item">
+                        <h3>Hybrid Approach</h3>
+                        <p>Strategic integration preserving authenticity</p>
+                    </div>
+                    <div class="framework-item">
+                        <h3>Your Vision</h3>
+                        <p>What does ideal integration look like operationally?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Closing -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">13</div>
+                <h1 class="slide-title">Next Steps</h1>
+            </div>
+            <div class="slide-content">
+                <div class="closing-content">
+                    <h2>Strategic Consultation</h2>
+                    <p>What would you need to see in terms of practical frameworks to feel confident recommending specific approaches to the filmmakers you mentor?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dots-indicator" id="dotsIndicator"></div>
+    
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="previousSlide()">Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const progressBar = document.getElementById('progressBar');
+        const dotsIndicator = document.getElementById('dotsIndicator');
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsIndicator.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+            
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>

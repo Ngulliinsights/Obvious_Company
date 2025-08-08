@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Intelligence Amplification | The Obvious Company</title>
+    <meta name="description" content="Transform into an AI-powered strategic leader. We handle the obvious so you can achieve the impossible. Free strategy assessment available.">
+    <meta name="keywords" content="AI strategy, business transformation, leadership development, energy optimization, East Africa business">
+    <meta name="author" content="The Obvious Company">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+    <style>
+        :root {
+            --clarity-blue: #2E5BBA;
+            --insight-green: #00A676;
+            --energy-amber: #F7931E;
+            --calm-gray: #6B7280;
+            --focus-white: #FFFFFF;
+            --depth-charcoal: #1F2937;
+            --subtle-gray: #F8FAFC;
+            --warm-white: #FEFEFE;
+            
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --shadow: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+            --shadow-subtle: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--depth-charcoal);
+            background-color: var(--warm-white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-5 { margin-bottom: 3rem; }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--depth-charcoal);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .logo-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--clarity-blue);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-dot:nth-child(1) { 
+            transform: translateY(-3px) scale(1.2); 
+            background-color: var(--insight-green); 
+        }
+        .logo:hover .logo-dot:nth-child(2) { 
+            transform: translateY(3px) scale(1.2); 
+            background-color: var(--energy-amber); 
+        }
+        .logo:hover .logo-dot:nth-child(3) { 
+            transform: translateY(-3px) scale(1.2); 
+            background-color: var(--insight-green); 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--depth-charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clarity-blue), var(--insight-green));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--clarity-blue);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--depth-charcoal);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, 
+                rgba(46, 91, 186, 0.03) 0%, 
+                rgba(0, 166, 118, 0.03) 50%, 
+                rgba(247, 147, 30, 0.02) 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 91, 186, 0.08) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 166, 118, 0.06) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--clarity-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--calm-gray);
+            margin-bottom: 3rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: var(--focus-white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--focus-white);
+            color: var(--depth-charcoal);
+            border-color: var(--clarity-blue);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-secondary:hover {
+            background: var(--clarity-blue);
+            color: var(--focus-white);
+            transform: translateY(-2px);
+        }
+
+        /* Philosophy Section */
+        .approach-section {
+            background: var(--focus-white);
+            padding: 6rem 0;
+        }
+
+        .philosophy-layers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .layer-card {
+            background: var(--subtle-gray);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .layer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--clarity-blue), var(--insight-green), var(--energy-amber));
+        }
+
+        .layer-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--focus-white);
+            font-size: 1.8rem;
+        }
+
+        .layer-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--depth-charcoal);
+        }
+
+        .layer-card p {
+            color: var(--calm-gray);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .layer-message {
+            font-style: italic;
+            font-weight: 600;
+            color: var(--clarity-blue);
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(46, 91, 186, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid var(--clarity-blue);
+        }
+
+        /* Strategic Framework Section */
+        .framework {
+            background: var(--subtle-gray);
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--calm-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .framework-card {
+            background: var(--focus-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .framework-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .framework-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--clarity-blue), var(--insight-green));
+        }
+
+        .framework-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--focus-white);
+            font-size: 1.5rem;
+        }
+
+        .framework-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .framework-description {
+            color: var(--calm-gray);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--focus-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: var(--focus-white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .service-tier {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-description {
+            color: var(--calm-gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--depth-charcoal);
+        }
+
+        .service-features i {
+            color: var(--insight-green);
+            font-size: 0.9rem;
+        }
+
+        .service-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .service-icon {
+            color: var(--focus-white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .function-note {
+            background: rgba(46, 91, 186, 0.05);
+            border-left: 4px solid var(--clarity-blue);
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .function-note strong {
+            color: var(--clarity-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Results Section */
+        .results {
+            background: var(--subtle-gray);
+            padding: 6rem 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .result-card {
+            background: var(--focus-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .result-metric {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--clarity-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .result-description {
+            color: var(--calm-gray);
+            line-height: 1.6;
+        }
+
+        /* Consultation Section */
+        .consultation {
+            background: linear-gradient(135deg, var(--depth-charcoal), #374151);
+            color: var(--focus-white);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consultation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 91, 186, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .consultation-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .consultation-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .consultation-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .consultation-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .consultation-feature {
+            text-align: center;
+        }
+
+        .consultation-feature i {
+            font-size: 2rem;
+            color: var(--energy-amber);
+            margin-bottom: 1rem;
+        }
+
+        .consultation-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .consultation-feature p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .consultation .btn-secondary {
+            background: transparent;
+            color: var(--energy-amber);
+            border: 2px solid var(--energy-amber);
+            transition: all 0.3s ease;
+        }
+        
+        .consultation .btn-secondary:hover {
+            background: var(--energy-amber);
+            color: var(--depth-charcoal);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--focus-white);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--subtle-gray);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            position: relative;
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .testimonial-card:before {
+            content: "";
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 3rem;
+            color: rgba(46, 91, 186, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--calm-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--depth-charcoal);
+            color: var(--focus-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--focus-white);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--clarity-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--clarity-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .framework-grid,
+            .services-grid,
+            .results-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-padding {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">We handle the <span style="color: var(--clarity-blue);">obvious</span> while you tackle the <span style="color: var(--insight-green);">impossible</span></h1>
+               
+                <div class="cta-buttons">
+                    <a href="#consultation" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Get Your Free Assessment
+                    </a>
+                    <a href="#framework" class="btn btn-secondary">
+                        <i class="fas fa-lightbulb"></i>
+                        How It Works
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="approach" class="approach-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">The Wisdom of Delegation</h2>
+                <p class="section-subtitle">True mastery isn't about doing everything yourself—it's about knowing what deserves your attention.</p>
+            </div>
+            
+            <div class="philosophy-layers">
+                <div class="layer-card fade-in">
+                    <div class="layer-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>The Garden Principle</h3>
+                    <p>Imagine a master gardener who could personally water every plant, prune every branch, and pull every weed. They have the skill and knowledge to do it all. But the wise gardener knows that spending time on routine maintenance means less time for the delicate art of grafting, designing new landscapes, and cultivating rare varieties that only their expertise can nurture.</p>
+                    <div class="layer-message">"Just because you can doesn't mean you should."</div>
+                </div>
+                
+                <div class="layer-card fade-in">
+                    <div class="layer-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>The Orchestra Principle</h3>
+                    <p>Consider a master conductor who could technically play every instrument in the orchestra. Their years of study have given them this capability. But the conductor's true value emerges when they step back from the instruments and focus on the harmony that only their vision can create.</p>
+                    <div class="layer-message">"Energy efficiency isn't about doing less—it's about amplifying what matters most."</div>
+                </div>
+                
+                <div class="layer-card fade-in">
+                    <div class="layer-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>The Prism of Possibility</h3>
+                    <p>Like light passing through a prism, your unique vision contains all the colors of innovation, but it takes the right medium to reveal them clearly. We become the perfect prism—transparent, precisely cut, and positioned to reveal the full spectrum of your potential.</p>
+                    <div class="layer-message">"The most profound transformations happen when the obvious becomes effortless."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Framework Section -->
+    <section id="framework" class="framework">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">The Strategic Amplification Framework</h2>
+                <p class="section-subtitle">Five integrated layers that transform professionals into AI-empowered leaders</p>
+            </div>
+            <div class="framework-grid">
+                <div class="framework-card slide-in-left">
+                    <div class="framework-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="framework-title">Strategic Foundation</h3>
+                    <p class="framework-description">We establish the core "why" behind AI implementation through deep problem analysis and value creation.</p>
+                </div>
+                <div class="framework-card fade-in">
+                    <div class="framework-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="framework-title">AI Execution System</h3>
+                    <p class="framework-description">Practical implementation focusing on strategic application rather than technical complexity.</p>
+                </div>
+                <div class="framework-card slide-in-right">
+                    <div class="framework-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="framework-title">Performance Excellence</h3>
+                    <p class="framework-description">Measurable results through phased implementation and continuous optimization.</p>
+                </div>
+                <div class="framework-card slide-in-left">
+                    <div class="framework-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="framework-title">Ecosystem Growth</h3>
+                    <p class="framework-description">Build collaborative networks that multiply your success through collective intelligence.</p>
+                </div>
+                <div class="framework-card slide-in-right">
+                    <div class="framework-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="framework-title">Strategic Leadership</h3>
+                    <p class="framework-description">Position yourself as an industry leader in responsible AI adoption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">The Three Essential Functions</h2>
+                <p class="section-subtitle">Like a world-class orchestra, excellence emerges through intentional role distribution, not role overlap.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-tier">Your Strategic Domain</div>
+                        <h3 class="service-title">The Visionary</h3>
+                        <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <p class="service-description">This function represents the origination of purpose, strategy, and breakthrough thinking. The Visionary carries the deep industry knowledge, customer understanding, and innovative capacity that drives impossible solutions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Strategic foresight and market intuition from direct experience</li>
+                            <li><i class="fas fa-check"></i> Industry expertise and relationship capital built over years</li>
+                            <li><i class="fas fa-check"></i> Creative problem-solving for complex, unprecedented challenges</li>
+                            <li><i class="fas fa-check"></i> Risk assessment and opportunity recognition in ambiguous situations</li>
+                            <li><i class="fas fa-check"></i> Long-term vision and cultural leadership that inspires others</li>
+                        </ul>
+                        <div class="function-note">
+                            <strong>Why This Function Must Remain Client-Owned:</strong> The Visionary role requires intimate knowledge of market dynamics, customer relationships, and competitive positioning that cannot be outsourced or replicated.
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-tier">The Obvious Company's Domain</div>
+                        <h3 class="service-title">The Implementer</h3>
+                        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <p class="service-description">This function represents the systematic execution of clear, proven solutions with professional excellence. The Implementer brings sophisticated technical knowledge to foundational processes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Process optimization and systematic thinking that prevents problems</li>
+                            <li><i class="fas fa-check"></i> Technical proficiency in established methodologies and emerging tools</li>
+                            <li><i class="fas fa-check"></i> Quality control systems that create consistent, reliable outcomes</li>
+                            <li><i class="fas fa-check"></i> Resource efficiency and waste elimination through specialized focus</li>
+                            <li><i class="fas fa-check"></i> Scalable system design that grows with your business needs</li>
+                        </ul>
+                        <div class="function-note">
+                            <strong>Why This Function Requires Specialized Focus:</strong> What appears "obvious" often requires sophisticated technical knowledge, process design, and quality systems to implement effectively.
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-tier">The Collaborative Relationship</div>
+                        <h3 class="service-title">The Integrator</h3>
+                        <div class="service-icon"><i class="fas fa-infinity"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <p class="service-description">This function represents the emergent excellence that arises when Visionary and Implementer work in perfect harmony. The Integrator creates compound value through specialized role synergy.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Seamless translation between strategic vision and tactical execution</li>
+                            <li><i class="fas fa-check"></i> Continuous optimization of the partnership dynamic over time</li>
+                            <li><i class="fas fa-check"></i> Emergent problem-solving leveraging both parties' unique strengths</li>
+                            <li><i class="fas fa-check"></i> Sustainable productivity cycles preventing burnout</li>
+                            <li><i class="fas fa-check"></i> Compound learning and capability development creating lasting advantage</li>
+                        </ul>
+                        <div class="function-note">
+                            <strong>Why This Function Cannot Be Forced:</strong> Integration emerges naturally when specialized functions trust each other's expertise and maintain clear boundaries.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Proven Strategic Outcomes</h2>
+                <p class="section-subtitle">Measurable impact across energy optimization and AI implementation</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card fade-in">
+                    <div class="result-metric">85%</div>
+                    <h3 class="result-label">Energy Optimization</h3>
+                    <p class="result-description">Average improvement in strategic energy allocation for decision-making</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-metric">3.2x</div>
+                    <h3 class="result-label">Strategic Impact</h3>
+                    <p class="result-description">Multiplication factor in strategic decision-making speed and quality</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-metric">92%</div>
+                    <h3 class="result-label">Implementation Success</h3>
+                    <p class="result-description">Client success rate in achieving measurable AI integration</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-metric">40+</div>
+                    <h3 class="result-label">Strategic Leaders</h3>
+                    <p class="result-description">Professionals transformed across East Africa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Success Stories from Leaders</h2>
+                <p class="section-subtitle">Hear how our framework transformed strategic leadership</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        "The Strategic Amplification Framework helped me reclaim 12 hours per week. I've transitioned from operational management to true strategic leadership while maintaining my energy and focus."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>James Mwangi</h4>
+                            <p>CEO, Financial Services Firm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        "Working with The Obvious Company allowed our leadership team to implement AI strategically rather than technically. The energy optimization principles have been transformative for our entire organization."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AW</div>
+                        <div class="author-info">
+                            <h4>Amina Wanjiru</h4>
+                            <p>COO, Logistics Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        "The 'Strategic Architects' program helped me position our company as an industry innovator. We've developed proprietary frameworks that give us a significant competitive edge in our market."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DO</div>
+                        <div class="author-info">
+                            <h4>David Omondi</h4>
+                            <p>Managing Director, Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <div class="consultation-content fade-in">
+                <h2 class="consultation-title">Strategic Intelligence Assessment</h2>
+                <p class="consultation-subtitle">Discover your AI Strategic Readiness and unlock your pathway to amplified leadership</p>
+                
+                <div class="consultation-features">
+                    <div class="consultation-feature">
+                        <i class="fas fa-brain"></i>
+                        <h4>Energy-Intelligence Analysis</h4>
+                        <p>Comprehensive assessment of your current strategic position, energy patterns, and AI readiness</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Authority Amplification</h4>
+                        <p>Custom roadmap for leveraging AI to enhance strategic influence while preserving energy</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Integrated Implementation</h4>
+                        <p>Actionable steps combining our framework with energy principles for sustainable performance</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <i class="fas fa-users"></i>
+                        <h4>Strategic Ecosystem</h4>
+                        <p>Build strategic relationships while maintaining energy efficiency through AI-powered networking</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; text-align: center;">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Ready to Transform Your Leadership?</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">Book your complimentary Strategic AI-Energy Readiness Assessment and discover how our approach can revolutionize your effectiveness.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:strategic@theobviouscompany.com?subject=Strategic Intelligence Assessment Request" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.25rem 2.5rem;">
+                            <i class="fas fa-calendar-check"></i>
+                            Schedule Free Assessment
+                        </a>
+                        <a href="tel:+254700000000" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1.25rem 2.5rem;">
+                            <i class="fas fa-phone"></i>
+                            Call Now +254 700 000 000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Obvious Company</h3>
+                    <p>We help leaders amplify their strategic impact through AI-powered solutions while optimizing energy and focus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Strategic Services</h3>
+                    <ul>
+                        <li><a href="#">Strategic Foundation</a></li>
+                        <li><a href="#">AI Execution Systems</a></li>
+                        <li><a href="#">Performance Excellence</a></li>
+                        <li><a href="#">Ecosystem Growth</a></li>
+                        <li><a href="#">Strategic Leadership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Strategic Readiness Assessment</a></li>
+                        <li><a href="#">AI Implementation Guide</a></li>
+                        <li><a href="#">Leadership Insights</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: strategic@theobviouscompany.com</p>
+                    <p>Phone: +254 (0) 700 000 000</p>
+                    <p>Nairobi, Kenya</p>
+                    <p>Serving leaders across East Africa</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Obvious Company. All rights reserved. Strategic Intelligence Amplification Framework.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 50 && rect.bottom >= 0;
+                
+                if (isVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check and scroll event listener
+        window.addEventListener('DOMContentLoaded', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Enhanced button hover effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic logo animation on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const logoDots = document.querySelectorAll('.logo-dot');
+            
+            logoDots.forEach((dot, index) => {
+                dot.style.transform = `translateY(${rate * (index + 1) * 0.1}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

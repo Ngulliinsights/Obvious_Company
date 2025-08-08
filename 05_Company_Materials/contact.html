@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contact - The Obvious Company | Strategic Intelligence Consultation
+    </title>
+    <meta
+      name="description"
+      content="Contact The Obvious Company for your Strategic Intelligence Amplification consultation. Multiple ways to connect and begin your transformation."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #1a1a2e;
+        --secondary-color: #16213e;
+        --accent-color: #0f3460;
+        --text-color: #ffffff;
+        --text-secondary: #b8c5d6;
+        --energy-amber: #f7931e;
+        --depth-charcoal: #2c3e50;
+        --clarity-blue: #3498db;
+        --wisdom-purple: #9b59b6;
+        --growth-green: #27ae60;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 50%,
+          var(--accent-color) 100%
+        );
+        color: var(--text-color);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(26, 26, 46, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--energy-amber);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--energy-amber);
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 80px;
+        padding: 4rem 0;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          45deg,
+          var(--energy-amber),
+          var(--clarity-blue)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .page-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .contact-info {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: var(--energy-amber);
+      }
+
+      .contact-method {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .contact-method:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+        color: var(--energy-amber);
+        width: 40px;
+        text-align: center;
+      }
+
+      .contact-details h3 {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-details p {
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .contact-details a {
+        color: var(--clarity-blue);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-details a:hover {
+        color: var(--energy-amber);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--energy-amber);
+        box-shadow: 0 0 0 2px rgba(247, 147, 30, 0.2);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          45deg,
+          var(--energy-amber),
+          var(--clarity-blue)
+        );
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(247, 147, 30, 0.3);
+      }
+
+      .office-hours {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 2rem;
+      }
+
+      .office-hours h3 {
+        color: var(--energy-amber);
+        margin-bottom: 1rem;
+      }
+
+      .hours-list {
+        list-style: none;
+      }
+
+      .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hours-list li:last-child {
+        border-bottom: none;
+      }
+
+      .cta-section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-color);
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 2rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="logo">The Obvious Company</div>
+          <ul class="nav-links">
+            <li><a href="the_obvious_landing_page.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="page-header">
+          <h1 class="page-title">Contact Us</h1>
+          <p class="page-subtitle">
+            Ready to bridge the gap between strategic understanding and
+            execution? Connect with us to begin your Single Thread journey
+            toward transformational truth.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="section-title">Get In Touch</h2>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>
+                  <a href="mailto:strategic@theobviouscompany.com"
+                    >strategic@theobviouscompany.com</a
+                  >
+                </p>
+                <p>For strategic consultations and assessments</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p><a href="tel:+254700000000">+254 700 000 000</a></p>
+                <p>Direct line for immediate consultation</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Schedule Online</h3>
+                <p>
+                  <a href="https://calendly.com/theobviouscompany"
+                    >Book Assessment</a
+                  >
+                </p>
+                <p>Complimentary Strategic AI-Energy Readiness Assessment</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Nairobi, Kenya</p>
+                <p>Serving clients globally via digital platforms</p>
+              </div>
+            </div>
+
+            <div class="office-hours">
+              <h3>Consultation Hours</h3>
+              <ul class="hours-list">
+                <li>
+                  <span>Monday - Friday</span><span>9:00 AM - 6:00 PM EAT</span>
+                </li>
+                <li>
+                  <span>Saturday</span><span>10:00 AM - 2:00 PM EAT</span>
+                </li>
+                <li><span>Sunday</span><span>By Appointment</span></li>
+                <li>
+                  <span>Emergency Strategic Support</span
+                  ><span>24/7 for Tier 1-2 Clients</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2 class="section-title">Request Consultation</h2>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company/Organization</label>
+                <input type="text" id="company" name="company" />
+              </div>
+
+              <div class="form-group">
+                <label for="position">Current Position/Role</label>
+                <input type="text" id="position" name="position" />
+              </div>
+
+              <div class="form-group">
+                <label for="tier">Estimated Strategic Readiness Tier</label>
+                <select id="tier" name="tier">
+                  <option value="">Select your estimated tier</option>
+                  <option value="observer">
+                    Strategic Observer - Foundation Builder
+                  </option>
+                  <option value="explorer">
+                    Strategic Explorer - Learning Pioneer
+                  </option>
+                  <option value="contributor">
+                    Strategic Contributor - Tactical Optimizer
+                  </option>
+                  <option value="catalyst">
+                    Strategic Catalyst - Influence Multiplier
+                  </option>
+                  <option value="architect">
+                    Strategic Architect - Visionary Optimizer
+                  </option>
+                  <option value="unsure">Not sure - Need assessment</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="challenge">Primary Strategic Challenge</label>
+                <textarea
+                  id="challenge"
+                  name="challenge"
+                  placeholder="Describe your main strategic challenge or opportunity where AI could provide leverage..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Desired Timeline</label>
+                <select id="timeline" name="timeline">
+                  <option value="">Select timeline</option>
+                  <option value="immediate">Immediate (Within 2 weeks)</option>
+                  <option value="month">Within 1 month</option>
+                  <option value="quarter">Within 3 months</option>
+                  <option value="flexible">Flexible timeline</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn">
+                <i class="fas fa-paper-plane"></i>
+                Request Strategic Consultation
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <h2 style="margin-bottom: 1rem; color: var(--energy-amber)">
+            Prefer to Start with a Free Assessment?
+          </h2>
+          <p
+            style="
+              margin-bottom: 2rem;
+              color: var(--text-secondary);
+              max-width: 600px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            Our Strategic AI-Energy Readiness Assessment takes just 15 minutes
+            and provides immediate insights into your strategic positioning and
+            AI implementation opportunities.
+          </p>
+          <a
+            href="the_obvious_landing_page.html#consultation"
+            class="btn"
+            style="width: auto; padding: 1.25rem 2.5rem; font-size: 1.1rem"
+          >
+            <i class="fas fa-chart-line"></i>
+            Take Free Assessment
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Form submission handling
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        // Simple validation
+        if (!data.name || !data.email) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // Simulate form submission
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          alert(
+            "Thank you for your consultation request! We will contact you within 24 hours to schedule your Strategic AI-Energy Readiness Assessment."
+          );
+          this.reset();
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

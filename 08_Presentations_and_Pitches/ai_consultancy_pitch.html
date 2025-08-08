@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mastery Practice - Strategic Business Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: none;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: slideIn 0.5s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800);
+        }
+        
+        .slide-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e0e6ed;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .financial-table th,
+        .financial-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .financial-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .financial-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 55%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .metric-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .risk-mitigation {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #764ba2;
+        }
+        
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .diagnostic-tool {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .course-module {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .execution-framework {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px;
+                margin: 10px 0;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+            
+            .timeline-item::before {
+                left: -30px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active">
+            <div class="slide-number">1/12</div>
+            <div class="slide-header">
+                <h1>AI Mastery Practice</h1>
+                <p style="font-size: 1.2em; color: #666; margin-top: 10px;">Transforming Kenya's Professional Landscape Through Strategic AI Education</p>
+            </div>
+            <div class="highlight">
+                <h3>Strategic Business Presentation</h3>
+                <p>A comprehensive business model addressing execution concerns while demonstrating systematic scalability and sustainable revenue generation.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="metric-card">
+                    <div class="metric-number">KSh 2.5M</div>
+                    <div>Year 1 Revenue Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">72</div>
+                    <div>Annual Client Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">85%</div>
+                    <div>Referral Success Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Market Opportunity -->
+        <div class="slide">
+            <div class="slide-number">2/12</div>
+            <h2>Market Opportunity & Positioning</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Target Demographics</h3>
+                    <p>Kenyan professionals aged 35-55 in middle to senior management positions with disposable income for strategic career development.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Core Problem</h3>
+                    <p>Critical gap between recognizing AI's strategic importance and developing practical, applicable competency in professional settings.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌟</div>
+                    <h3>Unique Solution</h3>
+                    <p>Culturally relevant, relationship-based AI education that enhances career security and advancement prospects.</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Competitive Advantage</h3>
+                <p>Social dance networking creates trust-based relationships with target demographic, leading to 73% female client base who value relationship-centered service delivery over impersonal online alternatives.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Revenue Architecture -->
+        <div class="slide">
+            <div class="slide-number">3/12</div>
+            <h2>Revenue Architecture & Pricing Strategy</h2>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Service Offering</th>
+                        <th>Price (KSh)</th>
+                        <th>Delivery Timeline</th>
+                        <th>Monthly Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI Diagnostic Assessment</td>
+                        <td>1,500</td>
+                        <td>1 session (90 mins)</td>
+                        <td>12 assessments</td>
+                    </tr>
+                    <tr>
+                        <td>6-Course AI Mastery Bundle</td>
+                        <td>18,000</td>
+                        <td>4 weeks intensive</td>
+                        <td>6 enrollments</td>
+                    </tr>
+                    <tr>
+                        <td>Corporate Workshop Training</td>
+                        <td>120,000</td>
+                        <td>Full-day intensive</td>
+                        <td>2 corporate contracts</td>
+                    </tr>
+                    <tr>
+                        <td>Ongoing Support Services</td>
+                        <td>2,500/month</td>
+                        <td>Monthly sessions</td>
+                        <td>20 recurring clients</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight">
+                <h3>Monthly Revenue Projection</h3>
+                <p>Primary Revenue: KSh 108,000 (Individual clients) + Secondary Revenue: KSh 240,000 (Corporate) + Recurring Revenue: KSh 50,000 = <strong>KSh 398,000 monthly</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Curriculum Design -->
+        <div class="slide">
+            <div class="slide-number">4/12</div>
+            <h2>6-Course AI Mastery Curriculum</h2>
+            <div class="diagnostic-tool">
+                <h3>Pre-Course: AI Diagnostic Assessment (KSh 1,500)</h3>
+                <p>Comprehensive evaluation of current AI knowledge, identification of professional use cases, and customized learning pathway development.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 1: AI Fundamentals for Professionals</h3>
+                <p>Demystifying AI terminology, understanding practical applications, and identifying immediate implementation opportunities in current role.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 2: AI Tools for Productivity Enhancement</h3>
+                <p>Hands-on experience with ChatGPT, Claude, and industry-specific AI tools that provide immediate productivity gains.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 3: AI-Driven Decision Making</h3>
+                <p>Leveraging AI for data analysis, trend identification, and strategic decision support in professional contexts.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 4: AI Integration Strategies</h3>
+                <p>Developing organizational AI adoption frameworks and leading AI transformation initiatives within teams.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 5: Advanced AI Applications</h3>
+                <p>Industry-specific AI implementations, custom solution development, and advanced automation strategies.</p>
+            </div>
+            <div class="course-module">
+                <h3>Week 6: AI Leadership & Future Planning</h3>
+                <p>Positioning for AI-driven career advancement, building AI competency within organizations, and staying current with emerging technologies.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Client Acquisition Strategy -->
+        <div class="slide">
+            <div class="slide-number">5/12</div>
+            <h2>Systematic Client Acquisition</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Social Dance Networking (Primary)</h3>
+                    <p>Attending 3 social dance events weekly, building genuine relationships with target demographic, natural transition to professional discussions.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Diagnostic Assessment Offering</h3>
+                    <p>Introducing AI Diagnostic Assessment as valuable service demonstrating expertise while identifying specific client needs.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Professional Association Partnerships</h3>
+                    <p>Developing relationships with women's business groups and industry organizations through speaking engagements and workshops.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Corporate Partnership Development</h3>
+                    <p>Building relationships with consulting firms and executive coaches for referral opportunities and corporate training contracts.</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Conversion Strategy</h3>
+                <p>Diagnostic Assessment → Personalized Curriculum Recommendation → 6-Course Bundle Enrollment → Corporate Training Opportunities → Ongoing Support Services</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Referral System -->
+        <div class="slide">
+            <div class="slide-number">6/12</div>
+            <h2>Systematic Referral Generation</h2>
+            <div class="execution-framework">
+                <h3>Referral Request Integration</h3>
+                <p>Systematic referral requests integrated into service delivery at optimal moments: post-diagnostic assessment (for assessment referrals) and post-course completion (for full program referrals).</p>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Referral Tracking</h3>
+                    <p>Comprehensive tracking system capturing referral sources, timing, outcomes, and conversion optimization data.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎁</div>
+                    <h3>Incentive Framework</h3>
+                    <p>Credits toward future training, exclusive workshop access, and special networking event invitations for successful referrers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Cumulative Rewards</h3>
+                    <p>Greater rewards for multiple successful referrals, encouraging ongoing referral behavior and client advocacy.</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Referral Success Metrics</h3>
+                <p>Target: 60% of new clients from referrals by month 6, with average referral conversion rate of 75% and client lifetime value increase of 40% through referral relationships.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Execution Framework -->
+        <div class="slide">
+            <div class="slide-number">7/12</div>
+            <h2>Systematic Execution Framework</h2>
+            <div class="execution-framework">
+                <h3>Weekly Minimum Requirements</h3>
+                <p>Designed to ensure consistent progress regardless of emotional states or competing priorities:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Attend 2 social dance events minimum</li>
+                    <li>Make 3 new professional connections</li>
+                    <li>Offer diagnostic assessment to 2 qualified prospects</li>
+                    <li>Complete all scheduled client sessions</li>
+                    <li>Follow up with recent clients on progress</li>
+                    <li>Update tracking systems and prepare weekly reports</li>
+                </ul>
+            </div>
+            <div class="stats-grid">
+                <div class="metric-card">
+                    <div class="metric-number">Monthly</div>
+                    <div>Progress Measurement & Analysis</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Quarterly</div>
+                    <div>Strategic Planning & Optimization</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Annual</div>
+                    <div>Comprehensive Business Review</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Payment & Conversion Strategy -->
+        <div class="slide">
+            <div class="slide-number">8/12</div>
+            <h2>Payment Systems & Conversion Optimization</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">💳</div>
+                    <h3>Payment Collection</h3>
+                    <p>50% deposit required for course enrollment, remaining balance due before Week 3. M-Pesa integration for seamless local payments.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <h3>Follow-up System</h3>
+                    <p>Automated follow-up sequence: 24-hour post-assessment, 7-day decision checkpoint, 14-day final enrollment opportunity.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📊</div>
+                    <h3>Conversion Tracking</h3>
+                    <p>Systematic tracking of assessment-to-enrollment conversion rates, identifying optimization opportunities and client journey improvements.</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Soft Target Conversion Strategy</h3>
+                <p>Warm prospects receive personalized follow-up including relevant AI industry updates, success stories from similar professionals, and limited-time enrollment incentives to create urgency without pressure.</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Risk Management -->
+        <div class="slide">
+            <div class="slide-number">9/12</div>
+            <h2>Risk Management & Mitigation Strategies</h2>
+            <div class="risk-mitigation">
+                <h3>Risk: Execution Consistency Challenges</h3>
+                <p>Historical pattern of strong analytical thinking but inconsistent implementation</p>
+            </div>
+            <div class="solution">
+                <h3>Mitigation: Systematic Minimum Requirements</h3>
+                <p>Weekly minimum activities designed to be manageable regardless of emotional state, with built-in accountability systems and progress tracking</p>
+            </div>
+            
+            <div class="risk-mitigation">
+                <h3>Risk: Market Saturation or Economic Downturn</h3>
+                <p>Reduced demand for professional development services during economic uncertainty</p>
+            </div>
+            <div class="solution">
+                <h3>Mitigation: Revenue Diversification</h3>
+                <p>Multiple revenue streams (individual, corporate, ongoing support) with different economic sensitivities, plus pivot capability to AI implementation consulting</p>
+            </div>
+            
+            <div class="risk-mitigation">
+                <h3>Risk: Technology Evolution Outpacing Curriculum</h3>
+                <p>Rapid AI advancement making course content obsolete</p>
+            </div>
+            <div class="solution">
+                <h3>Mitigation: Modular Curriculum Design</h3>
+                <p>Quarterly content updates, focus on principles rather than specific tools, and ongoing support services keeping clients current with developments</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Success Metrics -->
+        <div class="slide">
+            <div class="slide-number">10/12</div>
+            <h2>Success Metrics & Accountability</h2>
+            <div class="stats-grid">
+                <div class="metric-card">
+                    <div class="metric-number">95%</div>
+                    <div>Course Completion Rate Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">90%</div>
+                    <div>Client Satisfaction Score Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">60%</div>
+                    <div>Profit Margin Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">75%</div>
+                    <div>Referral Conversion Rate Target</div>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Monthly Accountability Framework</h3>
+                <p>Monthly mentor meetings with comprehensive progress reports including: client acquisition metrics, service delivery quality indicators, financial performance analysis, and strategic planning updates.</p>
+            </div>
+            <div class="execution-framework">
+                <h3>Quarterly Business Reviews</h3>
+                <p>Comprehensive analysis of execution effectiveness, market positioning, strategic direction, and adaptation to market feedback ensuring alignment with growth objectives.</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Implementation Timeline -->
+        <div class="slide">
+            <div class="slide-number">11/12</div>
+            <h2>Implementation Timeline & Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Months 1-2: Foundation Building</h3>
+                    <p>Complete curriculum development, implement client management systems, establish weekly networking routines. Target: 6 individual clients, 1 corporate contract.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Months 3-4: Momentum Building</h3>
+                    <p>Scale networking activities, develop association partnerships, implement referral systems. Target: 12 individual clients, 2 corporate contracts.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Months 5-6: Market Establishment</h3>
+                    <p>Establish market leadership, implement pricing evolution, build reputation through speaking engagements. Target: 18 individual clients, 3 corporate contracts.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Months 7-12: Scaling & Optimization</h3>
+                    <p>Expand service offerings, develop strategic partnerships, achieve 75% referral-based acquisition. Target: 72 annual clients, KSh 2.5M revenue.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Investment ROI -->
+        <div class="slide">
+            <div class="slide-number">12/12</div>
+            <h2>Investment Return & Partnership Value</h2>
+            <div class="highlight">
+                <h3>Immediate Return on Investment</h3>
+                <p>Current rent investment of KSh 25,000 generates 10x return within 60 days through systematic client acquisition and service delivery execution.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="metric-card">
+                    <div class="metric-number">Month 1</div>
+                    <div>Break-even Achievement</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Month 3</div>
+                    <div>Sustainable Profitability</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Month 6</div>
+                    <div>Market Leadership Position</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Month 12</div>
+                    <div>Regional Expansion Ready</div>
+                </div>
+            </div>
+            <div class="execution-framework">
+                <h3>Partnership Benefits Beyond Financial</h3>
+                <p>Your investment creates a systematic, scalable business model that addresses execution concerns through structured processes, measurable outcomes, and progressive scaling strategies. This demonstrates the practical application of your mentorship while building a sustainable enterprise that serves Kenya's growing AI literacy needs.</p>
+            </div>
+            <div class="highlight">
+                <h3>Long-term Vision</h3>
+                <p>Evolution from individual consultancy to comprehensive AI education platform, positioning for partnership opportunities with international organizations and potential franchise expansion across East Africa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="prevSlide()">Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            // Update navigation buttons
+            const prevBtn = document.querySelector('.navigation .nav-btn:first-child');
+            const nextBtn = document.querySelector('.navigation .nav-btn:last-child');
+            
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>

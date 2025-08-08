@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About - The Obvious Company | Strategic Intelligence Amplification
+    </title>
+    <meta
+      name="description"
+      content="Learn about The Obvious Company's unique approach to Strategic Intelligence Amplification through Energy Pattern Recognition for midlife professionals."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #1a1a2e;
+        --secondary-color: #16213e;
+        --accent-color: #0f3460;
+        --text-color: #ffffff;
+        --text-secondary: #b8c5d6;
+        --energy-amber: #f7931e;
+        --depth-charcoal: #2c3e50;
+        --clarity-blue: #3498db;
+        --wisdom-purple: #9b59b6;
+        --growth-green: #27ae60;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 50%,
+          var(--accent-color) 100%
+        );
+        color: var(--text-color);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(26, 26, 46, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--energy-amber);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--energy-amber);
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 80px;
+        padding: 4rem 0;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          45deg,
+          var(--energy-amber),
+          var(--clarity-blue)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .page-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .content-section {
+        margin-bottom: 4rem;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--energy-amber);
+      }
+
+      .section-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      .highlight-box {
+        background: linear-gradient(
+          135deg,
+          var(--energy-amber),
+          var(--clarity-blue)
+        );
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        color: var(--primary-color);
+      }
+
+      .methodology-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .methodology-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .methodology-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .methodology-icon {
+        font-size: 2.5rem;
+        color: var(--energy-amber);
+        margin-bottom: 1rem;
+      }
+
+      .methodology-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          45deg,
+          var(--energy-amber),
+          var(--clarity-blue)
+        );
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(247, 147, 30, 0.3);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-color);
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 2rem;
+        }
+
+        .content-section {
+          padding: 2rem;
+        }
+
+        .methodology-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="logo">The Obvious Company</div>
+          <ul class="nav-links">
+            <li><a href="the_obvious_landing_page.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="page-header">
+          <h1 class="page-title">About The Obvious Company</h1>
+          <p class="page-subtitle">
+            We handle what should be obvious. You handle what should be
+            impossible.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">Our Philosophy: The Harmony Framework</h2>
+          <div class="section-content">
+            <p>
+              The Obvious Company operates on a fundamental principle:
+              <strong
+                >sustainable excellence emerges through specialized
+                collaboration, not individual heroics</strong
+              >. We call this The Harmony Framework.
+            </p>
+
+            <div class="highlight-box">
+              <h3>The Garden Principle</h3>
+              <p>
+                Like a master gardener who delegates soil preparation to focus
+                on cultivation strategy, visionary leaders achieve their
+                greatest impact by delegating "obvious" operational tasks to
+                specialists who can execute them with superior efficiency.
+              </p>
+            </div>
+
+            <p>
+              Most consulting approaches ask leaders to become experts in
+              everything. We believe the opposite: true strategic power comes
+              from knowing what <em>not</em> to do yourself. By handling the
+              foundational, systematic work that drains your energy, we free you
+              to focus on the impossible challenges that only you can solve.
+            </p>
+
+            <p>
+              This isn't about outsourcing—it's about
+              <strong>energy efficiency through role specialization</strong>.
+              When each party operates in their zone of natural excellence, the
+              combined output exceeds what either could achieve alone.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">The Three Essential Functions</h2>
+          <div class="methodology-grid">
+            <div class="methodology-card">
+              <div class="methodology-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="methodology-title">The Visionary (Your Domain)</h3>
+              <p>
+                This function represents the origination of purpose, strategy,
+                and breakthrough thinking. You carry the deep industry
+                knowledge, customer understanding, and innovative capacity that
+                drives impossible solutions. This cannot and should not be
+                outsourced.
+              </p>
+            </div>
+
+            <div class="methodology-card">
+              <div class="methodology-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3 class="methodology-title">The Implementer (Our Domain)</h3>
+              <p>
+                This function represents the systematic execution of clear,
+                proven solutions with professional excellence. We bring
+                sophisticated technical knowledge to foundational processes that
+                appear "obvious" but require specialized focus to implement
+                effectively.
+              </p>
+            </div>
+
+            <div class="methodology-card">
+              <div class="methodology-icon">
+                <i class="fas fa-infinity"></i>
+              </div>
+              <h3 class="methodology-title">
+                The Integrator (Our Collaboration)
+              </h3>
+              <p>
+                This function represents the emergent excellence that arises
+                when Visionary and Implementer work in perfect harmony.
+                Integration creates compound value through specialized role
+                synergy and cannot be forced—it emerges naturally through trust
+                and clear boundaries.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">Why We're Different</h2>
+          <div class="section-content">
+            <p>
+              Most AI consultancies focus on technical implementation. Most
+              energy management approaches ignore technological leverage. We're
+              the only consultancy that integrates both dimensions to create
+              what we call "Intelligent Amplification Through Strategic
+              Revelation."
+            </p>
+
+            <p>Our clients experience:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem">
+              <li>
+                <strong>Increased Strategic Authority:</strong> AI tools that
+                amplify decision-making capability and influence
+              </li>
+              <li>
+                <strong>Optimized Energy Allocation:</strong> Systems that
+                preserve energy for high-impact strategic activities
+              </li>
+              <li>
+                <strong>Sustainable Competitive Advantage:</strong> Long-term
+                positioning that compounds over time
+              </li>
+              <li>
+                <strong>Cultural Integration:</strong> AI adoption that enhances
+                rather than disrupts existing strengths
+              </li>
+              <li>
+                <strong>Ecosystem Leverage:</strong> Strategic relationships
+                that multiply impact and influence
+              </li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 3rem">
+              <a href="the_obvious_landing_page.html#consultation" class="btn">
+                <i class="fas fa-calendar-alt"></i>
+                Schedule Your Strategic Assessment
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

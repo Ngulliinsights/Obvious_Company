@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Insights - The Obvious Company</title>
+    <meta name="description" content="Discover insights, tools, and resources to optimize your energy and unlock obvious solutions for sustainable productivity.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --clarity-blue: #2E5BBA;
+            --insight-green: #00A676;
+            --energy-amber: #F7931E;
+            --calm-gray: #6B7280;
+            --focus-white: #FFFFFF;
+            --depth-charcoal: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--depth-charcoal);
+            background-color: var(--focus-white);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid var(--energy-amber);
+            padding-bottom: 2px;
+        }
+
+        main {
+            padding: 4rem 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--calm-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--energy-amber);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-card h3 {
+            color: var(--clarity-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .resource-card p {
+            color: var(--calm-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--insight-green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--clarity-blue);
+        }
+
+        .insights-section {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+        }
+
+        .insights-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--depth-charcoal);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .insight-card h4 {
+            color: var(--clarity-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .insight-card blockquote {
+            font-style: italic;
+            color: var(--calm-gray);
+            border-left: 3px solid var(--energy-amber);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--energy-amber);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--depth-charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/obvious-company-logo-dark.svg" alt="The Obvious Company Logo">
+                    <h1>The Obvious Company</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="the_obvious_landing_page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1>Resources & Insights</h1>
+                <p>Discover tools, frameworks, and insights to optimize your energy and unlock obvious solutions for sustainable productivity.</p>
+            </section>
+
+            <section class="resources-grid">
+                <div class="resource-card">
+                    <h3>AI Strategic Readiness Audit</h3>
+                    <p>Take our comprehensive assessment to understand your organization's AI readiness and identify optimization opportunities.</p>
+                    <a href="https://docs.google.com/forms/d/12fx2JV-Wg20uEVGfwMZJ9pJmRyyXWl7-rcPAw1Bz9I0/edit?usp=forms_home&ouid=110097129284718999823&ths=true" class="resource-link" target="_blank">
+                        Take Assessment →
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Energy Management Framework</h3>
+                    <p>Our proprietary framework for aligning work patterns with natural energy rhythms for sustainable high performance.</p>
+                    <a href="#" class="resource-link">
+                        Download Guide →
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Pattern Recognition Toolkit</h3>
+                    <p>Tools and templates to help you identify inefficiencies and optimization opportunities in your current workflows.</p>
+                    <a href="#" class="resource-link">
+                        Access Toolkit →
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Implementation Playbook</h3>
+                    <p>Step-by-step guidance for implementing systematic changes that create lasting transformation.</p>
+                    <a href="#" class="resource-link">
+                        Get Playbook →
+                    </a>
+                </div>
+            </section>
+
+            <section class="insights-section">
+                <h2>Latest Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h4>The Energy Efficiency Paradigm</h4>
+                        <blockquote>
+                            "Most productivity advice focuses on time management. But time is infinite - energy is finite. The breakthrough comes when you optimize for energy, not time."
+                        </blockquote>
+                        <p>Understanding how to work with your natural energy patterns rather than against them creates sustainable high performance without burnout.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4>The Obvious Principle</h4>
+                        <blockquote>
+                            "The most powerful solutions are often hiding in plain sight. They become obvious once you know how to look."
+                        </blockquote>
+                        <p>Pattern recognition is a learnable skill. Once you develop the ability to see systems clearly, optimization opportunities become apparent.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4>Intelligent Routing</h4>
+                        <blockquote>
+                            "Success isn't about powering through obstacles - it's about finding the path of least resistance to your goals."
+                        </blockquote>
+                        <p>Strategic thinking means choosing routes that leverage your strengths and minimize friction, creating effortless progress.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Ready to Discover What's Obvious?</h2>
+                <p>Start with our strategic readiness assessment and uncover the optimization opportunities that are hiding in plain sight.</p>
+                <a href="contact.html" class="cta-button">Schedule Consultation</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

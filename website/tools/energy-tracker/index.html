@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Energy Tracker - The Obvious Company</title>
+    <meta name="description" content="Monitor and optimize your personal productivity and energy allocation across strategic priorities.">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .tracker-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        .energy-input {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+        .input-group input, .input-group select {
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .energy-chart {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: none;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .chart-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .chart-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .recommendations {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .recommendation-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--clarity-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../services.html">Services</a></li>
+                    <li><a href="../../methodology.html">Methodology</a></li>
+                    <li><a href="../../case-studies.html">Case Studies</a></li>
+                    <li><a href="../../insights/">Insights</a></li>
+                    <li><a href="../../learn/">Learn</a></li>
+                    <li><a href="../../assessment/">Assessment</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh;">
+        <div class="container">
+            <div class="hero-content">
+                <nav style="margin-bottom: 1rem;">
+                    <a href="../" style="color: var(--calm-gray); text-decoration: none;">Tools</a>
+                    <span style="margin: 0 0.5rem; color: var(--calm-gray);">/</span>
+                    <span>Energy Tracker</span>
+                </nav>
+                <h1 class="hero-title">Executive <span class="text-blue">Energy Tracker</span></h1>
+                <p class="hero-subtitle">Monitor and optimize your personal productivity and energy allocation across strategic priorities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Tracker -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="tracker-container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Daily Energy Assessment</h2>
+                
+                <form id="energyTracker">
+                    <div class="energy-input">
+                        <div class="input-group">
+                            <label for="morningEnergy">Morning Energy Level (1-10)</label>
+                            <input type="range" id="morningEnergy" min="1" max="10" value="7" oninput="updateValue('morningEnergy')">
+                            <span id="morningEnergyValue">7</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="afternoonEnergy">Afternoon Energy Level (1-10)</label>
+                            <input type="range" id="afternoonEnergy" min="1" max="10" value="6" oninput="updateValue('afternoonEnergy')">
+                            <span id="afternoonEnergyValue">6</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="eveningEnergy">Evening Energy Level (1-10)</label>
+                            <input type="range" id="eveningEnergy" min="1" max="10" value="5" oninput="updateValue('eveningEnergy')">
+                            <span id="eveningEnergyValue">5</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="strategicTime">Strategic Thinking Time (hours)</label>
+                            <input type="number" id="strategicTime" min="0" max="12" step="0.5" value="2">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="meetingTime">Meeting Time (hours)</label>
+                            <input type="number" id="meetingTime" min="0" max="12" step="0.5" value="4">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="adminTime">Administrative Time (hours)</label>
+                            <input type="number" id="adminTime" min="0" max="12" step="0.5" value="2">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="sleepQuality">Sleep Quality (1-10)</label>
+                            <input type="range" id="sleepQuality" min="1" max="10" value="7" oninput="updateValue('sleepQuality')">
+                            <span id="sleepQualityValue">7</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="stressLevel">Stress Level (1-10)</label>
+                            <input type="range" id="stressLevel" min="1" max="10" value="5" oninput="updateValue('stressLevel')">
+                            <span id="stressLevelValue">5</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="focusQuality">Focus Quality (1-10)</label>
+                            <input type="range" id="focusQuality" min="1" max="10" value="7" oninput="updateValue('focusQuality')">
+                            <span id="focusQualityValue">7</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="primaryGoal">Primary Goal Today</label>
+                            <select id="primaryGoal">
+                                <option value="strategic">Strategic Planning</option>
+                                <option value="execution">Project Execution</option>
+                                <option value="relationships">Relationship Building</option>
+                                <option value="learning">Learning & Development</option>
+                                <option value="innovation">Innovation & Creativity</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="goalProgress">Goal Progress (1-10)</label>
+                            <input type="range" id="goalProgress" min="1" max="10" value="6" oninput="updateValue('goalProgress')">
+                            <span id="goalProgressValue">6</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="interruptions">Interruptions Count</label>
+                            <input type="number" id="interruptions" min="0" max="50" value="8">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-chart-bar"></i>
+                        Analyze Energy Patterns
+                    </button>
+                </form>
+                
+                <div id="energyChart" class="energy-chart">
+                    <h3 style="margin-bottom: 1.5rem; text-align: center;">Your Energy Analysis</h3>
+                    
+                    <div class="chart-grid">
+                        <div class="chart-item">
+                            <div class="chart-value" id="overallEnergy">0</div>
+                            <div>Overall Energy</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-value" id="productivityScore">0</div>
+                            <div>Productivity Score</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-value" id="strategicRatio">0%</div>
+                            <div>Strategic Time %</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-value" id="efficiencyScore">0</div>
+                            <div>Efficiency Score</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="recommendations" class="recommendations">
+                    <h3 style="margin-bottom: 1.5rem;">Personalized Recommendations</h3>
+                    <div id="recommendationsList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Optimization Tips -->
+    <section class="approach-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Energy Optimization Principles</h2>
+                <p class="section-subtitle">Science-backed strategies for executive energy management</p>
+            </div>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Circadian Alignment</h3>
+                    <p>Schedule high-cognitive tasks during your natural energy peaks, typically 2-4 hours after waking for most executives.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3>Energy Budgeting</h3>
+                    <p>Treat energy like a finite resource. Allocate your highest energy to your highest-impact strategic activities.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Recovery Rhythms</h3>
+                    <p>Build strategic recovery periods into your schedule. Even 10-minute breaks can restore cognitive capacity significantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="consultation">
+        <div class="container">
+            <div class="consultation-content">
+                <h2 class="consultation-title">Ready to Optimize Your Executive Energy?</h2>
+                <p class="consultation-subtitle">Combine energy tracking with our strategic intelligence programs for maximum impact</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="../../services.html" class="btn btn-secondary">
+                        <i class="fas fa-rocket"></i>
+                        Strategic Programs
+                    </a>
+                    <a href="../../contact.html?source=energy-tracker" class="btn btn-outline">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Obvious Company</h3>
+                    <p>Strategic Intelligence Amplification for visionary leaders</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="../roi-calculator/">ROI Calculator</a></li>
+                        <li><a href="../readiness-scorer/">Readiness Scorer</a></li>
+                        <li><a href="../framework-builder/">Framework Builder</a></li>
+                        <li><a href="../">All Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="../../services.html#foundation">Foundation Program</a></li>
+                        <li><a href="../../services.html#amplification">Amplification Program</a></li>
+                        <li><a href="../../services.html#mastery">Mastery Program</a></li>
+                        <li><a href="../../services.html#enterprise">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Ready to transform your strategic capabilities?</p>
+                    <a href="../../contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Obvious Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        function updateValue(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const valueSpan = document.getElementById(sliderId + 'Value');
+            valueSpan.textContent = slider.value;
+        }
+
+        document.getElementById('energyTracker').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get all values
+            const morningEnergy = parseInt(document.getElementById('morningEnergy').value);
+            const afternoonEnergy = parseInt(document.getElementById('afternoonEnergy').value);
+            const eveningEnergy = parseInt(document.getElementById('eveningEnergy').value);
+            const strategicTime = parseFloat(document.getElementById('strategicTime').value);
+            const meetingTime = parseFloat(document.getElementById('meetingTime').value);
+            const adminTime = parseFloat(document.getElementById('adminTime').value);
+            const sleepQuality = parseInt(document.getElementById('sleepQuality').value);
+            const stressLevel = parseInt(document.getElementById('stressLevel').value);
+            const focusQuality = parseInt(document.getElementById('focusQuality').value);
+            const goalProgress = parseInt(document.getElementById('goalProgress').value);
+            const interruptions = parseInt(document.getElementById('interruptions').value);
+            
+            // Calculate metrics
+            const overallEnergy = Math.round((morningEnergy + afternoonEnergy + eveningEnergy) / 3);
+            const totalTime = strategicTime + meetingTime + adminTime;
+            const strategicRatio = Math.round((strategicTime / totalTime) * 100);
+            const productivityScore = Math.round((focusQuality + goalProgress + (10 - stressLevel)) / 3);
+            const efficiencyScore = Math.round((overallEnergy + focusQuality - (interruptions / 5)) / 2);
+            
+            // Display results
+            document.getElementById('overallEnergy').textContent = overallEnergy;
+            document.getElementById('productivityScore').textContent = productivityScore;
+            document.getElementById('strategicRatio').textContent = strategicRatio + '%';
+            document.getElementById('efficiencyScore').textContent = Math.max(1, efficiencyScore);
+            
+            // Generate recommendations
+            const recommendations = [];
+            
+            if (strategicRatio < 30) {
+                recommendations.push({
+                    title: "Increase Strategic Time",
+                    description: "Your strategic thinking time is below optimal. Aim for at least 30% of your day on strategic activities."
+                });
+            }
+            
+            if (overallEnergy < 6) {
+                recommendations.push({
+                    title: "Energy Management Priority",
+                    description: "Focus on sleep quality, stress reduction, and energy-giving activities to boost overall performance."
+                });
+            }
+            
+            if (interruptions > 10) {
+                recommendations.push({
+                    title: "Interruption Control",
+                    description: "High interruption count is fragmenting your focus. Consider time-blocking and communication boundaries."
+                });
+            }
+            
+            if (focusQuality < 7) {
+                recommendations.push({
+                    title: "Focus Enhancement",
+                    description: "Implement focus techniques like the Pomodoro method or deep work blocks to improve concentration quality."
+                });
+            }
+            
+            if (stressLevel > 7) {
+                recommendations.push({
+                    title: "Stress Management",
+                    description: "High stress levels are impacting performance. Consider delegation, mindfulness, or strategic support services."
+                });
+            }
+            
+            // Display recommendations
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = '';
+            
+            recommendations.forEach(rec => {
+                const div = document.createElement('div');
+                div.className = 'recommendation-item';
+                div.innerHTML = `<h4>${rec.title}</h4><p>${rec.description}</p>`;
+                recommendationsList.appendChild(div);
+            });
+            
+            // Show results
+            document.getElementById('energyChart').style.display = 'block';
+            document.getElementById('recommendations').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('energyChart').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

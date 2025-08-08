@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional AI Mastery Practice - Investment Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide:nth-child(even) {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .slide:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .slide:nth-child(odd) h3 {
+            color: #ffd700;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            color: white;
+            margin: 1rem;
+        }
+
+        .metric h4 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 55%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -60px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .risk-mitigation {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1rem;
+        }
+
+        .success-metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #667eea;
+            transform: scale(1.2);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 90%;
+                margin-left: 5% !important;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -30px !important;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-dots">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(7)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(8)"></div>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="container">
+            <h1>Professional AI Mastery Practice</h1>
+            <h2>Transforming Kenya's Professional Class Through Systematic AI Education</h2>
+            <div class="card">
+                <h3>Investment Proposal for Rachel</h3>
+                <p style="font-size: 1.2rem; text-align: center; margin: 1rem 0;">
+                    A proven business model addressing execution concerns through systematic processes, measurable outcomes, and relationship-based client acquisition.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Market Opportunity -->
+    <div class="slide">
+        <div class="container">
+            <h2>Market Opportunity & Validation</h2>
+            <div class="grid">
+                <div class="metric">
+                    <h4>Target Market</h4>
+                    <p>Kenyan professionals aged 35-55 in middle to senior management positions</p>
+                </div>
+                <div class="metric">
+                    <h4>Market Size</h4>
+                    <p>Over 150,000 professionals in Nairobi alone meeting our criteria</p>
+                </div>
+                <div class="metric">
+                    <h4>Proven Demand</h4>
+                    <p>Current clients paying KSh 18,000+ for AI literacy training</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Why This Works Now</h3>
+                <p>The professional class recognizes AI's critical importance but lacks practical competency. Our culturally relevant, immediately applicable approach bridges this gap through relationship-based delivery that Kenyan professionals prefer over impersonal online alternatives.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Addressing Execution Concerns -->
+    <div class="slide">
+        <div class="container">
+            <h2>Systematic Execution Framework</h2>
+            <div class="grid">
+                <div class="risk-mitigation">
+                    <h3>Rachel's Valid Concerns</h3>
+                    <p><strong>Analytical vs. Execution:</strong> Strong strategic thinking but historically weak implementation</p>
+                    <p><strong>Consistency:</strong> Need for systematic processes that work regardless of motivation levels</p>
+                    <p><strong>Measurability:</strong> Clear metrics to track progress and course-correct quickly</p>
+                </div>
+                <div class="card">
+                    <h3>Built-in Execution Systems</h3>
+                    <ul class="feature-list">
+                        <li>Weekly minimums: 2 social dance events, 3 professional connections</li>
+                        <li>Monthly progress reviews with specific metrics</li>
+                        <li>Quarterly strategic adjustments based on data</li>
+                        <li>Automated follow-up systems for client retention</li>
+                        <li>Standardized delivery processes reducing decision fatigue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Revenue Model -->
+    <div class="slide">
+        <div class="container">
+            <h2>Revenue Architecture & Pricing Strategy</h2>
+            <div class="grid">
+                <div class="pricing-card">
+                    <h3>AI Diagnostic Assessment</h3>
+                    <div class="price">KSh 1,500</div>
+                    <ul class="feature-list">
+                        <li>Custom Google Form questionnaire</li>
+                        <li>Personalized analysis report</li>
+                        <li>Qualification tool for full program</li>
+                        <li>90% conversion to full program</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>6-Course Mastery Bundle</h3>
+                    <div class="price">KSh 18,000</div>
+                    <ul class="feature-list">
+                        <li>One-month intensive program</li>
+                        <li>Personalized curriculum based on diagnostic</li>
+                        <li>Real-world case study application</li>
+                        <li>Google Meet delivery + materials</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Corporate Workshops</h3>
+                    <div class="price">KSh 60,000+</div>
+                    <ul class="feature-list">
+                        <li>Half-day to full-day intensives</li>
+                        <li>15-20 participants per session</li>
+                        <li>Industry-specific applications</li>
+                        <li>Follow-up support included</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Client Acquisition Strategy -->
+    <div class="slide">
+        <div class="container">
+            <h2>Systematic Client Acquisition</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Primary Channel: Social Dance Networking</h3>
+                    <p><strong>Why This Works:</strong> Trust-based relationships with target demographic. Natural, pressure-free environment for professional discussions.</p>
+                    <p><strong>Systematic Approach:</strong> 2 events per week, relationship-first approach, professional topics emerge naturally after trust is established.</p>
+                    <p><strong>Current Results:</strong> 70% of clients are women from social dance community, demonstrating channel effectiveness.</p>
+                </div>
+                <div class="card">
+                    <h3>Referral System Integration</h3>
+                    <p><strong>Timing:</strong> Request referrals after diagnostic assessment (when problem is clear) and after course completion (when value is proven).</p>
+                    <p><strong>Incentives:</strong> 10% discount for referrer's next program, 5% discount for referred client.</p>
+                    <p><strong>Tracking:</strong> Google Sheets system tracking referral source, timing, and conversion rates.</p>
+                </div>
+                <div class="card">
+                    <h3>Corporate Partnership Development</h3>
+                    <p><strong>Entry Point:</strong> Individual clients become internal champions, leading to corporate training contracts.</p>
+                    <p><strong>Scaling:</strong> One corporate workshop can generate 3-5 individual client conversions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Curriculum Design -->
+    <div class="slide">
+        <div class="container">
+            <h2>6-Course Curriculum Framework</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Week 1: AI Foundations & Personal Assessment</h3>
+                    <p>AI fundamentals, personal productivity audit, tool selection based on diagnostic results. Case study introduction.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Week 2: Communication & Content Creation</h3>
+                    <p>AI-powered writing, presentation enhancement, email optimization. Apply tools to real client communication challenges.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Week 3: Data Analysis & Decision Making</h3>
+                    <p>AI for data interpretation, trend analysis, strategic insights. Use client's actual business data when possible.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Week 4: Automation & Workflow Optimization</h3>
+                    <p>Process automation, workflow design, efficiency maximization. Implement systems in client's current role.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Week 5: Industry-Specific Applications</h3>
+                    <p>Sector-specific AI tools, competitive advantage strategies, future-proofing career. Tailored to client's industry.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Week 6: Implementation & Sustainability</h3>
+                    <p>Change management, team integration, continuous learning plan. 90-day implementation roadmap.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Financial Projections -->
+    <div class="slide">
+        <div class="container">
+            <h2>Financial Sustainability & Growth</h2>
+            <div class="grid">
+                <div class="metric">
+                    <h4>Month 1-3 Target</h4>
+                    <p>6 clients/month × KSh 18,000 = KSh 108,000/month</p>
+                </div>
+                <div class="metric">
+                    <h4>Month 4-6 Target</h4>
+                    <p>8 clients/month + 2 corporate workshops = KSh 264,000/month</p>
+                </div>
+                <div class="metric">
+                    <h4>Month 7-12 Target</h4>
+                    <p>12 clients/month + 3 corporate workshops = KSh 396,000/month</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Cost Structure</h3>
+                <div class="success-metric">
+                    <span>Office Rent & Utilities</span>
+                    <span>KSh 25,000/month</span>
+                </div>
+                <div class="success-metric">
+                    <span>Marketing & Networking</span>
+                    <span>KSh 15,000/month</span>
+                </div>
+                <div class="success-metric">
+                    <span>Technology & Tools</span>
+                    <span>KSh 8,000/month</span>
+                </div>
+                <div class="success-metric">
+                    <span>Professional Development</span>
+                    <span>KSh 10,000/month</span>
+                </div>
+                <div class="success-metric">
+                    <span><strong>Total Operating Costs</strong></span>
+                    <span><strong>KSh 58,000/month</strong></span>
+                </div>
+                <div class="success-metric">
+                    <span><strong>Net Profit Margin</strong></span>
+                    <span><strong>65-70%</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Risk Mitigation -->
+    <div class="slide">
+        <div class="container">
+            <h2>Risk Management & Contingencies</h2>
+            <div class="grid">
+                <div class="risk-mitigation">
+                    <h3>Primary Risks & Mitigation</h3>
+                    <p><strong>Execution Risk:</strong> Weekly accountability check-ins, monthly progress reviews, quarterly strategic adjustments.</p>
+                    <p><strong>Client Acquisition Risk:</strong> Multiple channels (social dance, referrals, corporate), systematic networking approach.</p>
+                    <p><strong>Market Risk:</strong> Diversified client base across industries, multiple service offerings, ongoing curriculum updates.</p>
+                    <p><strong>Cash Flow Risk:</strong> Monthly payment terms, deposits for corporate contracts, recurring revenue from advanced programs.</p>
+                </div>
+                <div class="card">
+                    <h3>Success Metrics Dashboard</h3>
+                    <div class="success-metric">
+                        <span>Weekly Networking Events</span>
+                        <span>Minimum 2</span>
+                    </div>
+                    <div class="success-metric">
+                        <span>Monthly New Clients</span>
+                        <span>Target 6</span>
+                    </div>
+                    <div class="success-metric">
+                        <span>Client Satisfaction Score</span>
+                        <span>Target 90%+</span>
+                    </div>
+                    <div class="success-metric">
+                        <span>Referral Rate</span>
+                        <span>Target 40%</span>
+                    </div>
+                    <div class="success-metric">
+                        <span>Course Completion Rate</span>
+                        <span>Target 95%+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Call to Action -->
+    <div class="slide">
+        <div class="container">
+            <h2>Investment Proposal</h2>
+            <div class="card">
+                <h3>What I'm Asking For</h3>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Financial Support:</strong> 3-month runway covering office rent and operating expenses (KSh 174,000 total)
+                </p>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Accountability Partnership:</strong> Monthly progress reviews and strategic guidance
+                </p>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Break-even Point:</strong> Month 2 based on current pricing and client acquisition rate
+                </p>
+            </div>
+            <div class="card">
+                <h3>What You Get</h3>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Return on Investment:</strong> Full repayment by month 4 based on projected revenue
+                </p>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Systematic Execution:</strong> Weekly activity reports, monthly financial statements, quarterly strategic reviews
+                </p>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Market Validation:</strong> Proven demand, existing client base, corporate workshop pipeline
+                </p>
+            </div>
+            <button class="cta-button" onclick="alert('Thank you for considering this investment, Rachel. I\'m ready to execute systematically and prove the viability of this business model.')">
+                Let's Build This Together
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        // Auto-update navigation dots on scroll
+        window.addEventListener('scroll', () => {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+        });
+
+        // Add smooth scrolling animation delays
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                slide.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>

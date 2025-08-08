@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Complete - Your Strategic Intelligence Profile | The Obvious Company</title>
+    <meta name="description" content="Your AI Integration Assessment is complete. Discover your strategic persona, get personalized recommendations, and schedule your free consultation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="completion-styles.css">
+    
+    <!-- Calendly widget styles -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    
+    <!-- Prevent indexing of completion pages -->
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../methodology.html">Methodology</a></li>
+                    <li><a href="../case-studies.html">Case Studies</a></li>
+                    <li><a href="../insights/">Insights</a></li>
+                    <li><a href="../learn/">Learn</a></li>
+                    <li><a href="index.html">Assessment</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="completionContainer">
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-container">
+            <div class="container">
+                <div class="loading-content">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    <h2>Analyzing Your Strategic Profile...</h2>
+                    <p>We're processing your assessment responses and generating personalized recommendations.</p>
+                    <div class="loading-steps">
+                        <div class="loading-step active">
+                            <i class="fas fa-brain"></i>
+                            <span>Processing responses</span>
+                        </div>
+                        <div class="loading-step">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Identifying persona</span>
+                        </div>
+                        <div class="loading-step">
+                            <i class="fas fa-route"></i>
+                            <span>Creating roadmap</span>
+                        </div>
+                        <div class="loading-step">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Finalizing results</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-container" style="display: none;">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h2>Unable to Load Results</h2>
+                    <p>We're having trouble loading your assessment results. This might be because:</p>
+                    <ul>
+                        <li>Your assessment session has expired</li>
+                        <li>There was a temporary connection issue</li>
+                        <li>You navigated here directly without completing an assessment</li>
+                    </ul>
+                    <div class="error-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-redo"></i>
+                            Take Assessment
+                        </a>
+                        <a href="../contact.html" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results will be dynamically inserted here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Obvious Company</h3>
+                    <p>Strategic Intelligence Amplification for visionary leaders</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Next Steps</h3>
+                    <ul>
+                        <li><a href="../services.html">Explore Programs</a></li>
+                        <li><a href="../contact.html">Schedule Consultation</a></li>
+                        <li><a href="../learn/">Learning Resources</a></li>
+                        <li><a href="../insights/">Strategic Insights</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Assessment</h3>
+                    <ul>
+                        <li><a href="index.html">Retake Assessment</a></li>
+                        <li><a href="../methodology.html">Our Methodology</a></li>
+                        <li><a href="../case-studies.html">Success Stories</a></li>
+                        <li><a href="../about.html">About Our Approach</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p>Questions about your results?</p>
+                    <a href="../contact.html" class="btn btn-outline">Get Help</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Obvious Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="completion-flow.js"></script>
+    <script src="calendar-integration.js"></script>
+    
+    <!-- Calendly widget script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
+    <script>
+        // Initialize completion flow
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate loading process
+            const loadingSteps = document.querySelectorAll('.loading-step');
+            let currentStep = 0;
+            
+            const progressLoading = () => {
+                if (currentStep < loadingSteps.length) {
+                    loadingSteps[currentStep].classList.add('active');
+                    currentStep++;
+                    setTimeout(progressLoading, 800);
+                } else {
+                    // Loading complete, initialize completion flow
+                    setTimeout(() => {
+                        initializeCompletionFlow();
+                    }, 500);
+                }
+            };
+            
+            // Start loading animation
+            setTimeout(progressLoading, 500);
+        });
+        
+        function initializeCompletionFlow() {
+            // Check if we have assessment data
+            const sessionData = localStorage.getItem('assessment-session');
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (sessionData || urlParams.get('demo') === 'true') {
+                // Hide loading, show results
+                document.getElementById('loadingState').style.display = 'none';
+                
+                // Initialize completion flow
+                if (window.AssessmentCompletionFlow) {
+                    const completionFlow = new AssessmentCompletionFlow();
+                    completionFlow.createCompletionInterface();
+                } else {
+                    // Fallback if script didn't load
+                    showFallbackResults();
+                }
+            } else {
+                // No assessment data, show error
+                document.getElementById('loadingState').style.display = 'none';
+                document.getElementById('errorState').style.display = 'block';
+            }
+        }
+        
+        function showFallbackResults() {
+            // Fallback results display if main script fails
+            const container = document.getElementById('completionContainer');
+            container.innerHTML = `
+                <div class="assessment-completion-container">
+                    <div class="completion-hero">
+                        <div class="completion-badge">
+                            <i class="fas fa-check-circle"></i>
+                            Assessment Complete
+                        </div>
+                        <h1 class="completion-title">
+                            Thank You for Completing Your Assessment
+                        </h1>
+                        <p style="color: var(--calm-gray); font-size: 1.1rem; margin-top: 1rem;">
+                            We're processing your results and will send them to your email shortly.
+                        </p>
+                    </div>
+                    
+                    <div class="completion-content">
+                        <div class="service-recommendation-card">
+                            <h2>Next Steps</h2>
+                            <p>While we prepare your detailed results, here's what you can do:</p>
+                            <div style="display: grid; gap: 1rem; margin-top: 2rem;">
+                                <a href="../contact.html" class="btn btn-primary">
+                                    <i class="fas fa-calendar"></i>
+                                    Schedule Free Consultation
+                                </a>
+                                <a href="../services.html" class="btn btn-outline">
+                                    <i class="fas fa-info-circle"></i>
+                                    Explore Our Programs
+                                </a>
+                                <a href="../learn/" class="btn btn-outline">
+                                    <i class="fas fa-book"></i>
+                                    Access Learning Resources
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Track page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: 'Assessment Completion',
+                page_location: window.location.href
+            });
+        }
+        
+        // Prevent back navigation to assessment
+        history.pushState(null, null, window.location.href);
+        window.addEventListener('popstate', function() {
+            if (confirm('Are you sure you want to leave? Your results may be lost.')) {
+                window.location.href = '../';
+            } else {
+                history.pushState(null, null, window.location.href);
+            }
+        });
+    </script>
+    
+    <style>
+        /* Loading State Styles */
+        .loading-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--subtle-gray);
+        }
+        
+        .loading-content {
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        .loading-spinner {
+            margin-bottom: 2rem;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(46, 91, 186, 0.1);
+            border-top: 4px solid var(--clarity-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-content h2 {
+            color: var(--depth-charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .loading-content p {
+            color: var(--calm-gray);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .loading-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .loading-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: white;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        
+        .loading-step.active {
+            opacity: 1;
+            background: rgba(46, 91, 186, 0.05);
+            border: 2px solid rgba(46, 91, 186, 0.2);
+        }
+        
+        .loading-step i {
+            font-size: 1.5rem;
+            color: var(--clarity-blue);
+        }
+        
+        .loading-step span {
+            font-size: 0.9rem;
+            color: var(--depth-charcoal);
+            font-weight: 500;
+        }
+        
+        /* Error State Styles */
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--subtle-gray);
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            color: #f59e0b;
+            margin-bottom: 1.5rem;
+        }
+        
+        .error-content h2 {
+            color: var(--depth-charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .error-content p {
+            color: var(--calm-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .error-content ul {
+            text-align: left;
+            color: var(--calm-gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .loading-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .error-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .loading-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .loading-step {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+    </style>
+</body>
+</html>

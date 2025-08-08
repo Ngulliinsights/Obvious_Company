@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - The Obvious Company</title>
+    <meta name="description" content="Comprehensive guides, FAQs, and documentation for strategic intelligence amplification.">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 1.1rem;
+        }
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--clarity-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .category-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--clarity-blue);
+            color: var(--clarity-blue);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: var(--clarity-blue);
+            color: white;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .article-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--calm-gray);
+        }
+        .article-category {
+            background: var(--clarity-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../services.html">Services</a></li>
+                    <li><a href="../../methodology.html">Methodology</a></li>
+                    <li><a href="../../case-studies.html">Case Studies</a></li>
+                    <li><a href="../../insights/">Insights</a></li>
+                    <li><a href="../../learn/">Learn</a></li>
+                    <li><a href="../../assessment/">Assessment</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content">
+                <nav style="margin-bottom: 1rem;">
+                    <a href="../" style="color: var(--calm-gray); text-decoration: none;">Support</a>
+                    <span style="margin: 0 0.5rem; color: var(--calm-gray);">/</span>
+                    <span>Knowledge Base</span>
+                </nav>
+                <h1 class="hero-title">Knowledge <span class="text-blue">Base</span></h1>
+                <p class="hero-subtitle">Comprehensive guides, FAQs, and documentation for strategic intelligence amplification</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search articles, guides, and FAQs..." id="searchInput">
+                <button class="search-btn" onclick="searchArticles()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="category-nav">
+                <a href="#" class="category-btn active" data-category="all">All Articles</a>
+                <a href="#" class="category-btn" data-category="getting-started">Getting Started</a>
+                <a href="#" class="category-btn" data-category="ai-integration">AI Integration</a>
+                <a href="#" class="category-btn" data-category="grant-writing">Grant Writing</a>
+                <a href="#" class="category-btn" data-category="virtual-assistance">Virtual Assistance</a>
+                <a href="#" class="category-btn" data-category="troubleshooting">Troubleshooting</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="approach-section">
+        <div class="container">
+            <div class="article-grid" id="articleGrid">
+                <!-- Getting Started Articles -->
+                <div class="article-card" data-category="getting-started">
+                    <div class="article-meta">
+                        <span class="article-category">Getting Started</span>
+                        <span><i class="fas fa-clock"></i> 15 min read</span>
+                        <span><i class="fas fa-eye"></i> 2.4K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Getting Started with Strategic Intelligence</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Complete beginner's guide to understanding and implementing strategic intelligence amplification in your organization. Learn the fundamentals and create your first strategic framework.</p>
+                    <a href="getting-started-guide.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="ai-integration">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--insight-green);">AI Integration</span>
+                        <span><i class="fas fa-clock"></i> 12 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.8K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Measuring ROI from AI Implementation</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Comprehensive guide to tracking and measuring the return on investment from your strategic intelligence initiatives. Includes templates and calculation methods.</p>
+                    <a href="roi-measurement-guide.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="getting-started">
+                    <div class="article-meta">
+                        <span class="article-category">Getting Started</span>
+                        <span><i class="fas fa-clock"></i> 18 min read</span>
+                        <span><i class="fas fa-eye"></i> 3.1K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Building Executive Buy-in for AI</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Strategies and frameworks for gaining leadership support and investment in strategic intelligence transformation. Includes presentation templates and business case examples.</p>
+                    <a href="executive-buy-in-guide.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="grant-writing">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--energy-amber);">Grant Writing</span>
+                        <span><i class="fas fa-clock"></i> 22 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.2K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Federal Grant Opportunities for AI Projects</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Complete overview of federal funding opportunities for artificial intelligence and strategic intelligence initiatives. Includes agency contacts and application timelines.</p>
+                    <a href="federal-grants-guide.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="virtual-assistance">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--clarity-blue);">Virtual Assistance</span>
+                        <span><i class="fas fa-clock"></i> 14 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.6K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Effective Delegation Strategies for Executives</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Master the art of strategic delegation with virtual assistance. Learn how to identify tasks for delegation and maintain quality while scaling your impact.</p>
+                    <a href="delegation-strategies.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="ai-integration">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--insight-green);">AI Integration</span>
+                        <span><i class="fas fa-clock"></i> 16 min read</span>
+                        <span><i class="fas fa-eye"></i> 2.1K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">AI Tools for Strategic Decision Making</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Comprehensive review of AI tools and platforms that enhance strategic decision-making capabilities. Includes implementation guides and best practices.</p>
+                    <a href="ai-tools-guide.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="troubleshooting">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--energy-amber);">Troubleshooting</span>
+                        <span><i class="fas fa-clock"></i> 10 min read</span>
+                        <span><i class="fas fa-eye"></i> 980 views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Common AI Implementation Challenges</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Solutions to the most common challenges encountered during AI and strategic intelligence implementation. Quick fixes and prevention strategies.</p>
+                    <a href="implementation-challenges.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="grant-writing">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--energy-amber);">Grant Writing</span>
+                        <span><i class="fas fa-clock"></i> 20 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.4K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Writing Compelling Grant Proposals</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">Step-by-step guide to crafting grant proposals that win funding. Includes templates, examples, and reviewer insights from successful applications.</p>
+                    <a href="grant-proposal-writing.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+
+                <div class="article-card" data-category="virtual-assistance">
+                    <div class="article-meta">
+                        <span class="article-category" style="background: var(--clarity-blue);">Virtual Assistance</span>
+                        <span><i class="fas fa-clock"></i> 12 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.3K views</span>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Optimizing Executive Workflows with AI</h3>
+                    <p style="color: var(--calm-gray); margin-bottom: 1.5rem;">How to combine virtual assistance with AI tools to create seamless, efficient workflows that amplify executive effectiveness and strategic impact.</p>
+                    <a href="workflow-optimization.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Read Article
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Topics</h2>
+                <p class="section-subtitle">Most searched and viewed content</p>
+            </div>
+            
+            <div class="frameworks-grid">
+                <div class="framework-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Quick Start Guides</h3>
+                    <p>Get up and running quickly with our step-by-step implementation guides for strategic intelligence amplification.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>ROI Calculation Methods</h3>
+                    <p>Learn how to measure and demonstrate the return on investment from your strategic intelligence initiatives.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Training Resources</h3>
+                    <p>Comprehensive resources for training your team on strategic intelligence frameworks and AI integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="consultation">
+        <div class="container">
+            <div class="consultation-content">
+                <h2 class="consultation-title">Can't Find What You're Looking For?</h2>
+                <p class="consultation-subtitle">Our support team is here to help with personalized guidance</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="../../contact.html?source=knowledge-base" class="btn btn-secondary">
+                        <i class="fas fa-headset"></i>
+                        Contact Support
+                    </a>
+                    <a href="../community-forum/" class="btn btn-outline">
+                        <i class="fas fa-comments"></i>
+                        Community Forum
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Obvious Company</h3>
+                    <p>Strategic Intelligence Amplification for visionary leaders</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Knowledge Base</h3>
+                    <ul>
+                        <li><a href="#" data-category="getting-started">Getting Started</a></li>
+                        <li><a href="#" data-category="ai-integration">AI Integration</a></li>
+                        <li><a href="#" data-category="grant-writing">Grant Writing</a></li>
+                        <li><a href="#" data-category="virtual-assistance">Virtual Assistance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="../">Support Center</a></li>
+                        <li><a href="../implementation/">Implementation</a></li>
+                        <li><a href="../troubleshooting/">Troubleshooting</a></li>
+                        <li><a href="../community-forum/">Community Forum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Ready to transform your strategic capabilities?</p>
+                    <a href="../../contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Obvious Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // Category filtering
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter articles
+                const category = this.dataset.category;
+                const articles = document.querySelectorAll('.article-card');
+                
+                articles.forEach(article => {
+                    if (category === 'all' || article.dataset.category === category) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        function searchArticles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('.article-card');
+            
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                const content = article.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchArticles();
+            }
+        });
+    </script>
+</body>
+</html>

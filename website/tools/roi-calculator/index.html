@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Implementation ROI Calculator - The Obvious Company</title>
+    <meta name="description" content="Calculate the potential return on investment from strategic intelligence amplification.">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--clarity-blue);
+        }
+        .results-panel {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../services.html">Services</a></li>
+                    <li><a href="../../methodology.html">Methodology</a></li>
+                    <li><a href="../../case-studies.html">Case Studies</a></li>
+                    <li><a href="../../insights/">Insights</a></li>
+                    <li><a href="../../learn/">Learn</a></li>
+                    <li><a href="../../assessment/">Assessment</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh;">
+        <div class="container">
+            <div class="hero-content">
+                <nav style="margin-bottom: 1rem;">
+                    <a href="../" style="color: var(--calm-gray); text-decoration: none;">Tools</a>
+                    <span style="margin: 0 0.5rem; color: var(--calm-gray);">/</span>
+                    <span>ROI Calculator</span>
+                </nav>
+                <h1 class="hero-title">AI Implementation <span class="text-blue">ROI Calculator</span></h1>
+                <p class="hero-subtitle">Calculate the potential return on investment from strategic intelligence amplification</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="calculator-container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Strategic Intelligence ROI Calculator</h2>
+                
+                <form id="roiCalculator">
+                    <div class="form-group">
+                        <label for="revenue">Annual Revenue ($)</label>
+                        <input type="number" id="revenue" placeholder="e.g., 50000000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="executives">Number of C-Suite Executives</label>
+                        <input type="number" id="executives" placeholder="e.g., 5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="decisions">Strategic Decisions per Month</label>
+                        <input type="number" id="decisions" placeholder="e.g., 20" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeSpent">Hours per Strategic Decision</label>
+                        <input type="number" id="timeSpent" placeholder="e.g., 8" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="avgSalary">Average Executive Salary ($)</label>
+                        <input type="number" id="avgSalary" placeholder="e.g., 300000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry</label>
+                        <select id="industry" required>
+                            <option value="">Select Industry</option>
+                            <option value="technology">Technology</option>
+                            <option value="finance">Financial Services</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="retail">Retail</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="program">Program Interest</label>
+                        <select id="program" required>
+                            <option value="">Select Program</option>
+                            <option value="foundation">Foundation Program</option>
+                            <option value="amplification">Amplification Program</option>
+                            <option value="mastery">Mastery Program</option>
+                            <option value="enterprise">Enterprise Solutions</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-calculator"></i>
+                        Calculate ROI
+                    </button>
+                </form>
+                
+                <div id="results" class="results-panel">
+                    <h3 style="margin-bottom: 1.5rem; text-align: center;">Your Strategic Intelligence ROI</h3>
+                    
+                    <div class="result-item">
+                        <span>Current Annual Cost of Decision-Making:</span>
+                        <span class="result-value" id="currentCost">$0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span>Potential Time Savings (65%):</span>
+                        <span class="result-value" id="timeSavings">0 hours</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span>Annual Cost Savings:</span>
+                        <span class="result-value" id="costSavings">$0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span>Estimated Program Investment:</span>
+                        <span class="result-value" id="investment">$0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span>Net Annual Benefit:</span>
+                        <span class="result-value" id="netBenefit">$0</span>
+                    </div>
+                    
+                    <div class="result-item" style="border-top: 2px solid rgba(255,255,255,0.3); margin-top: 1rem; padding-top: 1rem;">
+                        <span style="font-size: 1.2rem; font-weight: bold;">ROI Percentage:</span>
+                        <span class="result-value" style="font-size: 2rem;" id="roiPercentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="approach-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calculation Methodology</h2>
+                <p class="section-subtitle">How we calculate your strategic intelligence ROI</p>
+            </div>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Efficiency</h3>
+                    <p>Based on average 65% reduction in strategic decision-making time from our client data.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Quality Improvement</h3>
+                    <p>Factors in improved decision quality and reduced revision cycles from strategic intelligence amplification.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Industry Benchmarks</h3>
+                    <p>Uses industry-specific multipliers based on our extensive client success database.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="consultation">
+        <div class="container">
+            <div class="consultation-content">
+                <h2 class="consultation-title">Ready to Realize These Results?</h2>
+                <p class="consultation-subtitle">Schedule a consultation to discuss your strategic intelligence transformation</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="../../contact.html?source=roi-calculator" class="btn btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </a>
+                    <a href="../../assessment/" class="btn btn-outline">
+                        <i class="fas fa-chart-bar"></i>
+                        Full Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Obvious Company</h3>
+                    <p>Strategic Intelligence Amplification for visionary leaders</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="../energy-tracker/">Energy Tracker</a></li>
+                        <li><a href="../readiness-scorer/">Readiness Scorer</a></li>
+                        <li><a href="../framework-builder/">Framework Builder</a></li>
+                        <li><a href="../">All Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="../../services.html#foundation">Foundation Program</a></li>
+                        <li><a href="../../services.html#amplification">Amplification Program</a></li>
+                        <li><a href="../../services.html#mastery">Mastery Program</a></li>
+                        <li><a href="../../services.html#enterprise">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Ready to transform your strategic capabilities?</p>
+                    <a href="../../contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Obvious Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('roiCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const revenue = parseFloat(document.getElementById('revenue').value);
+            const executives = parseInt(document.getElementById('executives').value);
+            const decisions = parseInt(document.getElementById('decisions').value);
+            const timeSpent = parseFloat(document.getElementById('timeSpent').value);
+            const avgSalary = parseFloat(document.getElementById('avgSalary').value);
+            const industry = document.getElementById('industry').value;
+            const program = document.getElementById('program').value;
+            
+            // Calculate current cost
+            const hourlyRate = avgSalary / 2080; // 40 hours * 52 weeks
+            const monthlyDecisionCost = decisions * timeSpent * hourlyRate * executives;
+            const annualDecisionCost = monthlyDecisionCost * 12;
+            
+            // Calculate savings (65% time reduction)
+            const timeSavingsHours = decisions * timeSpent * executives * 12 * 0.65;
+            const annualSavings = timeSavingsHours * hourlyRate;
+            
+            // Program investment based on selection
+            let programCost = 0;
+            switch(program) {
+                case 'foundation': programCost = 25000; break;
+                case 'amplification': programCost = 75000; break;
+                case 'mastery': programCost = 150000; break;
+                case 'enterprise': programCost = Math.max(250000, revenue * 0.001); break;
+            }
+            
+            // Industry multiplier
+            let industryMultiplier = 1.0;
+            switch(industry) {
+                case 'technology': industryMultiplier = 1.2; break;
+                case 'finance': industryMultiplier = 1.15; break;
+                case 'healthcare': industryMultiplier = 1.1; break;
+                default: industryMultiplier = 1.0;
+            }
+            
+            const adjustedSavings = annualSavings * industryMultiplier;
+            const netBenefit = adjustedSavings - programCost;
+            const roiPercentage = ((netBenefit / programCost) * 100).toFixed(0);
+            
+            // Display results
+            document.getElementById('currentCost').textContent = '$' + annualDecisionCost.toLocaleString();
+            document.getElementById('timeSavings').textContent = Math.round(timeSavingsHours).toLocaleString() + ' hours';
+            document.getElementById('costSavings').textContent = '$' + Math.round(adjustedSavings).toLocaleString();
+            document.getElementById('investment').textContent = '$' + programCost.toLocaleString();
+            document.getElementById('netBenefit').textContent = '$' + Math.round(netBenefit).toLocaleString();
+            document.getElementById('roiPercentage').textContent = roiPercentage + '%';
+            
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

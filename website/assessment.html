@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic AI Readiness Assessment | The Obvious Company</title>
+    <meta name="description" content="Discover your organization's AI readiness with our comprehensive strategic assessment. Get personalized recommendations for your AI transformation journey.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theobviouscompany.com/assessment/">
+    <meta property="og:title" content="Strategic AI Readiness Assessment | The Obvious Company">
+    <meta property="og:description" content="Discover your organization's AI readiness with our comprehensive strategic assessment.">
+    <meta property="og:image" content="https://theobviouscompany.com/images/assessment-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://theobviouscompany.com/assessment/">
+    <meta property="twitter:title" content="Strategic AI Readiness Assessment | The Obvious Company">
+    <meta property="twitter:description" content="Discover your organization's AI readiness with our comprehensive strategic assessment.">
+    <meta property="twitter:image" content="https://theobviouscompany.com/images/assessment-preview.jpg">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Assessment Platform Styles -->
+    <style>
+        .assessment-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .assessment-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .assessment-intro h1 {
+            color: var(--clarity-blue);
+            margin-bottom: 1rem;
+        }
+
+        .assessment-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--clarity-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .assessment-cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .start-assessment-btn {
+            background: var(--clarity-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .start-assessment-btn:hover {
+            background: var(--insight-green);
+            transform: translateY(-2px);
+        }
+
+        .assessment-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .assessment-details h3 {
+            color: var(--clarity-blue);
+            margin-bottom: 1rem;
+        }
+
+        .assessment-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .assessment-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .assessment-details li:before {
+            content: "✓";
+            color: var(--insight-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        #assessment-platform {
+            min-height: 600px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+            display: none;
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--clarity-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <div class="logo-pattern">
+                        <div class="dot-grid">
+                            <!-- Pattern dots will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    <span class="logo-text">The Obvious Company</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/assessment.html" class="nav-link active">Assessment</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="assessment-container">
+        <!-- Assessment Introduction -->
+        <section class="assessment-intro" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; opacity: 0.08; z-index: 1;">
+                <img src="images/claudio-schwarz-k39RGHmLoV8-unsplash.webp"
+                     alt="Strategic assessment and analysis"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="position: relative; z-index: 2;">
+                <h1>Strategic AI Readiness Assessment</h1>
+                <p class="lead">Discover your organization's AI readiness and get personalized recommendations for your transformation journey.</p>
+                <p>This comprehensive assessment evaluates your strategic authority, organizational influence, resource availability, and implementation readiness to provide tailored insights for your AI integration strategy.</p>
+            </div>
+        </section>
+
+        <!-- Assessment Benefits -->
+        <section class="assessment-benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <h3>Comprehensive Analysis</h3>
+                <p>Multi-dimensional evaluation across strategic, organizational, and technical readiness factors.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3>Personalized Recommendations</h3>
+                <p>Tailored action plans based on your specific industry, role, and organizational context.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Strategic Roadmap</h3>
+                <p>Clear next steps and timeline for your AI transformation journey with measurable milestones.</p>
+            </div>
+        </section>
+
+        <!-- Assessment Details -->
+        <section class="assessment-details">
+            <h3>What You'll Discover</h3>
+            <ul>
+                <li>Your Strategic AI Readiness Score across key dimensions</li>
+                <li>Persona classification (Strategic Architect, Catalyst, Contributor, Explorer, or Observer)</li>
+                <li>Industry-specific insights and regulatory considerations</li>
+                <li>Personalized curriculum recommendations from our 12+ AI leadership programs</li>
+                <li>Service tier recommendation (Strategic Clarity, Systems, or Advantage)</li>
+                <li>Cultural adaptation strategies for East African business contexts</li>
+                <li>Resource requirements and timeline estimates</li>
+                <li>Implementation priorities and success metrics</li>
+            </ul>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="assessment-cta">
+            <button class="start-assessment-btn" onclick="startAssessment()">
+                Start Your Assessment (15 minutes)
+            </button>
+            <p><small>Your responses are confidential and used only to generate your personalized recommendations.</small></p>
+        </section>
+
+        <!-- Assessment Platform Container -->
+        <div id="assessment-platform">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo-pattern">
+                        <div class="dot-grid">
+                            <!-- Pattern dots -->
+                        </div>
+                    </div>
+                    <span class="logo-text">The Obvious Company</span>
+                </div>
+                <p>Strategic Intelligence Amplification for East African Leaders</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services.html#strategic-clarity">Strategic Clarity</a></li>
+                    <li><a href="/services.html#strategic-systems">Strategic Systems</a></li>
+                    <li><a href="/services.html#strategic-advantage">Strategic Advantage</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/assessment.html">AI Readiness Assessment</a></li>
+                    <li><a href="/insights/">Strategic Insights</a></li>
+                    <li><a href="/learn/">Learning Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="mailto:hello@theobviouscompany.com">hello@theobviouscompany.com</a></li>
+                    <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/image-optimization.js"></script>
+    <script src="/js/launch-monitoring.js"></script>
+    <script>
+        // Assessment platform integration
+        let assessmentLoaded = false;
+
+        async function startAssessment() {
+            const platform = document.getElementById('assessment-platform');
+            const intro = document.querySelector('.assessment-intro');
+            const benefits = document.querySelector('.assessment-benefits');
+            const details = document.querySelector('.assessment-details');
+            const cta = document.querySelector('.assessment-cta');
+
+            // Hide intro sections and show platform
+            intro.style.display = 'none';
+            benefits.style.display = 'none';
+            details.style.display = 'none';
+            cta.style.display = 'none';
+            platform.style.display = 'block';
+
+            if (!assessmentLoaded) {
+                try {
+                    // Load the assessment platform
+                    const response = await fetch('/assessment/api/health');
+                    if (response.ok) {
+                        // Assessment platform is running, load the interface
+                        await loadAssessmentInterface();
+                        assessmentLoaded = true;
+                    } else {
+                        throw new Error('Assessment platform not available');
+                    }
+                } catch (error) {
+                    console.error('Failed to load assessment platform:', error);
+                    platform.innerHTML = `
+                        <div style="text-align: center; padding: 2rem;">
+                            <h3 style="color: #dc2626;">Assessment Platform Unavailable</h3>
+                            <p>We're experiencing technical difficulties. Please try again later or <a href="/contact.html">contact us</a> for assistance.</p>
+                            <button onclick="location.reload()" style="background: var(--clarity-blue); color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">
+                                Try Again
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        async function loadAssessmentInterface() {
+            const platform = document.getElementById('assessment-platform');
+
+            try {
+                // Create iframe to load assessment platform
+                const iframe = document.createElement('iframe');
+                iframe.src = '/assessment/';
+                iframe.style.width = '100%';
+                iframe.style.height = '600px';
+                iframe.style.border = 'none';
+                iframe.style.borderRadius = '8px';
+
+                platform.innerHTML = '';
+                platform.appendChild(iframe);
+
+                // Listen for messages from the assessment platform
+                window.addEventListener('message', handleAssessmentMessage);
+
+            } catch (error) {
+                console.error('Error loading assessment interface:', error);
+                throw error;
+            }
+        }
+
+        function handleAssessmentMessage(event) {
+            // Handle messages from the assessment platform iframe
+            if (event.origin !== window.location.origin) return;
+
+            const { type, data } = event.data;
+
+            switch (type) {
+                case 'assessment_completed':
+                    handleAssessmentCompletion(data);
+                    break;
+                case 'assessment_progress':
+                    updateProgressIndicator(data.progress);
+                    break;
+                case 'assessment_error':
+                    handleAssessmentError(data.error);
+                    break;
+            }
+        }
+
+        function handleAssessmentCompletion(results) {
+            // Send results to main website for email integration
+            fetch('/api/assessment-integration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    sessionId: results.sessionId,
+                    userEmail: results.userEmail,
+                    results: results
+                })
+            }).then(response => {
+                if (response.ok) {
+                    // Show completion message
+                    const platform = document.getElementById('assessment-platform');
+                    platform.innerHTML = `
+                        <div style="text-align: center; padding: 3rem;">
+                            <h2 style="color: var(--insight-green); margin-bottom: 1rem;">Assessment Complete!</h2>
+                            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Thank you for completing the Strategic AI Readiness Assessment.</p>
+                            <p>Your personalized results and recommendations have been sent to your email address.</p>
+                            <p>Our team will follow up within 24 hours to discuss your strategic roadmap.</p>
+                            <div style="margin-top: 2rem;">
+                                <a href="/contact.html" class="start-assessment-btn">Schedule Consultation</a>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).catch(error => {
+                console.error('Failed to integrate assessment results:', error);
+            });
+        }
+
+        function updateProgressIndicator(progress) {
+            // Update progress indicator if needed
+            console.log('Assessment progress:', progress);
+        }
+
+        function handleAssessmentError(error) {
+            console.error('Assessment error:', error);
+            const platform = document.getElementById('assessment-platform');
+            platform.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h3 style="color: #dc2626;">Assessment Error</h3>
+                    <p>An error occurred during the assessment. Please try again.</p>
+                    <button onclick="startAssessment()" class="start-assessment-btn">Restart Assessment</button>
+                </div>
+            `;
+        }
+
+        // Check if assessment should auto-start based on URL parameters
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('start') === 'true') {
+                startAssessment();
+            }
+        });
+    </script>
+</body>
+</html>

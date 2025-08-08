@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology - The Obvious Company | The Harmony Framework</title>
+    <meta name="description" content="Discover our proprietary Harmony Framework for Strategic Intelligence Amplification through specialized collaboration and intentional role distribution.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --text-color: #ffffff;
+            --text-secondary: #b8c5d6;
+            --energy-amber: #f7931e;
+            --depth-charcoal: #2c3e50;
+            --clarity-blue: #3498db;
+            --wisdom-purple: #9b59b6;
+            --growth-green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--energy-amber);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--energy-amber);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .framework-overview {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 4rem;
+        }
+
+        .framework-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--energy-amber);
+        }
+
+        .framework-layers {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .layer-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2.5rem;
+            border-left: 4px solid var(--energy-amber);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .layer-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .layer-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .layer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+        }
+
+        .layer-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .layer-components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .component {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .component-title {
+            font-weight: 600;
+            color: var(--clarity-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .component-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .principles-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 4rem;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .principle-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .principle-icon {
+            font-size: 2.5rem;
+            color: var(--energy-amber);
+            margin-bottom: 1rem;
+        }
+
+        .principle-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--energy-amber), var(--clarity-blue));
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .framework-overview,
+            .principles-section {
+                padding: 2rem;
+            }
+            
+            .layer-card {
+                padding: 2rem;
+            }
+            
+            .layer-components {
+                grid-template-columns: 1fr;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">The Obvious Company</div>
+                <ul class="nav-links">
+                    <li><a href="the_obvious_landing_page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Our Methodology</h1>
+                <p class="page-subtitle">The Harmony Framework: Sustainable Excellence Through Specialized Collaboration</p>
+            </div>
+
+            <div class="framework-overview">
+                <h2 class="framework-title">The Harmony Framework</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Like a world-class orchestra where each instrument maintains its unique voice while contributing to extraordinary outcomes, our methodology creates sustainable excellence through specialized collaboration and intentional role distribution.</p>
+                
+                <div class="framework-layers">
+                    <div class="layer-card">
+                        <div class="layer-number">1</div>
+                        <h3 class="layer-title">The Visionary (Your Strategic Domain)</h3>
+                        <p class="layer-description">This function represents the origination of purpose, strategy, and breakthrough thinking. The Visionary carries deep industry knowledge, customer understanding, and innovative capacity that drives impossible solutions.</p>
+                        <div class="layer-components">
+                            <div class="component">
+                                <div class="component-title">Strategic Foresight</div>
+                                <div class="component-description">Market intuition and strategic vision that comes from direct experience</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Industry Expertise</div>
+                                <div class="component-description">Deep knowledge and relationship capital built over years</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Creative Problem-Solving</div>
+                                <div class="component-description">Innovative solutions for complex, unprecedented challenges</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Cultural Leadership</div>
+                                <div class="component-description">Long-term vision and inspiring leadership that motivates others</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layer-card">
+                        <div class="layer-number">2</div>
+                        <h3 class="layer-title">The Implementer (The Obvious Company's Domain)</h3>
+                        <p class="layer-description">This function represents the systematic execution of clear, proven solutions with professional excellence. The Implementer brings sophisticated technical knowledge to foundational processes, ensuring that "obvious" solutions are executed with precision, efficiency, and scalability.</p>
+                        <div class="layer-components">
+                            <div class="component">
+                                <div class="component-title">Process Optimization</div>
+                                <div class="component-description">Systematic thinking that prevents problems before they occur</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Technical Proficiency</div>
+                                <div class="component-description">Expertise in established methodologies and emerging tools</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Quality Control Systems</div>
+                                <div class="component-description">Consistent, reliable outcomes through specialized focus</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Scalable System Design</div>
+                                <div class="component-description">Systems that grow with your business needs and maintain efficiency</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layer-card">
+                        <div class="layer-number">3</div>
+                        <h3 class="layer-title">The Integrator (Collaborative Excellence)</h3>
+                        <p class="layer-description">This function represents the harmonious coordination between Visionary and Implementer, creating synergy that exceeds the sum of individual contributions. The Integrator ensures that strategic vision and systematic execution work together seamlessly.</p>
+                        <div class="layer-components">
+                            <div class="component">
+                                <div class="component-title">Strategic Translation</div>
+                                <div class="component-description">Converting visionary concepts into implementable systems</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Communication Bridge</div>
+                                <div class="component-description">Ensuring clear understanding between strategic and operational levels</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Adaptive Coordination</div>
+                                <div class="component-description">Dynamic adjustment of processes to maintain strategic alignment</div>
+                            </div>
+                            <div class="component">
+                                <div class="component-title">Synergy Optimization</div>
+                                <div class="component-description">Maximizing the combined effectiveness of all functions</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="principles-section">
+                <h2 class="framework-title">Core Principles</h2>
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="principle-title">Unity-Through-Distinction</h3>
+                        <p>Each function maintains its specialized excellence while contributing to a harmonious whole that exceeds individual capabilities.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="principle-title">Energy Efficiency Paradigm</h3>
+                        <p>Strategic focus on what you do best while delegating complementary functions to specialized partners.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h3 class="principle-title">Just Because You Can Doesn't Mean You Should</h3>
+                        <p>Wisdom in recognizing the difference between capability and optimal allocation of energy and resources.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3 class="principle-title">The Eternal Relationship Advantage</h3>
+                        <p>Building sustainable partnerships that create lasting value through specialized collaboration and mutual excellence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 4rem 0;">
+                <h2 style="margin-bottom: 1rem; color: var(--energy-amber);">Ready to Experience Our Methodology?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;">Schedule your complimentary Strategic AI-Energy Readiness Assessment and discover how our Harmony Framework can transform your strategic capabilities.</p>
+                <a href="the_obvious_landing_page.html#consultation" class="btn" style="padding: 1.25rem 2.5rem; font-size: 1.1rem;">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule Assessment
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The Obvious Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

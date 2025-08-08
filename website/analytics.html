@@ -1,0 +1,59 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+
+<!-- Conversion Tracking Events -->
+<script>
+// Assessment completion tracking
+function trackAssessmentCompletion(assessmentType, score) {
+  gtag('event', 'assessment_complete', {
+    'assessment_type': assessmentType,
+    'score': score,
+    'value': 1
+  });
+}
+
+// Newsletter signup tracking
+function trackNewsletterSignup() {
+  gtag('event', 'newsletter_signup', {
+    'event_category': 'engagement',
+    'event_label': 'newsletter',
+    'value': 1
+  });
+}
+
+// Contact form submission tracking
+function trackContactSubmission(source) {
+  gtag('event', 'contact_form_submit', {
+    'event_category': 'lead_generation',
+    'event_label': source || 'general',
+    'value': 5
+  });
+}
+
+// Program interest tracking
+function trackProgramInterest(programName) {
+  gtag('event', 'program_interest', {
+    'event_category': 'engagement',
+    'event_label': programName,
+    'value': 3
+  });
+}
+
+// Framework view tracking
+function trackFrameworkView(frameworkName) {
+  gtag('event', 'framework_view', {
+    'event_category': 'content_engagement',
+    'event_label': frameworkName,
+    'value': 1
+  });
+}
+</script>

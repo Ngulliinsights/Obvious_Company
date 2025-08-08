@@ -1,0 +1,74 @@
+{
+  "name": "the-obvious-company-website",
+  "version": "1.0.0",
+  "description": "Strategic Intelligence Amplification website with hybrid static/dynamic architecture",
+  "private": true,
+  "workspaces": [
+    "website/server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:watch\"",
+    "dev:server": "cd website/server && npm run dev",
+    "dev:watch": "npm run watch:css",
+    "dev:verbose": "cd website/server && npm run dev:verbose",
+    "start": "cd website/server && npm start",
+    "build": "npm run build:css && node verify-build.js",
+    "build:css": "postcss website/css/styles.css -o website/css/styles.min.css --no-map",
+    "watch:css": "postcss website/css/styles.css -o website/css/styles.min.css --map --watch",
+    "setup": "npm install && cd website/server && npm install",
+    "test": "npm run test:server && npm run test:frontend",
+    "test:server": "cd website/server && npm test",
+    "test:frontend": "jest --config jest.config.js",
+    "test:e2e": "playwright test",
+    "test:email": "cd website/server && npm run test:email",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint website/js/**/*.js website/server/**/*.js --fix",
+    "lint:css": "stylelint website/css/**/*.css --fix",
+    "lint:html": "htmlhint website/**/*.html",
+    "format": "prettier --write \"**/*.{js,css,html,md,json}\"",
+    "validate": "npm run lint && npm run test",
+    "clean": "rimraf website/css/*.min.css website/js/*.min.js node_modules/.cache",
+    "health": "cd website/server && npm run health",
+    "deploy:staging": "npm run build && npm run test && echo 'Ready for staging deployment'",
+    "deploy:production": "npm run validate && npm run build && echo 'Ready for production deployment'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/jest": "^29.5.8",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^7.1.0",
+    "htmlhint": "^1.1.4",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theobviouscompany/website.git"
+  },
+  "keywords": [
+    "strategic-intelligence",
+    "ai-consulting",
+    "leadership-development",
+    "business-transformation"
+  ],
+  "author": "The Obvious Company",
+  "license": "UNLICENSED"
+}

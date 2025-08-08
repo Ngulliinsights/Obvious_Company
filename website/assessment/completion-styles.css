@@ -1,0 +1,640 @@
+/* Assessment Completion Flow Styles */
+
+.assessment-completion-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--subtle-gray);
+    min-height: 100vh;
+}
+
+/* Completion Hero */
+.completion-hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+.completion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.completion-badge i {
+    font-size: 1.2rem;
+}
+
+.completion-title {
+    font-size: 2.5rem;
+    color: var(--depth-charcoal);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.persona-highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.readiness-score {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.score-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+/* Completion Content */
+.completion-content {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Card Styles */
+.service-recommendation-card,
+.customizations-card,
+.next-steps-card,
+.alternative-options-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--subtle-gray);
+}
+
+.card-header h2 {
+    color: var(--depth-charcoal);
+    margin: 0;
+}
+
+.confidence-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 166, 118, 0.1);
+    color: var(--insight-green);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Service Recommendation */
+.recommended-service {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+.service-info h3 {
+    color: var(--clarity-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--calm-gray);
+    font-size: 0.95rem;
+}
+
+.detail-item i {
+    color: var(--clarity-blue);
+    width: 16px;
+}
+
+.service-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 250px;
+}
+
+/* Customizations Grid */
+.customizations-card h3 {
+    color: var(--depth-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.customizations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.customization-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--subtle-gray);
+    border-radius: 8px;
+    transition: var(--transition-base);
+}
+
+.customization-item:hover {
+    background: rgba(46, 91, 186, 0.05);
+    transform: translateY(-2px);
+}
+
+.customization-item i {
+    color: var(--insight-green);
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.customization-item span {
+    color: var(--depth-charcoal);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Next Steps Timeline */
+.next-steps-card h3 {
+    color: var(--depth-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.steps-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step-group {
+    background: var(--subtle-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.step-group h4 {
+    color: var(--depth-charcoal);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-group h4 i {
+    color: var(--clarity-blue);
+}
+
+.step-group ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--calm-gray);
+}
+
+.step-group li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Alternative Options */
+.alternative-options-card h3 {
+    color: var(--depth-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.alternatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.alternative-option {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--subtle-gray);
+    border-radius: 8px;
+    transition: var(--transition-base);
+}
+
+.alternative-option:hover {
+    background: rgba(46, 91, 186, 0.05);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.alternative-option h4 {
+    color: var(--depth-charcoal);
+    margin-bottom: 0.75rem;
+}
+
+.alternative-option p {
+    color: var(--calm-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--subtle-gray);
+    position: relative;
+}
+
+.modal-header h3 {
+    color: var(--depth-charcoal);
+    margin: 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--calm-gray);
+    transition: var(--transition-base);
+}
+
+.modal-close:hover {
+    color: var(--depth-charcoal);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 1rem 2rem 2rem;
+}
+
+.modal-body p {
+    color: var(--calm-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Lead Capture Form */
+.lead-capture-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--depth-charcoal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 1rem;
+    border: 2px solid var(--subtle-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--clarity-blue);
+    box-shadow: 0 0 0 3px rgba(46, 91, 186, 0.1);
+}
+
+/* Notifications */
+.success-notification,
+.error-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001;
+    max-width: 400px;
+    animation: slideInRight 0.5s ease-out;
+}
+
+.notification-content {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-hover);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-left: 4px solid var(--insight-green);
+}
+
+.notification-content.error {
+    border-left-color: #dc2626;
+}
+
+.notification-content i {
+    color: var(--insight-green);
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+}
+
+.notification-content.error i {
+    color: #dc2626;
+}
+
+.notification-content h4 {
+    color: var(--depth-charcoal);
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+}
+
+.notification-content p {
+    color: var(--calm-gray);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--calm-gray);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.notification-close:hover {
+    color: var(--depth-charcoal);
+}
+
+/* Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .assessment-completion-container {
+        padding: 1rem;
+    }
+    
+    .completion-title {
+        font-size: 2rem;
+    }
+    
+    .recommended-service {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-actions {
+        min-width: auto;
+    }
+    
+    .service-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .customizations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-timeline {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .alternatives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .success-notification,
+    .error-notification {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .completion-title {
+        font-size: 1.5rem;
+    }
+    
+    .score-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .score-number {
+        font-size: 1.5rem;
+    }
+    
+    .service-recommendation-card,
+    .customizations-card,
+    .next-steps-card,
+    .alternative-options-card {
+        padding: 1.5rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .confidence-indicator {
+        align-self: flex-start;
+    }
+}
+
+/* Loading States */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Hover Effects */
+.service-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.alternative-option .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Focus States */
+.btn:focus,
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--clarity-blue);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .completion-badge,
+    .score-circle {
+        background: var(--depth-charcoal);
+    }
+    
+    .persona-highlight {
+        background: var(--depth-charcoal);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .customization-item:hover,
+    .alternative-option:hover {
+        background: var(--depth-charcoal);
+        color: white;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .modal,
+    .modal-content,
+    .btn,
+    .customization-item,
+    .alternative-option,
+    .notification-content {
+        transition: none;
+    }
+    
+    .success-notification,
+    .error-notification {
+        animation: none;
+    }
+    
+    .btn.loading::after {
+        animation: none;
+    }
+}

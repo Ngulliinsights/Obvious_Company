@@ -1,0 +1,30 @@
+{
+  "name": "obvious-company-website",
+  "version": "1.0.0",
+  "description": "Fast marketing website for The Obvious Company",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev": "cd server && npm run dev",
+    "install-server": "cd server && npm install",
+    "install-assessment": "cd assessment && npm install",
+    "build-assessment": "cd assessment && npm run build",
+    "build": "npm run install-server && npm run install-assessment && npm run build-assessment",
+    "deploy": "npm run build && npm start",
+    "setup": "npm run install-server && npm run install-assessment",
+    "dev-full": "concurrently \"npm run dev\" \"cd assessment && npm run dev\"",
+    "test-assessment": "cd assessment && npm test"
+  },
+  "keywords": [
+    "marketing",
+    "website",
+    "ai",
+    "strategic",
+    "consulting"
+  ],
+  "author": "The Obvious Company",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

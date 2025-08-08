@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start-server",
+            "type": "shell",
+            "command": "node",
+            "args": ["server/server.js"],
+            "options": {
+                "cwd": "${workspaceFolder}/website",
+                "env": {
+                    "NODE_ENV": "development",
+                    "PORT": "3000"
+                }
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "^(.*)$",
+                    "line": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting server.*$",
+                    "endsPattern": "^.*Server running.*$"
+                }
+            }
+        },
+        {
+            "label": "install-dependencies",
+            "type": "shell",
+            "command": "npm",
+            "args": ["install"],
+            "options": {
+                "cwd": "${workspaceFolder}/website/server"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}

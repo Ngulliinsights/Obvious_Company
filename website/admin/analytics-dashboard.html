@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - The Obvious Company</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-dots">
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    The Obvious Company - Analytics
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section style="margin-top: 100px; padding: 2rem 0;">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem; color: var(--depth-charcoal);">Analytics Dashboard</h1>
+            
+            <!-- Key Metrics -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-value" id="totalVisitors">-</div>
+                    <div class="metric-label">Total Visitors</div>
+                    <div class="metric-change" id="visitorsChange">-</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="metric-value" id="assessmentCompletions">-</div>
+                    <div class="metric-label">Assessment Completions</div>
+                    <div class="metric-change" id="assessmentsChange">-</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="metric-value" id="leadMagnetDownloads">-</div>
+                    <div class="metric-label">Lead Magnet Downloads</div>
+                    <div class="metric-change" id="downloadsChange">-</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="metric-value" id="contactSubmissions">-</div>
+                    <div class="metric-label">Contact Submissions</div>
+                    <div class="metric-change" id="contactsChange">-</div>
+                </div>
+            </div>
+            
+            <!-- Charts -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Traffic Overview</h3>
+                    <canvas id="trafficChart"></canvas>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Conversion Funnel</h3>
+                    <canvas id="funnelChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Assessment Performance -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 2rem; color: var(--depth-charcoal);">Assessment Performance</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--clarity-blue); margin-bottom: 1rem;">Strategic Readiness Assessment</h4>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Completion Rate:</span>
+                            <span style="float: right; font-weight: bold;" id="strategicCompletionRate">-</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Average Score:</span>
+                            <span style="float: right; font-weight: bold;" id="strategicAvgScore">-</span>
+                        </div>
+                        <div>
+                            <span>Consultation Bookings:</span>
+                            <span style="float: right; font-weight: bold;" id="strategicConsultations">-</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: var(--insight-green); margin-bottom: 1rem;">Energy Optimization Audit</h4>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Completion Rate:</span>
+                            <span style="float: right; font-weight: bold;" id="energyCompletionRate">-</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Average Score:</span>
+                            <span style="float: right; font-weight: bold;" id="energyAvgScore">-</span>
+                        </div>
+                        <div>
+                            <span>Consultation Bookings:</span>
+                            <span style="float: right; font-weight: bold;" id="energyConsultations">-</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: var(--energy-amber); margin-bottom: 1rem;">Organizational Maturity</h4>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Completion Rate:</span>
+                            <span style="float: right; font-weight: bold;" id="orgCompletionRate">-</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span>Average Score:</span>
+                            <span style="float: right; font-weight: bold;" id="orgAvgScore">-</span>
+                        </div>
+                        <div>
+                            <span>Consultation Bookings:</span>
+                            <span style="float: right; font-weight: bold;" id="orgConsultations">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Content -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Top Performing Content</h3>
+                    <div id="topContent">
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                            <span>The Harmony Framework</span>
+                            <span style="font-weight: bold;">1,234 views</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                            <span>Strategic Readiness Assessment</span>
+                            <span style="font-weight: bold;">987 completions</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                            <span>AI Leadership Programs</span>
+                            <span style="font-weight: bold;">756 views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                    <h3 style="margin-bottom: 1rem; color: var(--depth-charcoal);">Traffic Sources</h3>
+                    <canvas id="trafficSourceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        
+        .metric-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--depth-charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: var(--calm-gray);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-change {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .metric-change.positive {
+            color: var(--insight-green);
+        }
+        
+        .metric-change.negative {
+            color: #ef4444;
+        }
+    </style>
+
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnalyticsData();
+            initializeCharts();
+        });
+
+        async function loadAnalyticsData() {
+            try {
+                const response = await fetch('/api/analytics-data');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateMetrics(data.metrics);
+                    updateCharts(data.charts);
+                }
+            } catch (error) {
+                console.error('Failed to load analytics data:', error);
+                // Load demo data for development
+                loadDemoData();
+            }
+        }
+
+        function loadDemoData() {
+            const demoMetrics = {
+                totalVisitors: 12543,
+                visitorsChange: '+23%',
+                assessmentCompletions: 342,
+                assessmentsChange: '+45%',
+                leadMagnetDownloads: 156,
+                downloadsChange: '+67%',
+                contactSubmissions: 89,
+                contactsChange: '+34%'
+            };
+            
+            updateMetrics(demoMetrics);
+        }
+
+        function updateMetrics(metrics) {
+            document.getElementById('totalVisitors').textContent = metrics.totalVisitors?.toLocaleString() || '-';
+            document.getElementById('visitorsChange').textContent = metrics.visitorsChange || '-';
+            document.getElementById('assessmentCompletions').textContent = metrics.assessmentCompletions?.toLocaleString() || '-';
+            document.getElementById('assessmentsChange').textContent = metrics.assessmentsChange || '-';
+            document.getElementById('leadMagnetDownloads').textContent = metrics.leadMagnetDownloads?.toLocaleString() || '-';
+            document.getElementById('downloadsChange').textContent = metrics.downloadsChange || '-';
+            document.getElementById('contactSubmissions').textContent = metrics.contactSubmissions?.toLocaleString() || '-';
+            document.getElementById('contactsChange').textContent = metrics.contactsChange || '-';
+            
+            // Update change indicators
+            document.querySelectorAll('.metric-change').forEach(el => {
+                if (el.textContent.startsWith('+')) {
+                    el.classList.add('positive');
+                } else if (el.textContent.startsWith('-')) {
+                    el.classList.add('negative');
+                }
+            });
+        }
+
+        function initializeCharts() {
+            // Traffic Overview Chart
+            const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+            new Chart(trafficCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Visitors',
+                        data: [1200, 1900, 3000, 5000, 8000, 12543],
+                        borderColor: '#2E5BBA',
+                        backgroundColor: 'rgba(46, 91, 186, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Conversion Funnel Chart
+            const funnelCtx = document.getElementById('funnelChart').getContext('2d');
+            new Chart(funnelCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Visitors', 'Assessment Takers', 'Consultations'],
+                    datasets: [{
+                        data: [12543, 342, 89],
+                        backgroundColor: ['#2E5BBA', '#00A676', '#F7931E']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Traffic Sources Chart
+            const sourceCtx = document.getElementById('trafficSourceChart').getContext('2d');
+            new Chart(sourceCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Organic Search', 'Direct', 'Social Media', 'Referrals'],
+                    datasets: [{
+                        data: [45, 30, 15, 10],
+                        backgroundColor: ['#2E5BBA', '#00A676', '#F7931E', '#6B7280']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

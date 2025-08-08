@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Article Alignment Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Test styles to highlight alignment */
+        .featured-article {
+            border: 2px dashed #ccc;
+            padding: 1rem;
+        }
+        .article-content {
+            border: 1px solid #2E5BBA;
+            background: rgba(46, 91, 186, 0.05);
+        }
+        .article-image {
+            border: 1px solid #00A676;
+            background: rgba(0, 166, 118, 0.05);
+        }
+        .alignment-guide {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: red;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 2rem; background: var(--subtle-gray);">
+        <h1>Featured Article Alignment Test</h1>
+        <p>This page tests the alignment of the featured article section. The content and image should be top-aligned.</p>
+
+        <!-- Alignment guides -->
+        <div class="alignment-guide" style="top: 200px;"></div>
+        <div class="alignment-guide" style="top: 300px;"></div>
+        <div class="alignment-guide" style="top: 400px;"></div>
+
+        <div class="container" style="position: relative;">
+            <div class="featured-article">
+                <div class="article-content">
+                    <div class="article-badge">
+                        <i class="fas fa-star"></i>
+                        Featured Insight
+                    </div>
+                    <h2 class="article-title">
+                        The Authenticity Tax: On Error, Excellence, and the Future of Human Expression
+                    </h2>
+                    <p class="article-excerpt">
+                        In which we examine the curious modern preference for flawed humanity over technical perfection, and consider whether our rebellion against artificial intelligence has led us to embrace mediocrity as virtue.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-category">Strategic Thinking</span>
+                        <span class="article-read-time">12 min read</span>
+                    </div>
+                    <div class="article-actions">
+                        <a href="insights/blog/authenticity-tax.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i>
+                            Read Full Article
+                        </a>
+                        <a href="insights/blog/" class="btn btn-outline">
+                            <i class="fas fa-newspaper"></i>
+                            More Insights
+                        </a>
+                    </div>
+                </div>
+                <div class="article-image">
+                    <img src="images/authenticity-ai-hero.png"
+                         alt="The Authenticity Tax - AI and Human Expression" />
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px;">
+            <h3>Alignment Check:</h3>
+            <ul>
+                <li>✅ Content and image should start at the same vertical level (top-aligned)</li>
+                <li>✅ Content should flow naturally without forced centering</li>
+                <li>✅ Image should maintain aspect ratio and not stretch</li>
+                <li>✅ On mobile, image should appear above content</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add Font Awesome for icons
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+    </script>
+</body>
+</html>

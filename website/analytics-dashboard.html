@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - The Obvious Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--clarity-blue), var(--insight-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--clarity-blue);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--clarity-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-change {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .metric-change.positive {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .metric-change.negative {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: #f9fafb;
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+
+        .alerts-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .alert-item {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+        }
+
+        .alert-item.warning {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+
+        .alert-item.error {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .alert-item.info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+
+        .real-time-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Analytics Dashboard</h1>
+            <p>Real-time insights into assessment performance and user behavior</p>
+            <div class="real-time-indicator">
+                <div class="status-dot"></div>
+                <span>Live Data</span>
+                <span id="last-update">Loading...</span>
+            </div>
+        </div>
+
+        <div id="error-container"></div>
+
+        <div class="metrics-grid" id="metrics-grid">
+            <!-- Metrics will be populated by JavaScript -->
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3 class="chart-title">Hourly Activity</h3>
+                <div class="chart-placeholder" id="activity-chart">
+                    Activity chart will load here
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Conversion Funnel</h3>
+                <div class="chart-placeholder" id="funnel-chart">
+                    Conversion funnel will load here
+                </div>
+            </div>
+        </div>
+
+        <div class="alerts-section">
+            <h3 class="chart-title">Performance Alerts</h3>
+            <div id="alerts-container">
+                <!-- Alerts will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3 class="chart-title">Assessment Performance</h3>
+                <div id="assessment-performance">
+                    <!-- Assessment performance data -->
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Recent Activity</h3>
+                <div id="recent-activity">
+                    <!-- Recent activity feed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class AnalyticsDashboard {
+            constructor() {
+                this.apiBase = '/api/analytics';
+                this.updateInterval = null;
+                this.isLoading = false;
+                
+                this.init();
+            }
+
+            async init() {
+                await this.loadDashboardData();
+                this.startRealTimeUpdates();
+            }
+
+            async loadDashboardData() {
+                if (this.isLoading) return;
+                
+                this.isLoading = true;
+                this.showLoading();
+
+                try {
+                    const response = await fetch(`${this.apiBase}/dashboard`);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.updateDashboard(result.data);
+                        this.clearError();
+                    } else {
+                        throw new Error(result.message || 'Failed to load dashboard data');
+                    }
+
+                } catch (error) {
+                    console.error('Dashboard loading error:', error);
+                    this.showError('Failed to load dashboard data. Please refresh the page.');
+                } finally {
+                    this.isLoading = false;
+                    this.hideLoading();
+                }
+            }
+
+            updateDashboard(data) {
+                this.updateMetrics(data.overview);
+                this.updateAlerts(data.alerts.performanceAlerts);
+                this.updateAssessmentPerformance(data.performance.completionRates);
+                this.updateRecentActivity(data.activity.recentEvents);
+                this.updateLastUpdateTime();
+            }
+
+            updateMetrics(overview) {
+                const metricsGrid = document.getElementById('metrics-grid');
+                
+                const metrics = [
+                    {
+                        label: 'Active Users',
+                        value: overview.activeUsers || 0,
+                        change: null
+                    },
+                    {
+                        label: 'Current Assessments',
+                        value: overview.currentAssessments || 0,
+                        change: null
+                    },
+                    {
+                        label: 'Completions Today',
+                        value: overview.completionsToday || 0,
+                        change: null
+                    },
+                    {
+                        label: 'Avg Engagement Time',
+                        value: this.formatTime(overview.averageEngagementTime || 0),
+                        change: null
+                    }
+                ];
+
+                metricsGrid.innerHTML = metrics.map(metric => `
+                    <div class="metric-card">
+                        <div class="metric-value">${metric.value}</div>
+                        <div class="metric-label">${metric.label}</div>
+                        ${metric.change ? `<div class="metric-change ${metric.change.startsWith('+') ? 'positive' : 'negative'}">${metric.change}</div>` : ''}
+                    </div>
+                `).join('');
+            }
+
+            updateAlerts(alerts) {
+                const alertsContainer = document.getElementById('alerts-container');
+                
+                if (!alerts || alerts.length === 0) {
+                    alertsContainer.innerHTML = '<div class="alert-item info">No active alerts. System is performing well.</div>';
+                    return;
+                }
+
+                alertsContainer.innerHTML = alerts.map(alert => `
+                    <div class="alert-item ${alert.type}">
+                        <strong>${alert.category.replace('_', ' ').toUpperCase()}:</strong>
+                        ${alert.message}
+                        ${alert.assessmentType ? `<br><small>Assessment: ${alert.assessmentType}</small>` : ''}
+                    </div>
+                `).join('');
+            }
+
+            updateAssessmentPerformance(completionRates) {
+                const container = document.getElementById('assessment-performance');
+                
+                if (!completionRates || Object.keys(completionRates).length === 0) {
+                    container.innerHTML = '<p>No assessment data available.</p>';
+                    return;
+                }
+
+                const performanceHtml = Object.entries(completionRates).map(([assessmentType, data]) => `
+                    <div style="margin-bottom: 1rem; padding: 1rem; background: #f9fafb; border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <strong>${assessmentType.replace(/-/g, ' ').toUpperCase()}</strong>
+                            <span style="color: var(--clarity-blue); font-weight: bold;">${data.rate.toFixed(1)}%</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <div style="background: #e5e7eb; height: 8px; border-radius: 4px;">
+                                <div style="background: var(--clarity-blue); height: 100%; width: ${data.rate}%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <small style="color: #6b7280;">Trend: ${data.trend}</small>
+                    </div>
+                `).join('');
+
+                container.innerHTML = performanceHtml;
+            }
+
+            updateRecentActivity(recentEvents) {
+                const container = document.getElementById('recent-activity');
+                
+                if (!recentEvents || recentEvents.length === 0) {
+                    container.innerHTML = '<p>No recent activity.</p>';
+                    return;
+                }
+
+                const activityHtml = recentEvents.slice(0, 10).map(event => `
+                    <div style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem;">
+                        <div style="font-weight: 500;">${event.summary}</div>
+                        <div style="color: #6b7280; font-size: 0.8rem;">${this.formatTimestamp(event.timestamp)}</div>
+                    </div>
+                `).join('');
+
+                container.innerHTML = activityHtml;
+            }
+
+            updateLastUpdateTime() {
+                const lastUpdateElement = document.getElementById('last-update');
+                lastUpdateElement.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+            }
+
+            startRealTimeUpdates() {
+                // Update every 30 seconds
+                this.updateInterval = setInterval(() => {
+                    this.loadDashboardData();
+                }, 30000);
+            }
+
+            stopRealTimeUpdates() {
+                if (this.updateInterval) {
+                    clearInterval(this.updateInterval);
+                    this.updateInterval = null;
+                }
+            }
+
+            showLoading() {
+                document.body.classList.add('loading');
+            }
+
+            hideLoading() {
+                document.body.classList.remove('loading');
+            }
+
+            showError(message) {
+                const errorContainer = document.getElementById('error-container');
+                errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+            }
+
+            clearError() {
+                const errorContainer = document.getElementById('error-container');
+                errorContainer.innerHTML = '';
+            }
+
+            formatTime(milliseconds) {
+                if (!milliseconds) return '0s';
+                
+                const seconds = Math.floor(milliseconds / 1000);
+                const minutes = Math.floor(seconds / 60);
+                
+                if (minutes > 0) {
+                    return `${minutes}m ${seconds % 60}s`;
+                }
+                
+                return `${seconds}s`;
+            }
+
+            formatTimestamp(timestamp) {
+                const date = new Date(timestamp);
+                const now = new Date();
+                const diffMs = now - date;
+                const diffMins = Math.floor(diffMs / 60000);
+                
+                if (diffMins < 1) return 'Just now';
+                if (diffMins < 60) return `${diffMins}m ago`;
+                if (diffMins < 1440) return `${Math.floor(diffMins / 60)}h ago`;
+                
+                return date.toLocaleDateString();
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboard = new AnalyticsDashboard();
+            
+            // Handle page visibility changes
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    dashboard.stopRealTimeUpdates();
+                } else {
+                    dashboard.startRealTimeUpdates();
+                    dashboard.loadDashboardData();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
