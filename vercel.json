@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "name": "the-obvious-company",
+  "builds": [
+    {
+      "src": "website/server/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "website/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "website/server/server.js"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot))",
+      "dest": "website/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "website/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "website/server/server.js": {
+      "maxDuration": 30
+    }
+  }
+}
