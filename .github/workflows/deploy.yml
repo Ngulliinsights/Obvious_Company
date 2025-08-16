@@ -4,44 +4,35 @@ on:
   push:
     branches:
       - gh-pages
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          node-version: '16'
+          path: './website'
 
-      - name: Install Dependencies
-        run: |
-          cd website
-          npm install
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Build
-        run: |
-          cd website
-          npm run build
-
-      - name: Run tests
-        run: npm run test:e2e
-        env:
-          CI: true
-          BASE_URL: http://localhost:3000
-
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/dist # Adjust this to your build output directory
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
