@@ -25,47 +25,50 @@ export class StrategicAutomationPositioningExample {
 
     // Sample assessment results for a Strategic Architect in Financial Services
     const assessmentResults: AssessmentResults = {
-      session_id: 'demo-session',
-      overall_score: 82,
-      dimension_scores: {
-        strategic_authority: 85,
-        organizational_influence: 80,
-        resource_availability: 85,
-        implementation_readiness: 75,
-        cultural_alignment: 80
+      sessionId: 'demo-session',
+      overallScore: 82,
+      dimensionScores: {
+        strategicAuthority: 85,
+        organizationalInfluence: 80,
+        resourceAvailability: 85,
+        implementationReadiness: 75,
+        culturalAlignment: 80,
       },
-      persona_classification: {
-        primary_persona: 'strategic_architect' as PersonaType,
-        confidence_score: 0.88,
-        secondary_characteristics: ['strategic_catalyst']
+      personaClassification: {
+        primaryPersona: 'Strategic Architect' as PersonaType,
+        confidenceScore: 0.88,
+        secondaryCharacteristics: ['Strategic Catalyst'],
       },
-      industry_insights: {
-        sector_readiness: 78,
-        regulatory_considerations: ['Financial regulations', 'Data privacy'],
-        implementation_priorities: ['Risk management enhancement', 'Customer experience optimization']
+      industryInsights: {
+        sectorReadiness: 78,
+        regulatoryConsiderations: ['Financial regulations', 'Data privacy'],
+        implementationPriorities: [
+          'Risk management enhancement',
+          'Customer experience optimization',
+        ],
       },
       recommendations: {
-        program_recommendation: 'Strategic Advantage',
-        next_steps: ['Develop comprehensive AI strategy', 'Build executive alignment'],
-        timeline_suggestion: '12-18 months',
-        resource_requirements: ['Executive sponsorship', 'Dedicated team', 'Technology investment']
+        programRecommendation: 'Strategic Advantage',
+        nextSteps: ['Develop comprehensive AI strategy', 'Build executive alignment'],
+        timelineSuggestion: '12-18 months',
+        resourceRequirements: ['Executive sponsorship', 'Dedicated team', 'Technology investment'],
       },
-      curriculum_pathway: {
-        pathway_id: 'strategic-architect-financial',
-        foundation_modules: [],
-        industry_modules: [],
-        role_specific_modules: [],
-        cultural_adaptation_modules: [],
-        estimated_duration: {
-          total_hours: 60,
-          weekly_commitment: 5,
-          completion_timeline: '12 weeks'
+      curriculumPathway: {
+        pathwayId: 'strategic-architect-financial',
+        foundationModules: [],
+        industryModules: [],
+        roleSpecificModules: [],
+        culturalAdaptationModules: [],
+        estimatedDuration: {
+          totalHours: 60,
+          weeklyCommitment: 5,
+          completionTimeline: '12 weeks',
         },
-        learning_objectives: [],
-        success_metrics: [],
+        learningObjectives: [],
+        successMetrics: [],
         prerequisites: [],
-        optional_enhancements: []
-      }
+        optionalEnhancements: [],
+      },
     };
 
     const industryContext = 'financial_services';
@@ -74,7 +77,7 @@ export class StrategicAutomationPositioningExample {
       'Risk Assessment Automation',
       'Customer Service Enhancement',
       'Regulatory Compliance Monitoring',
-      'Investment Decision Support'
+      'Investment Decision Support',
     ];
 
     // Step 1: Generate Strategic Intelligence Insights
@@ -138,7 +141,7 @@ export class StrategicAutomationPositioningExample {
     const automationFraming = this.valueEngine.frameAutomationWithinStrategicContext(
       automationOpportunities,
       industryContext,
-      assessmentResults.persona_classification.primary_persona
+      assessmentResults.personaClassification.primaryPersona
     );
 
     automationFraming.forEach((framing, index) => {
@@ -178,56 +181,62 @@ export class StrategicAutomationPositioningExample {
   public demonstratePersonaSpecificPositioning(): void {
     console.log('\n=== Persona-Specific Strategic Positioning ===\n');
 
-    const baseAssessment: Omit<AssessmentResults, 'persona_classification'> = {
-      session_id: 'persona-demo',
-      overall_score: 75,
-      dimension_scores: {
-        strategic_authority: 70,
-        organizational_influence: 75,
-        resource_availability: 70,
-        implementation_readiness: 80,
-        cultural_alignment: 75
+    const baseAssessment: Omit<AssessmentResults, 'personaClassification'> = {
+      sessionId: 'persona-demo',
+      overallScore: 75,
+      dimensionScores: {
+        strategicAuthority: 70,
+        organizationalInfluence: 75,
+        resourceAvailability: 70,
+        implementationReadiness: 80,
+        culturalAlignment: 75,
       },
-      industry_insights: {
-        sector_readiness: 75,
-        regulatory_considerations: ['Industry standards'],
-        implementation_priorities: ['Process optimization']
+      industryInsights: {
+        sectorReadiness: 75,
+        regulatoryConsiderations: ['Industry standards'],
+        implementationPriorities: ['Process optimization'],
       },
       recommendations: {
-        program_recommendation: 'Strategic Systems',
-        next_steps: ['Assessment completion'],
-        timeline_suggestion: '6-12 months',
-        resource_requirements: ['Team alignment']
+        programRecommendation: 'Strategic Systems',
+        nextSteps: ['Assessment completion'],
+        timelineSuggestion: '6-12 months',
+        resourceRequirements: ['Team alignment'],
       },
-      curriculum_pathway: {
-        pathway_id: 'demo-path',
-        foundation_modules: [],
-        industry_modules: [],
-        role_specific_modules: [],
-        cultural_adaptation_modules: [],
-        estimated_duration: {
-          total_hours: 40,
-          weekly_commitment: 4,
-          completion_timeline: '10 weeks'
+      curriculumPathway: {
+        pathwayId: 'demo-path',
+        foundationModules: [],
+        industryModules: [],
+        roleSpecificModules: [],
+        culturalAdaptationModules: [],
+        estimatedDuration: {
+          totalHours: 40,
+          weeklyCommitment: 4,
+          completionTimeline: '10 weeks',
         },
-        learning_objectives: [],
-        success_metrics: [],
+        learningObjectives: [],
+        successMetrics: [],
         prerequisites: [],
-        optional_enhancements: []
-      }
+        optionalEnhancements: [],
+      },
     };
 
-    const personas: PersonaType[] = ['strategic_architect', 'strategic_catalyst', 'strategic_contributor', 'strategic_explorer', 'strategic_observer'];
+    const personas: PersonaType[] = [
+      'Strategic Architect',
+      'Strategic Catalyst',
+      'Strategic Contributor',
+      'Strategic Explorer',
+      'Strategic Observer',
+    ];
     const automationOpportunity = ['Process Optimization'];
 
     personas.forEach(persona => {
       const assessmentResults: AssessmentResults = {
         ...baseAssessment,
-        persona_classification: {
-          primary_persona: persona,
-          confidence_score: 0.85,
-          secondary_characteristics: []
-        }
+        personaClassification: {
+          primaryPersona: persona,
+          confidenceScore: 0.85,
+          secondaryCharacteristics: [],
+        },
       };
 
       const strategicInsights = this.strategicFramework.generateStrategicInsights(
@@ -237,4 +246,27 @@ export class StrategicAutomationPositioningExample {
       );
 
       const automationFraming = this.valueEngine.frameAutomationWithinStrategicContext(
-        aut
+        automationOpportunity,
+        'technology',
+        persona
+      );
+
+      // Use the automation framing results
+      console.log(`\nStrategic Positioning for ${persona}:`);
+      automationFraming.forEach((framing, index) => {
+        console.log(`  ${automationOpportunity[index]}:`);
+        console.log(`    Message: ${framing.primary_message}`);
+        console.log(`    Strategic Framing: ${framing.strategic_framing}`);
+        console.log(`    Value Emphasis: ${framing.value_emphasis}`);
+        console.log(`    Implementation: ${framing.implementation_narrative}\n`);
+      });
+
+      // Use the strategic insights
+      console.log('Strategic Insights:');
+      strategicInsights.strategic_positioning.forEach((insight: any, index: number) => {
+        console.log(`  ${index + 1}. ${insight.title}`);
+        console.log(`     ${insight.description}\n`);
+      });
+    });
+  }
+}
