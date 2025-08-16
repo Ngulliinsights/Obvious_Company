@@ -77,7 +77,7 @@ jobs:
         with:
           ref: gh-pages           # Explicitly specify branch (redundant but clear)
           fetch-depth: 1          # Shallow clone for faster checkout since we only need current state
-          
+
       - name: Validate website directory
         run: |
           # Verify the website directory exists and contains files
@@ -86,7 +86,7 @@ jobs:
             echo "Please ensure your build process outputs files to ./website directory"
             exit 1
           fi
-          
+
           # Check if directory has content
           file_count=$(find ./website -type f | wc -l)
           if [ "$file_count" -eq 0 ]; then
@@ -94,28 +94,28 @@ jobs:
             echo "No files found to deploy"
             exit 1
           fi
-          
+
           echo "Found $file_count files ready for deployment"
-          
+
       - name: Setup GitHub Pages configuration
         uses: actions/configure-pages@v4  # Updated to v4 for improved reliability and features
-        
+
       - name: Upload website artifact to Pages
         uses: actions/upload-pages-artifact@v2  # Updated to v2 for better performance
         with:
           path: './website'
           retention-days: 1  # Clean up deployment artifacts after 1 day to save storage
-          
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3  # Updated to v3 for enhanced deployment capabilities
-        
+
       - name: Report deployment success
         run: |
           echo "🚀 Deployment completed successfully!"
           echo "📍 Site URL: ${{ steps.deployment.outputs.page_url }}"
           echo "⏰ Deployed at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          
+
           # Optional: Verify the deployment is accessible
           echo "🔍 Verifying site accessibility..."
           if curl -f -s -o /dev/null -w "%{http_code}" "${{ steps.deployment.outputs.page_url }}" | grep -q "200"; then
