@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: |
           npm run build
+        env:
+          NODE_ENV: production
+          WEBSITE_URL: ${{ secrets.WEBSITE_URL || 'https://ngulliinsights.github.io/Obvious_Company' }}
         env:
           NODE_ENV: production
           WEBSITE_URL: ${{ secrets.WEBSITE_URL || 'https://ngulliinsights.github.io/Obvious_Company' }}
@@ -68,3 +71,56 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+=======
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4  # Updated to latest stable version for better security and performance
+        with:
+          ref: gh-pages           # Explicitly specify branch (redundant but clear)
+          fetch-depth: 1          # Shallow clone for faster checkout since we only need current state
+          
+      - name: Validate website directory
+        run: |
+          # Verify the website directory exists and contains files
+          if [ ! -d "./website" ]; then
+            echo "Error: ./website directory not found in gh-pages branch"
+            echo "Please ensure your build process outputs files to ./website directory"
+            exit 1
+          fi
+          
+          # Check if directory has content
+          file_count=$(find ./website -type f | wc -l)
+          if [ "$file_count" -eq 0 ]; then
+            echo "Error: ./website directory is empty"
+            echo "No files found to deploy"
+            exit 1
+          fi
+          
+          echo "Found $file_count files ready for deployment"
+          
+      - name: Setup GitHub Pages configuration
+        uses: actions/configure-pages@v4  # Updated to v4 for improved reliability and features
+        
+      - name: Upload website artifact to Pages
+        uses: actions/upload-pages-artifact@v2  # Updated to v2 for better performance
+        with:
+          path: './website'
+          retention-days: 1  # Clean up deployment artifacts after 1 day to save storage
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3  # Updated to v3 for enhanced deployment capabilities
+        
+      - name: Report deployment success
+        run: |
+          echo "🚀 Deployment completed successfully!"
+          echo "📍 Site URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "⏰ Deployed at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          
+          # Optional: Verify the deployment is accessible
+          echo "🔍 Verifying site accessibility..."
+          if curl -f -s -o /dev/null -w "%{http_code}" "${{ steps.deployment.outputs.page_url }}" | grep -q "200"; then
+            echo "✅ Site is responding successfully"
+          else
+            echo "⚠️  Site may still be propagating (this is normal for new deployments)"
+          fi
+>>>>>>> 7254992874be9ac10591b2e18466014db648fded
