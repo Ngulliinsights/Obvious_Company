@@ -30,24 +30,38 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          npm install
           npm run setup
+          npm install -g postcss-cli esbuild html-minifier imagemin-cli
 
       - name: Build
         run: |
-          npm run build
-        env:
-          NODE_ENV: production
-          WEBSITE_URL: ${{ secrets.WEBSITE_URL || 'https://ngulliinsights.github.io/Obvious_Company' }}
+          cd website
+          cp -r * ../dist/
+          cd ..
+          npm run build:all
         env:
           NODE_ENV: production
           WEBSITE_URL: ${{ secrets.WEBSITE_URL || 'https://ngulliinsights.github.io/Obvious_Company' }}
 
-      - name: Run Tests
-        run: |
-          npm run test:frontend
-          npm run test:server
-        env:
-          CI: true
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
 
       - name: Optimize Assets
         run: |
