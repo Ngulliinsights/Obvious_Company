@@ -28,6 +28,15 @@ export interface LearningPathway {
   estimatedDuration: number;
   targetPersonas: string[];
   industries: string[];
+
+  getNextModule(completedModules: string[]): Module | null;
+  applyAdaptiveRules(assessmentResults: {
+    scores: any;
+    persona: string;
+    industry: string;
+  }): Module[];
+  getTotalEstimatedHours(): number;
+  getPrerequisiteChain(moduleId: string): string[];
 }
 
 export interface ModuleSequence {
