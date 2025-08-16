@@ -18,6 +18,7 @@
     "test:frontend": "jest --config jest.config.js",
     "test:e2e": "playwright test",
     "test:email": "cd website/server && npm run test:email",
+    "lint:css": "npx stylelint \"**/*.css\"",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "eslint website/js/**/*.js website/server/**/*.js --fix",
     "lint:css": "stylelint website/css/**/*.css --fix",

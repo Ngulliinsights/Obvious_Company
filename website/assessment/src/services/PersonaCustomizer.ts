@@ -1,12 +1,11 @@
-import { 
-  PersonaType, 
+import {
+  PersonaType,
   PersonaClassification,
   ServiceRecommendation,
   UserContext,
-  IndustryInsights
+  IndustryInsights,
 } from '../models/types';
 import { UserProfile } from '../models/UserProfile';
-import { PersonaClassifier } from './PersonaClassifier';
 
 export interface PersonaContent {
   language: {
@@ -43,28 +42,33 @@ export class PersonaCustomizer {
     'Strategic Architect': {
       language: {
         tone: 'executive',
-        vocabulary: ['strategic transformation', 'enterprise-wide impact', 'competitive advantage', 'organizational evolution'],
-        communicationStyle: 'direct, high-level, outcome-focused'
+        vocabulary: [
+          'strategic transformation',
+          'enterprise-wide impact',
+          'competitive advantage',
+          'organizational evolution',
+        ],
+        communicationStyle: 'direct, high-level, outcome-focused',
       },
       examples: {
         useCases: [
           'Enterprise-wide AI strategy development',
           'Board-level AI governance frameworks',
           'Competitive intelligence and market positioning',
-          'Organizational transformation through AI adoption'
+          'Organizational transformation through AI adoption',
         ],
         roiScenarios: [
           '25-40% operational efficiency gains across business units',
           'Strategic market positioning through AI-driven innovation',
           'Risk mitigation through predictive analytics and scenario planning',
-          'Revenue growth through AI-enabled product and service innovation'
+          'Revenue growth through AI-enabled product and service innovation',
         ],
         implementationApproaches: [
           'Top-down strategic mandate with clear governance structure',
           'Phased enterprise rollout with pilot programs and scaling',
           'Cross-functional leadership team with dedicated AI transformation office',
-          'Strategic partnerships with AI vendors and implementation partners'
-        ]
+          'Strategic partnerships with AI vendors and implementation partners',
+        ],
       },
       recommendations: {
         serviceAlignment: 'Strategic Advantage tier - comprehensive transformation',
@@ -72,42 +76,47 @@ export class PersonaCustomizer {
           'Executive AI readiness assessment and strategic planning session',
           'Enterprise AI strategy development with governance framework',
           'Leadership team alignment and change management planning',
-          'Pilot program design with measurable success criteria'
+          'Pilot program design with measurable success criteria',
         ],
         timelineApproach: '6-18 month strategic transformation with quarterly milestones',
         resourceFocus: [
           'Executive sponsorship and change leadership',
           'Dedicated AI transformation team and budget allocation',
           'Strategic technology partnerships and vendor relationships',
-          'Organizational culture and capability development'
-        ]
-      }
+          'Organizational culture and capability development',
+        ],
+      },
     },
     'Strategic Catalyst': {
       language: {
         tone: 'collaborative',
-        vocabulary: ['change leadership', 'organizational alignment', 'capability building', 'strategic implementation'],
-        communicationStyle: 'engaging, solution-oriented, team-focused'
+        vocabulary: [
+          'change leadership',
+          'organizational alignment',
+          'capability building',
+          'strategic implementation',
+        ],
+        communicationStyle: 'engaging, solution-oriented, team-focused',
       },
       examples: {
         useCases: [
           'Cross-departmental AI integration initiatives',
           'Change management for AI adoption programs',
           'Team capability building and AI literacy development',
-          'Process optimization through intelligent automation'
+          'Process optimization through intelligent automation',
         ],
         roiScenarios: [
           '15-30% productivity improvements through process optimization',
           'Enhanced decision-making quality through data-driven insights',
           'Improved team collaboration and knowledge sharing',
-          'Accelerated innovation cycles through AI-assisted workflows'
+          'Accelerated innovation cycles through AI-assisted workflows',
         ],
         implementationApproaches: [
           'Collaborative implementation with stakeholder engagement',
           'Iterative approach with continuous feedback and adjustment',
           'Team-based learning and capability development programs',
-          'Cross-functional project teams with clear accountability'
-        ]
+          'Cross-functional project teams with clear accountability',
+        ],
       },
       recommendations: {
         serviceAlignment: 'Strategic Systems tier - implementation and change management',
@@ -115,42 +124,47 @@ export class PersonaCustomizer {
           'Stakeholder alignment workshop and readiness assessment',
           'Change management strategy development',
           'Team capability assessment and training program design',
-          'Pilot implementation with success metrics and feedback loops'
+          'Pilot implementation with success metrics and feedback loops',
         ],
         timelineApproach: '3-12 month implementation with iterative improvements',
         resourceFocus: [
           'Change management expertise and stakeholder engagement',
           'Team training and capability development resources',
           'Cross-functional collaboration and communication tools',
-          'Performance measurement and continuous improvement systems'
-        ]
-      }
+          'Performance measurement and continuous improvement systems',
+        ],
+      },
     },
     'Strategic Contributor': {
       language: {
         tone: 'practical',
-        vocabulary: ['tactical implementation', 'operational efficiency', 'process improvement', 'team productivity'],
-        communicationStyle: 'detailed, action-oriented, results-focused'
+        vocabulary: [
+          'tactical implementation',
+          'operational efficiency',
+          'process improvement',
+          'team productivity',
+        ],
+        communicationStyle: 'detailed, action-oriented, results-focused',
       },
       examples: {
         useCases: [
           'Department-specific AI tool implementation',
           'Workflow automation and process optimization',
           'Team productivity enhancement through AI assistance',
-          'Data analysis and reporting automation'
+          'Data analysis and reporting automation',
         ],
         roiScenarios: [
           '10-25% efficiency gains in specific processes',
           'Reduced manual work and improved accuracy',
           'Enhanced data-driven decision making at department level',
-          'Improved customer service and response times'
+          'Improved customer service and response times',
         ],
         implementationApproaches: [
           'Focused implementation within specific department or function',
           'Practical, hands-on approach with immediate value demonstration',
           'Step-by-step rollout with clear success metrics',
-          'Integration with existing systems and workflows'
-        ]
+          'Integration with existing systems and workflows',
+        ],
       },
       recommendations: {
         serviceAlignment: 'Strategic Clarity tier - focused implementation support',
@@ -158,42 +172,47 @@ export class PersonaCustomizer {
           'Department-specific needs assessment and opportunity identification',
           'Tactical implementation planning with clear deliverables',
           'Tool selection and integration strategy development',
-          'Team training and adoption support program'
+          'Team training and adoption support program',
         ],
         timelineApproach: '1-6 month focused implementation with quick wins',
         resourceFocus: [
           'Practical implementation expertise and hands-on support',
           'Tool integration and technical implementation resources',
           'Team training and adoption support materials',
-          'Performance tracking and optimization guidance'
-        ]
-      }
+          'Performance tracking and optimization guidance',
+        ],
+      },
     },
     'Strategic Explorer': {
       language: {
         tone: 'educational',
-        vocabulary: ['learning journey', 'skill development', 'exploration', 'growth opportunities'],
-        communicationStyle: 'supportive, developmental, growth-oriented'
+        vocabulary: [
+          'learning journey',
+          'skill development',
+          'exploration',
+          'growth opportunities',
+        ],
+        communicationStyle: 'supportive, developmental, growth-oriented',
       },
       examples: {
         useCases: [
           'Personal AI literacy and skill development',
           'Exploration of AI applications in current role',
           'Preparation for future leadership opportunities',
-          'Innovation and experimentation with AI tools'
+          'Innovation and experimentation with AI tools',
         ],
         roiScenarios: [
           'Enhanced personal productivity and effectiveness',
           'Improved problem-solving and analytical capabilities',
           'Increased value contribution to team and organization',
-          'Career advancement through AI expertise development'
+          'Career advancement through AI expertise development',
         ],
         implementationApproaches: [
           'Learning-focused approach with experimentation and practice',
           'Gradual skill building with practical application opportunities',
           'Mentorship and guidance from AI implementation experts',
-          'Community-based learning and peer collaboration'
-        ]
+          'Community-based learning and peer collaboration',
+        ],
       },
       recommendations: {
         serviceAlignment: 'Strategic Clarity tier - learning and development focus',
@@ -201,42 +220,42 @@ export class PersonaCustomizer {
           'Personal AI readiness assessment and learning path development',
           'Foundational AI literacy training and skill building',
           'Practical experimentation with AI tools and applications',
-          'Mentorship and guidance for career development planning'
+          'Mentorship and guidance for career development planning',
         ],
         timelineApproach: '3-9 month learning journey with milestone achievements',
         resourceFocus: [
           'Educational content and learning resources',
           'Practical experimentation opportunities and tools',
           'Mentorship and guidance from AI experts',
-          'Community access and peer learning opportunities'
-        ]
-      }
+          'Community access and peer learning opportunities',
+        ],
+      },
     },
     'Strategic Observer': {
       language: {
         tone: 'informational',
         vocabulary: ['assessment', 'exploration', 'understanding', 'preparation'],
-        communicationStyle: 'clear, informative, non-pressured'
+        communicationStyle: 'clear, informative, non-pressured',
       },
       examples: {
         useCases: [
           'AI landscape understanding and awareness building',
           'Assessment of organizational AI readiness',
           'Exploration of AI potential in specific context',
-          'Preparation for future AI initiatives'
+          'Preparation for future AI initiatives',
         ],
         roiScenarios: [
           'Improved understanding of AI opportunities and risks',
           'Better preparation for future AI initiatives',
           'Enhanced ability to contribute to AI discussions',
-          'Informed decision-making about AI investments'
+          'Informed decision-making about AI investments',
         ],
         implementationApproaches: [
           'Assessment-focused approach with no immediate implementation pressure',
           'Educational and awareness-building activities',
           'Consultation and guidance for future planning',
-          'Flexible engagement based on evolving needs and readiness'
-        ]
+          'Flexible engagement based on evolving needs and readiness',
+        ],
       },
       recommendations: {
         serviceAlignment: 'Assessment-based consultation - flexible engagement',
@@ -244,17 +263,17 @@ export class PersonaCustomizer {
           'Comprehensive AI readiness assessment and gap analysis',
           'Educational consultation on AI opportunities and considerations',
           'Strategic planning support for future AI initiatives',
-          'Ongoing advisory relationship with flexible engagement'
+          'Ongoing advisory relationship with flexible engagement',
         ],
         timelineApproach: 'Flexible timeline based on readiness and organizational needs',
         resourceFocus: [
           'Assessment and consultation expertise',
           'Educational resources and awareness-building materials',
           'Strategic planning and advisory support',
-          'Flexible engagement model with scalable support'
-        ]
-      }
-    }
+          'Flexible engagement model with scalable support',
+        ],
+      },
+    },
   };
 
   /**
@@ -267,19 +286,17 @@ export class PersonaCustomizer {
     industryInsights?: IndustryInsights
   ): PersonaCustomization {
     const personaContent = this.PERSONA_CONTENT[classification.primaryPersona];
-    
+
     // Generate service recommendation
     const serviceRecommendation = this.generateServiceRecommendation(
       classification,
       userProfile,
-      userContext,
       industryInsights
     );
 
     // Generate customized messaging
     const customizedMessaging = this.generateCustomizedMessaging(
       classification,
-      userProfile,
       userContext,
       industryInsights
     );
@@ -294,7 +311,7 @@ export class PersonaCustomizer {
     return {
       content: adaptedContent,
       serviceRecommendation,
-      customizedMessaging
+      customizedMessaging,
     };
   }
 
@@ -304,12 +321,10 @@ export class PersonaCustomizer {
   private static generateServiceRecommendation(
     classification: PersonaClassification,
     userProfile: UserProfile,
-    userContext: UserContext,
     industryInsights?: IndustryInsights
   ): ServiceRecommendation {
     const persona = classification.primaryPersona;
     const orgSize = userProfile.professional.organizationSize;
-    const industry = userContext.industry;
 
     // Base service tier mapping
     let tier: ServiceRecommendation['tier'];
@@ -359,14 +374,14 @@ export class PersonaCustomizer {
     );
 
     // Generate next steps
-    const nextSteps = this.generateNextSteps(persona, tier, userContext);
+    const nextSteps = this.generateNextSteps(persona, tier);
 
     return {
       tier,
       priceRange,
       rationale,
       nextSteps,
-      timelineEstimate
+      timelineEstimate,
     };
   }
 
@@ -387,31 +402,43 @@ export class PersonaCustomizer {
     const rationale = [
       `Based on your ${persona} classification (${confidence}% confidence)`,
       `and ${roleLevel} role in ${industry},`,
-      `the ${tier} tier provides the optimal balance of strategic depth and practical implementation.`
+      `the ${tier} tier provides the optimal balance of strategic depth and practical implementation.`,
     ];
 
     // Add persona-specific rationale
     switch (persona) {
       case 'Strategic Architect':
-        rationale.push('Your enterprise-wide authority and strategic focus require comprehensive transformation support with governance frameworks and change management expertise.');
+        rationale.push(
+          'Your enterprise-wide authority and strategic focus require comprehensive transformation support with governance frameworks and change management expertise.'
+        );
         break;
       case 'Strategic Catalyst':
-        rationale.push('Your change leadership capabilities and organizational influence align with systematic implementation and team capability building approaches.');
+        rationale.push(
+          'Your change leadership capabilities and organizational influence align with systematic implementation and team capability building approaches.'
+        );
         break;
       case 'Strategic Contributor':
-        rationale.push('Your tactical implementation focus and department-level authority benefit from targeted, practical solutions with clear ROI demonstration.');
+        rationale.push(
+          'Your tactical implementation focus and department-level authority benefit from targeted, practical solutions with clear ROI demonstration.'
+        );
         break;
       case 'Strategic Explorer':
-        rationale.push('Your learning orientation and growth potential are best served through educational approaches with practical experimentation opportunities.');
+        rationale.push(
+          'Your learning orientation and growth potential are best served through educational approaches with practical experimentation opportunities.'
+        );
         break;
       case 'Strategic Observer':
-        rationale.push('Your current assessment needs and exploration focus are optimally addressed through flexible consultation and educational support.');
+        rationale.push(
+          'Your current assessment needs and exploration focus are optimally addressed through flexible consultation and educational support.'
+        );
         break;
     }
 
     // Add industry-specific considerations
     if (industryInsights) {
-      rationale.push(`Industry-specific considerations for ${industry} include regulatory compliance, sector-specific use cases, and implementation best practices.`);
+      rationale.push(
+        `Industry-specific considerations for ${industry} include regulatory compliance, sector-specific use cases, and implementation best practices.`
+      );
     }
 
     return rationale.join(' ');
@@ -422,14 +449,13 @@ export class PersonaCustomizer {
    */
   private static generateNextSteps(
     persona: PersonaType,
-    tier: ServiceRecommendation['tier'],
-    userContext: UserContext
+    tier: ServiceRecommendation['tier']
   ): string[] {
     const baseSteps = this.PERSONA_CONTENT[persona].recommendations.nextSteps;
-    
+
     // Add tier-specific steps
     const tierSteps: string[] = [];
-    
+
     switch (tier) {
       case 'Strategic Advantage':
         tierSteps.push(
@@ -464,19 +490,18 @@ export class PersonaCustomizer {
    */
   private static generateCustomizedMessaging(
     classification: PersonaClassification,
-    userProfile: UserProfile,
     userContext: UserContext,
     industryInsights?: IndustryInsights
   ): PersonaCustomization['customizedMessaging'] {
     const persona = classification.primaryPersona;
     const industry = userContext.industry || 'business';
-    
+
     // Base messaging templates
     const messaging = {
       valueProposition: this.generateValueProposition(persona, industry),
       implementationFocus: this.generateImplementationFocus(persona, userContext),
       successMetrics: this.generateSuccessMetrics(persona, industryInsights),
-      riskMitigation: this.generateRiskMitigation(persona, userContext)
+      riskMitigation: this.generateRiskMitigation(persona),
     };
 
     return messaging;
@@ -491,7 +516,7 @@ export class PersonaCustomizer {
       'Strategic Catalyst': `Lead successful AI adoption across your ${industry} teams with proven change management approaches and collaborative implementation strategies.`,
       'Strategic Contributor': `Achieve immediate productivity gains and operational efficiency in your ${industry} department through targeted AI solutions and practical implementation.`,
       'Strategic Explorer': `Develop AI expertise and leadership capabilities that position you for career advancement and increased value contribution in ${industry}.`,
-      'Strategic Observer': `Gain comprehensive understanding of AI opportunities and strategic considerations specific to ${industry} through expert assessment and consultation.`
+      'Strategic Observer': `Gain comprehensive understanding of AI opportunities and strategic considerations specific to ${industry} through expert assessment and consultation.`,
     };
 
     return baseProps[persona];
@@ -500,17 +525,22 @@ export class PersonaCustomizer {
   /**
    * Generate persona-specific implementation focus
    */
-  private static generateImplementationFocus(persona: PersonaType, userContext: UserContext): string {
+  private static generateImplementationFocus(
+    persona: PersonaType,
+    userContext: UserContext
+  ): string {
     const region = userContext.geographicRegion;
-    const culturalContext = region === 'kenya' || region === 'east-africa' ? 
-      'with cultural sensitivity and local market understanding' : '';
+    const culturalContext =
+      region === 'kenya' || region === 'east-africa'
+        ? 'with cultural sensitivity and local market understanding'
+        : '';
 
     const focusAreas = {
       'Strategic Architect': `Enterprise transformation ${culturalContext}, emphasizing strategic intelligence amplification over simple automation`,
       'Strategic Catalyst': `Organizational change management ${culturalContext}, focusing on team alignment and capability building`,
       'Strategic Contributor': `Tactical implementation ${culturalContext}, prioritizing immediate value and process optimization`,
       'Strategic Explorer': `Learning and development ${culturalContext}, emphasizing skill building and career advancement`,
-      'Strategic Observer': `Assessment and exploration ${culturalContext}, providing flexible consultation and strategic guidance`
+      'Strategic Observer': `Assessment and exploration ${culturalContext}, providing flexible consultation and strategic guidance`,
     };
 
     return focusAreas[persona];
@@ -519,45 +549,52 @@ export class PersonaCustomizer {
   /**
    * Generate persona-specific success metrics
    */
-  private static generateSuccessMetrics(persona: PersonaType, industryInsights?: IndustryInsights): string[] {
+  private static generateSuccessMetrics(
+    persona: PersonaType,
+    industryInsights?: IndustryInsights
+  ): string[] {
     const baseMetrics = {
       'Strategic Architect': [
         'Enterprise-wide efficiency gains of 25-40%',
         'Strategic market positioning improvement',
         'ROI achievement within 12-18 months',
-        'Organizational transformation success rate'
+        'Organizational transformation success rate',
       ],
       'Strategic Catalyst': [
         'Team productivity improvement of 15-30%',
         'Change adoption success rate above 80%',
         'Cross-functional collaboration enhancement',
-        'Implementation timeline adherence'
+        'Implementation timeline adherence',
       ],
       'Strategic Contributor': [
         'Process efficiency gains of 10-25%',
         'Error reduction and quality improvement',
         'Time-to-value achievement within 3 months',
-        'User adoption rate above 85%'
+        'User adoption rate above 85%',
       ],
       'Strategic Explorer': [
         'AI literacy and competency development',
         'Career advancement opportunities',
         'Personal productivity enhancement',
-        'Innovation contribution increase'
+        'Innovation contribution increase',
       ],
       'Strategic Observer': [
         'Comprehensive AI readiness understanding',
         'Strategic planning capability improvement',
         'Informed decision-making enhancement',
-        'Future initiative preparation success'
-      ]
+        'Future initiative preparation success',
+      ],
     };
 
     let metrics = baseMetrics[persona];
 
     // Add industry-specific metrics if available
     if (industryInsights) {
-      metrics = [...metrics, 'Industry-specific compliance achievement', 'Sector benchmark performance'];
+      metrics = [
+        ...metrics,
+        'Industry-specific compliance achievement',
+        'Sector benchmark performance',
+      ];
     }
 
     return metrics.slice(0, 4); // Limit to 4 most relevant metrics
@@ -566,38 +603,38 @@ export class PersonaCustomizer {
   /**
    * Generate persona-specific risk mitigation strategies
    */
-  private static generateRiskMitigation(persona: PersonaType, userContext: UserContext): string[] {
+  private static generateRiskMitigation(persona: PersonaType): string[] {
     const baseRisks = {
       'Strategic Architect': [
         'Comprehensive change management and stakeholder alignment',
         'Phased implementation with clear governance and oversight',
         'Risk assessment and mitigation planning at enterprise level',
-        'Cultural adaptation and organizational readiness validation'
+        'Cultural adaptation and organizational readiness validation',
       ],
       'Strategic Catalyst': [
         'Team engagement and adoption support strategies',
         'Continuous feedback loops and iterative improvement',
         'Cross-functional collaboration and communication protocols',
-        'Performance monitoring and course correction mechanisms'
+        'Performance monitoring and course correction mechanisms',
       ],
       'Strategic Contributor': [
         'Practical implementation with minimal disruption',
         'Clear success criteria and performance measurement',
         'Integration testing and rollback procedures',
-        'User training and support system establishment'
+        'User training and support system establishment',
       ],
       'Strategic Explorer': [
         'Learning-focused approach with low implementation risk',
         'Gradual skill building with practical application',
         'Mentorship and guidance support system',
-        'Flexible timeline and expectation management'
+        'Flexible timeline and expectation management',
       ],
       'Strategic Observer': [
         'No-pressure assessment and exploration approach',
         'Flexible engagement with scalable commitment',
         'Educational focus with minimal implementation risk',
-        'Strategic planning support without immediate execution pressure'
-      ]
+        'Strategic planning support without immediate execution pressure',
+      ],
     };
 
     return baseRisks[persona];
@@ -614,16 +651,24 @@ export class PersonaCustomizer {
     const adaptedContent = JSON.parse(JSON.stringify(content)); // Deep copy
 
     // Apply cultural adaptations
-    if (userContext.geographicRegion === 'kenya' || userContext.geographicRegion === 'east-africa') {
+    if (
+      userContext.geographicRegion === 'kenya' ||
+      userContext.geographicRegion === 'east-africa'
+    ) {
       // Adjust language for East African context
-      adaptedContent.language.vocabulary = adaptedContent.language.vocabulary.map(term => {
-        if (term.includes('enterprise-wide')) return term.replace('enterprise-wide', 'organization-wide');
-        return term;
-      });
+      adaptedContent.language.vocabulary = adaptedContent.language.vocabulary.map(
+        (term: string) => {
+          if (term.includes('enterprise-wide'))
+            return term.replace('enterprise-wide', 'organization-wide');
+          return term;
+        }
+      );
 
       // Add culturally appropriate examples
-      adaptedContent.examples.useCases = adaptedContent.examples.useCases.map(useCase => {
-        return useCase + ' with consideration for local business practices and regulatory environment';
+      adaptedContent.examples.useCases = adaptedContent.examples.useCases.map((useCase: string) => {
+        return (
+          useCase + ' with consideration for local business practices and regulatory environment'
+        );
       });
     }
 
@@ -654,24 +699,31 @@ export class PersonaCustomizer {
     classification: PersonaClassification
   ): { isValid: boolean; warnings: string[] } {
     const warnings: string[] = [];
-    
+
     // Check service tier alignment
     const expectedTiers = {
       'Strategic Architect': ['Strategic Advantage'],
       'Strategic Catalyst': ['Strategic Systems', 'Strategic Advantage'],
       'Strategic Contributor': ['Strategic Clarity', 'Strategic Systems'],
       'Strategic Explorer': ['Strategic Clarity'],
-      'Strategic Observer': ['Strategic Clarity']
+      'Strategic Observer': ['Strategic Clarity'],
     };
 
     const expectedTiersForPersona = expectedTiers[classification.primaryPersona];
     if (!expectedTiersForPersona.includes(customization.serviceRecommendation.tier)) {
-      warnings.push(`Service tier ${customization.serviceRecommendation.tier} may not align with ${classification.primaryPersona} characteristics`);
+      warnings.push(
+        `Service tier ${customization.serviceRecommendation.tier} may not align with ${classification.primaryPersona} characteristics`
+      );
     }
 
     // Check confidence alignment
-    if (classification.confidenceScore < 0.7 && customization.serviceRecommendation.tier === 'Strategic Advantage') {
-      warnings.push('High-tier service recommendation with low classification confidence - consider additional assessment');
+    if (
+      classification.confidenceScore < 0.7 &&
+      customization.serviceRecommendation.tier === 'Strategic Advantage'
+    ) {
+      warnings.push(
+        'High-tier service recommendation with low classification confidence - consider additional assessment'
+      );
     }
 
     return { isValid: true, warnings };

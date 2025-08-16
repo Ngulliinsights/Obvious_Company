@@ -94,10 +94,7 @@ img[loading="lazy"].loaded {
 .image-overlay::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(135deg, rgba(46, 91, 186, 0.1) 0%, rgba(0, 166, 118, 0.1) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -135,15 +132,16 @@ img[loading="lazy"].loaded {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--depth-charcoal);
   background-color: var(--warm-white);
   overflow-x: hidden;
+
   /* Performance optimizations */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 .container {
@@ -168,6 +166,7 @@ body {
   right: 0;
   z-index: 1000;
   transition: var(--transition-base);
+
   /* Performance optimization - avoid backdrop-filter until needed */
   will-change: backdrop-filter, background-color;
 }
@@ -177,9 +176,10 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(0);
   transition: var(--transition-base);
   z-index: -1;
+
   /* Performance optimization */
   will-change: backdrop-filter, background-color;
 }
@@ -298,10 +298,12 @@ body {
   transform: translateY(-3px) scale(1.2);
   background-color: var(--insight-green);
 }
+
 .logo:hover .logo-dot:nth-child(2) {
   transform: translateY(3px) scale(1.2);
   background-color: var(--energy-amber);
 }
+
 .logo:hover .logo-dot:nth-child(3) {
   transform: translateY(-3px) scale(1.2);
   background-color: var(--insight-green);
@@ -658,6 +660,7 @@ body {
 
 .service-card {
   @extend .card-base;
+
   background: var(--focus-white);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -831,6 +834,7 @@ body {
       opacity: 0.4;
       transform: scale(1);
   }
+
   50% {
       opacity: 1;
       transform: scale(1.1);
@@ -842,9 +846,11 @@ body {
       transform: translateX(-100%);
       opacity: 0.3;
   }
+
   50% {
       opacity: 0.8;
   }
+
   100% {
       transform: translateX(100%);
       opacity: 0.3;
@@ -856,6 +862,7 @@ body {
       opacity: 0;
       transform: translateY(20px) scale(0.9);
   }
+
   100% {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -867,6 +874,7 @@ body {
       opacity: 0;
       transform: translateY(20px);
   }
+
   to {
       opacity: 1;
       transform: translateY(0);
@@ -877,6 +885,7 @@ body {
   0% {
       transform: translateX(-100%) skewX(-20deg);
   }
+
   100% {
       transform: translateX(300%) skewX(-20deg);
   }
@@ -921,6 +930,7 @@ body {
 
 .framework-card {
   @extend .card-base;
+
   background: var(--focus-white);
   padding: 2.5rem;
 }
@@ -1019,6 +1029,7 @@ body {
 
 .insight-card {
   @extend .card-base;
+
   background: var(--focus-white);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -1153,6 +1164,7 @@ body {
 /* Outcome Cards */
 .outcome-card {
   @extend .card-base;
+
   background: var(--focus-white);
   padding: 2rem;
   text-align: center;
@@ -1271,10 +1283,7 @@ body {
 .article-image::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: 20px;
-  bottom: 20px;
+  inset: -20px 20px 20px -20px;
   background: var(--gradient-primary);
   border-radius: 12px;
   z-index: -1;
@@ -1465,7 +1474,7 @@ body {
 }
 
 /* Responsive Design - Consolidated and optimized */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .featured-insights {
       grid-template-columns: 1fr;
   }
@@ -1487,14 +1496,11 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Enhanced Mobile Navigation */
   .nav-links {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(20px);
       flex-direction: column;
@@ -1667,13 +1673,14 @@ body {
       transform: translateX(100%);
       opacity: 0;
   }
+
   to {
       transform: translateX(0);
       opacity: 1;
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .container {
       padding: 0 15px;
   }
@@ -1732,7 +1739,7 @@ body {
   .service-card,
   .card-base {
       box-shadow: none;
-      border: 1px solid #ddd;
+      border: 1px solid #dddddd;
       break-inside: avoid;
   }
 
@@ -1744,14 +1751,14 @@ body {
 
   /* Ensure readability */
   body {
-      color: #000;
+      color: #000000;
       background: white;
   }
 
   .hero,
   .consultation {
       background: white;
-      color: #000;
+      color: #000000;
   }
 
   /* Page breaks */
@@ -1811,7 +1818,7 @@ body {
 }
 
 /* Performance optimization for large screens */
-@media (min-width: 1400px) {
+@media (width >= 1400px) {
   .container {
       max-width: 1400px;
   }
@@ -1821,6 +1828,7 @@ body {
       height: 1000px;
   }
 }
+
 /*
 Article Styling Enhancements */
 .breadcrumb-section {
@@ -1933,7 +1941,7 @@ padding-left: 2rem;
 
 .article-content h2 {
 color: var(--clarity-blue);
-margin: 3rem 0 1.5rem 0;
+margin: 3rem 0 1.5rem;
 font-size: 1.8rem;
 font-weight: 600;
 }
@@ -2034,7 +2042,7 @@ color: var(--calm-gray);
 }
 
 /* Mobile Responsiveness for Articles */
-@media (max-width: 768px) {
+@media (width <= 768px) {
 .article-title {
   font-size: 2rem;
 }
@@ -2052,6 +2060,7 @@ color: var(--calm-gray);
   gap: 0.5rem;
 }
 }
+
 /* Sop
 histicated Design Elements from Company Materials */
 
@@ -2064,10 +2073,7 @@ overflow: hidden;
 .prism-effect::before {
 content: '';
 position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
+inset: 0;
 background: radial-gradient(circle at 30% 70%, rgba(247, 147, 30, 0.15) 0%, transparent 50%),
             radial-gradient(circle at 70% 30%, rgba(46, 91, 186, 0.1) 0%, transparent 50%);
 z-index: 0;
@@ -2208,7 +2214,7 @@ border-radius: 1px;
 }
 
 /* Enhanced Mobile Responsiveness for Sophisticated Elements */
-@media (max-width: 768px) {
+@media (width <= 768px) {
 .prism-effect::before {
   background: radial-gradient(circle at 50% 50%, rgba(247, 147, 30, 0.1) 0%, transparent 70%);
 }
@@ -2227,6 +2233,7 @@ border-radius: 1px;
   transform: translateY(-4px) scale(1.01);
 }
 }
+
 /* Strategic Image Enhancements */
 .hero img[src*="prism"] {
   filter: brightness(1.1) contrast(1.05);
@@ -2251,7 +2258,7 @@ img[src*="column"] {
 }
 
 /* Responsive adjustments for column pairs */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .hero img[src*="prism"] {
     opacity: 0.06 !important;
   }

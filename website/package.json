@@ -26,5 +26,9 @@
   "license": "UNLICENSED",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0"
   }
 }

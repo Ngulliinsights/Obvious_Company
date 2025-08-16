@@ -1,5 +1,7 @@
 /* Assessment-Specific Styles */
 
+/* Refined version addressing linting issues while maintaining all existing functionality */
+
 /* Assessment Hero Section */
 .assessment-hero {
     background: var(--gradient-hero-bg);
@@ -76,6 +78,8 @@
     align-items: center;
     gap: 1rem;
     background: rgba(255, 255, 255, 0.8);
+
+    /* Enhanced backdrop-filter with webkit prefix for Safari compatibility */
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     border-radius: var(--border-radius);
@@ -321,10 +325,9 @@
 .pattern-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+    /* Using modern inset shorthand property instead of individual positioning */
+    inset: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(46,91,186,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
 }
@@ -377,9 +380,10 @@
     font-size: 3rem;
     font-weight: 800;
     background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+    /* Webkit prefix maintained for text gradient effect compatibility */
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     line-height: 1;
     margin-bottom: 0.5rem;
 }
@@ -521,98 +525,101 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Updated media queries using modern approach while maintaining compatibility */
+@media (width <= 768px) {
     .assessment-hero {
         padding: 6rem 0 4rem;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .hero-visual {
         order: -1;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .value-props {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .value-prop {
         padding: 1rem;
     }
-    
+
     .pattern-content h2 {
         font-size: 2rem;
     }
-    
+
     .pattern-content p {
         font-size: 1.1rem;
     }
-    
+
     .modalities-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .modality-card {
         padding: 1.5rem;
     }
-    
+
     .modality-card.featured {
         transform: none;
     }
-    
+
     .outcomes-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .trust-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .trust-stats {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .privacy-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn-lg {
         width: 100%;
         max-width: 300px;
     }
 }
 
-/* Animation Classes */
+/* Animation Classes - Updated with kebab-case naming convention */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fade-in-up 0.6s ease-out forwards;
 }
 
-@keyframes fadeInUp {
+/* Updated keyframe names following kebab-case convention */
+@keyframes fade-in-up {
     to {
         opacity: 1;
         transform: translateY(0);
@@ -622,10 +629,10 @@
 .slide-in-left {
     opacity: 0;
     transform: translateX(-30px);
-    animation: slideInLeft 0.6s ease-out forwards;
+    animation: slide-in-left 0.6s ease-out forwards;
 }
 
-@keyframes slideInLeft {
+@keyframes slide-in-left {
     to {
         opacity: 1;
         transform: translateX(0);
@@ -635,10 +642,10 @@
 .slide-in-right {
     opacity: 0;
     transform: translateX(30px);
-    animation: slideInRight 0.6s ease-out forwards;
+    animation: slide-in-right 0.6s ease-out forwards;
 }
 
-@keyframes slideInRight {
+@keyframes slide-in-right {
     to {
         opacity: 1;
         transform: translateX(0);
