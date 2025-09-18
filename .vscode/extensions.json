@@ -1,0 +1,56 @@
+{
+  "recommendations": [
+    // Essential formatting and linting
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "htmlhint.vscode-htmlhint",
+    
+    // Development tools
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    
+    // Git and version control
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    
+    // Testing
+    "ms-playwright.playwright",
+    "orta.vscode-jest",
+    
+    // Live development
+    "ritwickdey.liveserver",
+    "ms-vscode.live-server",
+    
+    // Productivity
+    "christian-kohler.path-intellisense",
+    "formulahendry.code-runner",
+    "ms-vscode.vscode-typescript-next",
+    
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    
+    // Themes and icons (optional)
+    "pkief.material-icon-theme",
+    "github.github-vscode-theme",
+    
+    // Environment files
+    "mikestead.dotenv",
+    
+    // REST API testing
+    "humao.rest-client",
+    
+    // Docker (if using)
+    "ms-azuretools.vscode-docker",
+    
+    // Spell checking
+    "streetsidesoftware.code-spell-checker"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript",
+    "hookyqr.beautify"
+  ]
+}

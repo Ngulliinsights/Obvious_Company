@@ -1,0 +1,115 @@
+{
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // File associations
+  "files.associations": {
+    "*.css": "css",
+    "*.html": "html",
+    "*.js": "javascript"
+  },
+
+  // Auto save
+  "files.autoSave": "onFocusChange",
+
+  // Exclude files from explorer
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/coverage": true,
+    "**/.nyc_output": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/*.min.js": true,
+    "**/*.min.css": true
+  },
+
+  // Search exclude
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/*.min.js": true,
+    "**/*.min.css": true
+  },
+
+  // Language specific settings
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ESLint settings
+  "eslint.workingDirectories": [
+    ".",
+    "website/server"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "html"
+  ],
+
+  // Stylelint settings
+  "stylelint.validate": [
+    "css",
+    "html"
+  ],
+
+  // HTML settings
+  "html.format.enable": true,
+  "html.format.wrapLineLength": 120,
+
+  // CSS settings
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+
+  // Emmet settings
+  "emmet.includeLanguages": {
+    "html": "html",
+    "css": "css"
+  },
+
+  // Terminal settings
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
+
+  // Git settings
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // Live Server settings (if using Live Server extension)
+  "liveServer.settings.root": "/website",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.CustomBrowser": "chrome",
+
+  // Prettier settings
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+
+  // TypeScript settings (for server files)
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  // Workspace specific
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti"
+}

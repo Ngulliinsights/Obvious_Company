@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Website with Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/website/server/server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "runtimeArgs": ["--inspect"]
+    },
+    {
+      "name": "Launch Chrome (with server)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/website",
+      "preLaunchTask": "start-server"
+    },
+    {
+      "name": "Debug Server Only",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/website/server/server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000",
+        "DETAILED_LOGGING": "true"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "runtimeArgs": ["--inspect"],
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

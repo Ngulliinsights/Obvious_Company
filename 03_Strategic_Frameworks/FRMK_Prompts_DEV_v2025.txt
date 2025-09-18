@@ -1,0 +1,259 @@
+Act as a Strategic Framework Architect specializing in AI business transformation. Your task is to create reusable strategic frameworks for Kenyan businesses.
+
+CONTEXT:
+
+- Target: Mid to large Kenyan businesses
+- Purpose: AI readiness and implementation frameworks
+- Format: Modular, adaptable frameworks
+
+REQUIREMENTS:
+
+1. Each framework must include:
+   - Assessment criteria
+   - Implementation roadmap
+   - Success metrics
+   - Risk mitigation strategies
+2. Must be adaptable across industries
+3. Must consider Kenyan business context
+4. Must include clear ROI measurements
+
+Generate frameworks for:
+
+1. AI Readiness Assessment Matrix
+2. Implementation Roadmap Template
+3. Risk Management Framework
+4. ROI Calculation Model
+5. Change Management Guide
+
+Consider:
+
+- Local regulatory environment
+- Available technology infrastructure
+- Workforce skill levels
+- Market dynamics
+
+OUTPUT FORMAT:
+
+- Title
+- Purpose
+- Components
+- Application Guidelines
+- Customization Points
+- Success Indicators
+
+Act as an Executive Education Designer specializing in AI leadership development. Create curriculum modules for senior executives in Kenya.
+
+TARGET AUDIENCE:
+
+- C-suite executives
+- Business owners
+- Senior managers
+- Age: 40+
+- Experience: 15+ years
+
+LEARNING OBJECTIVES:
+
+1. Strategic AI understanding
+2. Implementation leadership
+3. Risk management
+4. Change management
+5. ROI optimization
+
+REQUIRED OUTPUTS:
+For each module, create:
+
+1. Executive Summary (250 words)
+2. Key Learning Points (5-7)
+3. Case Study Template
+4. Discussion Questions (3-5)
+5. Action Planning Template
+6. Implementation Checklist
+
+CONSTRAINTS:
+
+- Session length: 2-4 hours
+- Delivery format: Hybrid
+- Must include local context
+- Focus on practical application
+
+SPECIAL CONSIDERATIONS:
+
+- Executive time constraints
+- Need for immediate application
+- Focus on strategic rather than technical
+- Integration with existing business processes
+
+Act as a Prompt Engineering Strategist developing business-focused prompt templates for AI implementation.
+
+CONTEXT:
+
+- Industry: Business Consulting
+- Location: Kenya
+- Use Case: Strategic Planning & Implementation
+
+PROMPT CATEGORIES NEEDED:
+
+1. Strategic Analysis
+   - Market assessment
+   - Competitive analysis
+   - Opportunity identification
+   - Risk evaluation
+
+2. Implementation Planning
+   - Resource allocation
+   - Timeline development
+   - Milestone setting
+   - Progress tracking
+
+3. Change Management
+   - Communication planning
+   - Stakeholder engagement
+   - Resistance management
+   - Success measurement
+
+PROMPT STRUCTURE:
+
+1. Context Setting
+2. Objective Statement
+3. Constraints Definition
+4. Required Outputs
+5. Quality Criteria
+6. Format Specifications
+
+OPTIMIZATION CRITERIA:
+
+- Clarity of instruction
+- Consistency of output
+- Adaptability to different scenarios
+- Measurable outcomes
+- Local relevance
+
+Act as a Content Strategy Architect designing scalable content assets for AI business transformation.
+
+OBJECTIVE:
+Create a content architecture that supports:
+
+- Multiple delivery formats
+- Various expertise levels
+- Different learning styles
+- Scalable deployment
+
+CONTENT TYPES:
+
+1. Educational Materials
+   - Workshop guides
+   - Training modules
+   - Case studies
+   - Exercise templates
+
+2. Implementation Tools
+   - Assessment frameworks
+   - Planning templates
+   - Progress trackers
+   - Evaluation tools
+
+3. Support Resources
+   - FAQ documents
+   - Troubleshooting guides
+   - Best practices
+   - Reference materials
+
+REQUIREMENTS:
+
+- Modular design
+- Customization points
+- Clear progression paths
+- Measurable outcomes
+
+FORMAT SPECIFICATIONS:
+
+- Length guidelines
+- Structure templates
+- Visual elements
+- Interactive components
+
+Act as an ROI & Metrics Specialist creating measurement frameworks for AI implementation success.
+
+FRAMEWORK REQUIREMENTS:
+
+1. Quantitative Metrics
+   - Cost savings
+   - Time efficiency
+   - Revenue impact
+   - Productivity gains
+
+2. Qualitative Indicators
+   - Strategic alignment
+   - User adoption
+   - Process improvement
+   - Innovation capacity
+
+3. Implementation Metrics
+   - Project milestones
+   - Resource utilization
+   - Risk mitigation
+   - Change management
+
+MEASUREMENT TOOLS:
+Create templates for:
+
+1. Baseline Assessment
+2. Progress Tracking
+3. ROI Calculation
+4. Impact Analysis
+5. Success Reporting
+
+CONSIDERATIONS:
+
+- Industry specifics
+- Company size
+- Implementation timeline
+- Resource constraints
+- Local market factors
+
+For each module in our curriculum, generate:
+
+CONTEXT:
+Module: [Specific Module Name]
+Duration: [Time Length]
+Audience: Kenyan executives
+Format: [Delivery Method]
+
+GENERATE:
+
+1. Learning Objectives
+   - Strategic outcomes
+   - Practical applications
+   - Success indicators
+
+2. Content Structure
+   - Key concepts
+   - Case studies
+   - Exercises
+   - Discussion points
+
+3. Implementation Guide
+   - Step-by-step process
+   - Common challenges
+   - Success strategies
+   - Resource requirements
+
+4. Assessment Framework
+   - Progress indicators
+   - Success metrics
+   - Evaluation criteria
+
+5. Support Materials
+   - Reference guides
+   - Templates
+   - Checklists
+   - Resources
+
+FORMAT:
+
+- Clear sections
+- Actionable steps
+- Measurable outcomes
+- Local context
+- Practical examples
+-

@@ -1,0 +1,176 @@
+---
+title: "Reorganization mapping"
+type: "curriculum"
+audience: "internal"
+version: "v2025.json"
+dependencies:
+  - "" # Add dependencies here
+related_docs:
+  - "" # Add related documents here
+supersedes: "" # Add superseded document here if applicable
+---
+
+{
+  "file_analysis": [
+    {
+      "current_path": "01_AI_Curricula_and_Training/ai_consultancy_curriculum.md",
+      "recommended_path": "education/curricula/ai_consultancy_training_program.md",
+      "content_summary": "Comprehensive training curriculum for AI consultancy with focus on Kenyan businesses, including workshop structure and implementation strategies.",
+      "primary_function": "education",
+      "target_audience": "consultants",
+      "content_type": "curriculum",
+      "dependencies": [
+        "01_AI_Curricula_and_Training/ai_leadership_curriculum.md",
+        "03_Strategic_Frameworks/ai_integration_guide.md"
+      ],
+      "overlap_files": [
+        "01_AI_Curricula_and_Training/refined_ai_curriculum.md",
+        "01_AI_Curricula_and_Training/ai_curriculum_intensive.md"
+      ],
+      "duplication_score": 65
+    },
+    {
+      "current_path": "02_Prompt_Engineering/strategic_ai_prompting_framework.md",
+      "recommended_path": "frameworks/prompt_engineering/strategic_prompting_framework.md",
+      "content_summary": "Comprehensive guide for strategic AI prompting with frameworks for hallucination detection, prevention, and code quality enhancement.",
+      "primary_function": "framework",
+      "target_audience": "developers",
+      "content_type": "framework",
+      "dependencies": [
+        "02_Prompt_Engineering/comprehensive_prompt_architecture.md",
+        "02_Prompt_Engineering/unified_prompt_framework.md"
+      ],
+      "overlap_files": ["02_Prompt_Engineering/refined_prompt_templates.md"],
+      "duplication_score": 45
+    },
+    {
+      "current_path": "03_Strategic_Frameworks/ai_readiness_audit.md",
+      "recommended_path": "frameworks/assessment/ai_strategic_readiness_audit.md",
+      "content_summary": "Diagnostic framework for assessing executive readiness for AI adoption, with optimized questions and scoring methodology.",
+      "primary_function": "strategy",
+      "target_audience": "executives",
+      "content_type": "assessment",
+      "dependencies": [
+        "website/assessment/index.html",
+        "AI Strategic Readiness Audit - Executive Assessment - Google Forms.pdf"
+      ],
+      "overlap_files": ["03_Strategic_Frameworks/ai_integration_guide.md"],
+      "duplication_score": 30
+    },
+    {
+      "current_path": "04_Funding_and_Business_Development/ai_funding_framework.md",
+      "recommended_path": "frameworks/business/ai_funding_partnership_framework.md",
+      "content_summary": "Strategic framework for AI-enhanced funding and partnership development, focusing on AI as an amplification tool for human intelligence.",
+      "primary_function": "funding",
+      "target_audience": "executives",
+      "content_type": "framework",
+      "dependencies": [
+        "04_Funding_and_Business_Development/unified_funding_framework.md",
+        "04_Funding_and_Business_Development/grant_ecosystem_framework.md"
+      ],
+      "overlap_files": [
+        "04_Funding_and_Business_Development/ai_fundraising_guide.md",
+        "04_Funding_and_Business_Development/strategic_fundraising_guide.md"
+      ],
+      "duplication_score": 70
+    },
+    {
+      "current_path": "05_Company_Materials/obvious_company_brief.md",
+      "recommended_path": "company/brand/obvious_company_strategic_blueprint.md",
+      "content_summary": "Strategic blueprint for The Obvious Company as an AI consultancy, detailing value proposition, market position, and brand architecture.",
+      "primary_function": "marketing",
+      "target_audience": "internal",
+      "content_type": "guide",
+      "dependencies": [
+        "05_Company_Materials/obvious_company_brand_strategy (1).md",
+        "05_Company_Materials/obvious_company_messaging.md"
+      ],
+      "overlap_files": ["05_Company_Materials/obvious_company_brief (1).md"],
+      "duplication_score": 90
+    },
+    {
+      "current_path": "website/IMPLEMENTATION_GUIDE.md",
+      "recommended_path": "website/documentation/implementation_guide.md",
+      "content_summary": "Guide for implementing priority pages including thought leadership hub, assessment center, and learning portal with setup instructions.",
+      "primary_function": "education",
+      "target_audience": "developers",
+      "content_type": "guide",
+      "dependencies": [
+        "website/index.html",
+        "website/assessment/index.html",
+        "website/insights/index.html",
+        "website/learn/index.html"
+      ],
+      "overlap_files": ["DEPLOYMENT_OPTIONS.md", "website/CONTENT_STRATEGY.md"],
+      "duplication_score": 25
+    },
+    {
+      "current_path": "DEPLOYMENT_OPTIONS.md",
+      "recommended_path": "website/documentation/deployment_options.md",
+      "content_summary": "Overview of deployment options for The Obvious Company website, including Vercel and Netlify with setup instructions.",
+      "primary_function": "education",
+      "target_audience": "developers",
+      "content_type": "guide",
+      "dependencies": ["deploy-netlify.sh", "deploy-vercel.sh", "netlify.toml", "vercel.json"],
+      "overlap_files": ["DEPLOYMENT_READY.md", "website/deploy.sh"],
+      "duplication_score": 40
+    },
+    {
+      "current_path": "08_Presentations_and_Pitches/ai_consultancy_pitch.html",
+      "recommended_path": "marketing/presentations/ai_consultancy_pitch.html",
+      "content_summary": "HTML presentation for AI consultancy services with styled slides and animations.",
+      "primary_function": "marketing",
+      "target_audience": "clients",
+      "content_type": "presentation",
+      "dependencies": ["05_Company_Materials/obvious_company_brief.md"],
+      "overlap_files": [
+        "08_Presentations_and_Pitches/ai_agency_pitch.html",
+        "08_Presentations_and_Pitches/ai_mastery_pitch.html"
+      ],
+      "duplication_score": 60
+    },
+    {
+      "current_path": "website/index.html",
+      "recommended_path": "website/public/index.html",
+      "content_summary": "Main landing page for The Obvious Company website with navigation, hero section, and strategic intelligence amplification messaging.",
+      "primary_function": "marketing",
+      "target_audience": "clients",
+      "content_type": "template",
+      "dependencies": ["website/css/styles.css", "website/js/main.js"],
+      "overlap_files": ["05_Company_Materials/the_obvious_landing_page.html"],
+      "duplication_score": 50
+    }
+  ],
+  "recommended_structure": {
+    "frameworks": {
+      "purpose": "Contains all strategic frameworks organized by domain",
+      "subfolders": ["assessment", "prompt_engineering", "business", "strategy", "implementation"],
+      "cross_references": ["education", "marketing"]
+    },
+    "education": {
+      "purpose": "Educational materials including curricula, guides, and training programs",
+      "subfolders": ["curricula", "guides", "workshops", "resources"],
+      "cross_references": ["frameworks", "marketing"]
+    },
+    "marketing": {
+      "purpose": "Marketing and sales materials for client acquisition",
+      "subfolders": ["presentations", "case_studies", "materials", "pitches"],
+      "cross_references": ["company", "frameworks"]
+    },
+    "company": {
+      "purpose": "Internal company materials and brand assets",
+      "subfolders": ["brand", "strategy", "operations", "team"],
+      "cross_references": ["marketing", "website"]
+    },
+    "website": {
+      "purpose": "Website implementation files and documentation",
+      "subfolders": ["public", "documentation", "server", "components"],
+      "cross_references": ["marketing", "company"]
+    },
+    "tools": {
+      "purpose": "Development tools, scripts, and utilities",
+      "subfolders": ["deployment", "testing", "automation", "analytics"],
+      "cross_references": ["website"]
+    }
+  }
+}
